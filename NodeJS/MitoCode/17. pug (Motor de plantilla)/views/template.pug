@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title=titulo
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css', rel='stylesheet')
+    body
+        div.container
+            h1=mensaje
+
+            table.table.table-striped
+                for persona in personas
+                    tr
+                        td=persona.id
+                        td
+                            a(href='/persona/'+persona.id) #{persona.nombre}

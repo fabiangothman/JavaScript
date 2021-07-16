@@ -1,0 +1,28 @@
+{
+  "name": "npm-tutorial",
+  "version": "1.0.0",
+  "description": "init for npm-tutorial",
+  "main": "geocode.js",
+  "scripts": {
+    "test": "node geocode.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiangothman/JSTutorials.git"
+  },
+  "keywords": [
+    "nodejs",
+    "npm",
+    "mitocode"
+  ],
+  "author": "Fabián Murillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabiangothman/JSTutorials/issues"
+  },
+  "homepage": "https://github.com/fabiangothman/JSTutorials#readme",
+  "dependencies": {
+    "request": "^2.88.2",
+    "yargs": "^16.2.0"
+  }
+}

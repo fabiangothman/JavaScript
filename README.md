@@ -1,2 +1,2 @@
-# JavaScript
-Here are lot of JS samples &amp; studies for NodeJS, ExpressJS, ReactJS, TypeScript and more!
+# JStutorials
+Here are lots of JS codes & samples for NodeJS, ExpressJS, ReactJS, TypeScript and more!

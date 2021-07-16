@@ -1,0 +1,27 @@
+{
+  "name": "npm-tutorial",
+  "version": "1.0.0",
+  "description": "init for npm-tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiangothman/JSTutorials.git"
+  },
+  "keywords": [
+    "nodejs",
+    "npm",
+    "mitocode"
+  ],
+  "author": "Fabián Murillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabiangothman/JSTutorials/issues"
+  },
+  "homepage": "https://github.com/fabiangothman/JSTutorials#readme",
+  "dependencies": {
+    "yargs": "^16.1.1"
+  }
+}
