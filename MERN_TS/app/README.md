@@ -2,8 +2,8 @@
 Sample APP build using ReactJS with TypeScript!
 
 ## Initialization
-The API was stated by:
-- npx create-react-app app --typescript
+The API was stated by using yarn & typescript:
+- yarn create react-app my-app --template typescript
 Libraries
 - yarn add 
 
