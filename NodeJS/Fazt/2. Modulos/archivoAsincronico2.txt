@@ -1,0 +1,7 @@
+linea 1
+aaa
+bbbb
+ccccc
+dddddd
+eeeeeee
+ffffffff

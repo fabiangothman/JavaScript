@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-curso-npm",
+  "version": "0.0.1",
+  "description": "NodeJS npm usage",
+  "main": "index.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "desarrollo": "node index.js"
+  },
+  "keywords": [
+    "npm",
+    "example",
+    "nodejs",
+    "curso"
+  ],
+  "author": "Fabian Murillo",
+  "license": "MIT"
+}
