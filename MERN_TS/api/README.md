@@ -21,6 +21,7 @@ You can access to the MongoDB database via:
     - mongod --version
 
 ## Run
+Don't forget first to configure the .env file properly
 You can run the API backend by running:
 - We've already configured the "build" and "dev" script inside package.json
 - npm run dev   (Keep awake a listening connection for changes)
