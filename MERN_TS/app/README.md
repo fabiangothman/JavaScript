@@ -5,9 +5,17 @@ Sample APP build using ReactJS with TypeScript!
 The API was stated by using yarn & typescript:
 - yarn create react-app my-app --template typescript
 Libraries
-- yarn add 
+- yarn add axios
+- yarn add react-player
+- yarn add react-router-dom
+Types
+- yarn add @types/react-router-dom
+Styles
+- yarn add bootswatch
+- yarn add react-toastify
 
 ## Run
+Don't forget first to configure the .env file properly
 You can run the APP frontend by running:
 - yarn start
 
