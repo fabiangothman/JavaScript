@@ -1,0 +1,24 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { createStore } from "redux";
+import allReducers from "./reducers";
+import { Provider } from "react-redux";
+
+/**
+ * It can contain not only a reducer also combined reducers "combineReducers"
+ * Also, you can display the reducers via ReduxDevTools chrome plugin, and pass it as second paramenter
+ */
+const myStore = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+
+ReactDOM.render(
+  <Provider store={myStore}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
