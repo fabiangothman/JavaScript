@@ -5,7 +5,7 @@ Sample Application build using Redux & ReactJS
 ## Libraries
 To implement Redux:
 - npm install redux react-redux
-To support asynchronous
+To support asynchronous functions
 - npm install redux-thunk
 
 ## "Steps" explanation
