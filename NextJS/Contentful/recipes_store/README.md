@@ -15,3 +15,4 @@ npx create-next-app [your-site-name] -e https://github.com/iamshaunjp/next-conte
 
 # Deploy
 - This project has been deployed to Vercel: https://recipes-store.vercel.app
+- It's using Web Hooks from Vercel and from Contentful (check it under settings)
