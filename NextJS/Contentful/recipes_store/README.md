@@ -14,4 +14,4 @@ npx create-next-app [your-site-name] -e https://github.com/iamshaunjp/next-conte
 - Create a .env file from .env.sample with your custom fields.
 
 # Deploy
-- This project has been deployed to Vercel
+- This project has been deployed to Vercel: https://recipes-store.vercel.app
