@@ -1,0 +1,10 @@
+<div class="hello-world3">
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+
+    <ul *ngIf="show">
+        <li *ngFor="let user of users">
+            <span>{{ user }}</span>
+        </li>
+    </ul>
+</div>

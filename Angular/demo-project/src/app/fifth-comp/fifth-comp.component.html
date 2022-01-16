@@ -1,0 +1,13 @@
+<div class="hello-world5">
+    <form (submit)="addUser(newUser)">
+        <input type="text" #newUser />
+        <button>Add</button>
+    </form>
+    <ul>
+        <li *ngFor="let user of users">
+            <span>{{ user }}</span>
+            <button (click)="greetUser(user)">Greet</button>
+            <button (click)="deleteUser(user)">x</button>
+        </li>
+    </ul>
+</div>
