@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Backend server
 
-A new package script was added to run a fake backend server. Please run `npm run server` before Development server. Navigate to `http://localhost:5000/`. The app will automatically reload if you change the source file: `db.json`.
+A new package script was added to run a fake backend server with `json-server`. Please run `npm run server` before Development server. Navigate to `http://localhost:5000/`. The app will automatically reload if you change the source file: `db.json`.
 
 ## Development server
 
