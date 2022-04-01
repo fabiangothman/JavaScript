@@ -1,0 +1,452 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+
+.ourTeam {
+  .fullWidth {
+    width: 100%;
+  }
+  .hide {
+    display: none;
+  }
+  .myPerson {
+    align-content: flex-end;
+    & > div {
+      position: relative;
+
+      min-width: 28rem;
+
+      flex-direction: column;
+    }
+
+    @include media.onLg() {
+      justify-content: center;
+
+      flex: 0 0 31.8rem;
+      flex-direction: row;
+      .blank1,
+      .blank2 {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 0 3rem;
+      }
+      & > div {
+        min-width: unset;
+      }
+      @include media.onLg() {
+        & > div {
+          flex: 0 0 25rem;
+          height: 25rem;
+        }
+      }
+      @include media.onXlWithMargin() {
+        & > div {
+          flex: 0 0 31.5rem;
+          height: 31.5rem;
+        }
+      }
+      @include media.bwLgAndXl() {
+        & > div {
+          flex: 0 0 22rem;
+          height: 22rem;
+        }
+      }
+      &:nth-child(6n + 4) {
+        .blank2 {
+          order: 1 !important;
+          visibility: hidden;
+        }
+        .blank1 {
+          order: 2 !important;
+          visibility: visible !important;
+        }
+      }
+      &:nth-child(6n + 5) {
+        .blank2 {
+          order: 1;
+          visibility: visible !important;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+        .blank1 {
+          visibility: hidden;
+        }
+      }
+      &:nth-child(6n + 6) {
+        .blank2 {
+          svg {
+            display: none;
+          }
+          .hide {
+            display: block;
+          }
+          visibility: visible !important;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+        .blank1 {
+          visibility: visible !important;
+          padding: 0;
+        }
+      }
+      &:nth-child(3n + 3) {
+        .blank1 {
+          order: 3;
+          visibility: hidden;
+        }
+        .blank2 {
+          order: 2;
+          visibility: hidden;
+        }
+        .myImage {
+          order: 1;
+          &::after {
+            display: block;
+          }
+        }
+      }
+      &:nth-child(3n + 1) {
+        .myImage {
+          order: 3;
+          &::before {
+            display: block;
+          }
+        }
+        .blank1 {
+          order: 1;
+          visibility: hidden;
+        }
+        .blank2 {
+          order: 2;
+        }
+      }
+      &:nth-child(n + 4) {
+        position: relative;
+        top: -5rem;
+      }
+      &:nth-child(3n + 2) {
+        .myImage {
+          order: 2;
+          &::before,
+          &::after {
+            display: block;
+          }
+        }
+        .blank1 {
+          order: 1;
+        }
+        .blank2 {
+          order: 3;
+          visibility: hidden;
+        }
+      }
+    }
+    @include media.smallerThanLg() {
+      &:first-child {
+        background-image: url('~assets/icons/four-lines.svg');
+        background-position: calc(100% - 30.5rem) 14.2rem !important;
+      }
+      background-image: url('~assets/icons/three-lines.svg');
+      flex-direction: column;
+      padding: 5rem 0;
+      background-repeat: no-repeat;
+      .learnMore {
+        display: flex;
+      }
+      &.showTooltipOnMobile {
+        .blank2 {
+          flex: 1 1 28rem;
+        }
+        .myImage {
+          &:after,
+          &:before {
+            @include media.smallerThanLg() {
+              height: calc(200% + 22.1rem);
+            }
+          }
+        }
+      }
+      .personAbout {
+        width: 20rem;
+      }
+      flex-direction: column;
+      padding: 5rem 0;
+      .blank1 {
+        svg {
+          display: none;
+        }
+        display: none;
+      }
+      .blank2 {
+        order: 2;
+        flex: 1 1 10rem;
+        svg {
+          display: none;
+        }
+      }
+      &:nth-child(even) {
+        background-position: calc(100% - 2.5rem) 5rem;
+
+        align-content: flex-start;
+        .myImage {
+          &::before {
+            display: block;
+          }
+        }
+        .learnMore {
+          justify-content: flex-end;
+        }
+        .personAbout {
+          flex-direction: row-reverse;
+          text-align: right;
+          justify-content: flex-start;
+          right: -4rem;
+          left: unset;
+        }
+      }
+      &:nth-child(odd) {
+        background-position: calc(100% - 30rem) 5rem;
+        .myImage {
+          &::after {
+            display: block;
+          }
+        }
+      }
+
+      .myImage {
+        order: 1;
+        flex: 1 1 28rem;
+        height: 28rem;
+      }
+    }
+    padding: 0;
+  }
+
+  .myMetaData,
+  .myTooltip,
+  .myImage {
+    padding: 0;
+  }
+  .myImage {
+    flex: 0 0 33.3%;
+    position: relative;
+    &:after,
+    &:before {
+      @include media.smallerThanLg() {
+        height: calc(200% + 4.1rem);
+      }
+      display: none;
+      position: absolute;
+      height: 100%;
+      width: 0.2rem;
+      background: white;
+      content: '';
+      z-index: 1;
+    }
+    &:before {
+      left: -0.1rem;
+    }
+    &:after {
+      right: -0.1rem;
+    }
+  }
+  padding-top: 12rem;
+  padding-bottom: 14rem;
+  position: relative;
+  background-color: colors.$black;
+  margin-left: auto;
+  max-width: 144rem;
+  margin-right: auto;
+
+  .title {
+    z-index: 2;
+    margin-top: 0;
+    padding-left: 1.7rem;
+    @include media.onLg() {
+      left: 17rem;
+      position: absolute;
+    }
+    @include mixins.H4Mobile;
+    @include media.onLg() {
+      @include mixins.H4;
+    }
+  }
+
+  .wrapper {
+    column-count: revert;
+    padding: 0 1.5rem;
+    @include media.onXl() {
+      padding: 0 23rem;
+    }
+  }
+
+  .personWrapper {
+    display: flex;
+    &:hover {
+      z-index: 4;
+    }
+    &AtStart {
+      justify-content: flex-start;
+    }
+
+    &AtCenter {
+      justify-content: center;
+    }
+
+    &AtEnd {
+      justify-content: flex-end;
+    }
+  }
+
+  .learnMore {
+    border: none;
+    background: none;
+    display: none;
+    color: inherit;
+    font-size: 1.4rem;
+    padding: 0;
+    align-items: center;
+    margin-top: 0.8rem;
+    justify-content: flex-start;
+    > * {
+      margin-left: 0.5rem !important;
+    }
+  }
+
+  .person {
+    z-index: 2;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 20rem;
+
+    @include media.onLg() {
+      flex-direction: row;
+      margin-bottom: 0;
+    }
+
+    &Photo {
+      position: relative;
+      filter: grayscale(1);
+      transition: all 0.5s ease-in-out;
+      & > img {
+        object-fit: cover;
+        width: 29.2rem;
+        height: 29.2rem;
+        @include media.onLg() {
+          width: 28rem;
+          height: 28rem;
+        }
+      }
+      &:hover {
+        filter: none;
+        transform: scale(1.02);
+      }
+    }
+    &About {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      max-width: 90%;
+      width: 19.5rem;
+      //   bottom: -23%;
+      right: 0;
+      position: absolute;
+      top: 106%;
+      left: -1.8rem;
+      gap: 1rem;
+      z-index: 1;
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+      @include media.onLg() {
+        gap: unset;
+        flex-direction: column;
+        top: calc(100% - 2.5rem);
+        left: calc(100% + 2rem);
+      }
+      &Name {
+        font-family: 'Tomato Grotesk';
+        cursor: default;
+        @include mixins.H4Mobile;
+        @include media.onLg() {
+          @include mixins.H4;
+        }
+      }
+      &Role {
+        @include mixins.Caption;
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+        cursor: default;
+        display: block;
+        @include media.onLg() {
+          margin-bottom: 1.2rem;
+        }
+      }
+      &Url {
+        margin-bottom: 0.8rem;
+        @include media.onLg() {
+          margin-bottom: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .LeftCard {
+    left: 10rem;
+    bottom: -12.3rem;
+    flex-direction: row-reverse;
+    & > div:first-of-type {
+      padding-left: 1.5rem;
+    }
+  }
+
+  .RightCard {
+    right: 4.7rem;
+    bottom: -12rem;
+    & > div:first-of-type {
+      padding-right: 1.5rem;
+    }
+  }
+
+  .bars {
+    position: absolute;
+    top: 0;
+    left: -18.9rem;
+    transform: translateX(20%);
+    display: none;
+    z-index: 0;
+
+    @include media.onLg() {
+      display: block;
+    }
+  }
+
+  .tooltip {
+    &::-webkit-scrollbar {
+      width: 0.5em;
+      height: 0.5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: colors.$gray;
+      border-radius: 3px;
+
+      &:hover {
+        background: colors.$gray;
+      }
+    }
+    position: absolute;
+    bottom: 5rem;
+    right: 100%;
+    z-index: 2;
+    @include media.smallerThanLg() {
+      bottom: -116%;
+      right: 0;
+      max-height: 63%;
+      width: 100%;
+    }
+  }
+}

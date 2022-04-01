@@ -1,0 +1,29 @@
+@use 'styles/colors';
+
+.header {
+  background: colors.$blue-darker;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  .title {
+    color: colors.$white;
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    &Item {
+      &:not(&:first-of-type) {
+        margin-left: 15px;
+      }
+      &Link {
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  border-radius: 50%;
+  background-color: colors.$white-1000;
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  @include media.onMd() {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+// Button base colors
+.WHITEBLACK {
+  background-color: colors.$white-1000;
+  color: colors.$black-1000;
+  &_HOVER{
+    background-color: colors.$white-1000;
+    color: colors.$black-1000;
+    &:hover {
+      background-color: colors.$black-1000;
+      color: colors.$white-1000;
+    }
+    &GREEN{
+      background-color: colors.$white-1000;
+      color: colors.$black-1000;
+      &:hover {
+        background-color: colors.$green-1000;
+        color: colors.$white-1000;
+      }
+    }
+  }
+}
+.BLUEWHITE {
+  background-color: colors.$blue-1000;
+  color: colors.$white-1000;
+  &_HOVER{
+    background-color: colors.$blue-1000;
+    color: colors.$white-1000;
+    &:hover {
+      background-color: colors.$white-1000;
+      color: colors.$blue-1000;
+    }
+  }
+}
+.PURPLEWHITE {
+  background-color: colors.$purple-1000;
+  color: colors.$white-1000;
+  &_HOVER{
+    background-color: colors.$purple-1000;
+    color: colors.$white-1000;
+    &:hover {
+      background-color: colors.$white-1000;
+      color: colors.$purple-1000;
+    }
+  }
+}
+.REDWHITE {
+  background-color: colors.$red-1000;
+  color: colors.$white-1000;
+  &_HOVER{
+    background-color: colors.$red-1000;
+    color: colors.$white-1000;
+    &:hover {
+      background-color: colors.$white-1000;
+      color: colors.$red-1000;
+    }
+  }
+}
+.GRAYWHITE {
+  background-color: colors.$gray-700;
+  color: colors.$white-1000;
+  &_HOVER{
+    background-color: colors.$gray-700;
+    color: colors.$white-1000;
+    &:hover {
+      background-color: colors.$white-1000;
+      color: colors.$gray-700;
+    }
+  }
+}

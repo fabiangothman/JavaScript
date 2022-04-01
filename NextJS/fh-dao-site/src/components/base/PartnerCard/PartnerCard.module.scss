@@ -1,0 +1,32 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .content {
+    position: relative;
+
+    .contImage {
+      position: relative;
+      width: 100%;
+      height: 12.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.bgGreen {
+        background-color: colors.$green-superwhite;
+      }
+      &.bgTransparent {
+        background-color: transparent;
+      }
+      .image {
+        background-color: inherit;
+        object-position: top center;
+      }
+    }
+  }
+  
+}

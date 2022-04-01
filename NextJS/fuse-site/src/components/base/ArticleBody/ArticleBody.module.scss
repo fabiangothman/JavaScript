@@ -1,0 +1,22 @@
+@use 'styles/mixins';
+@use 'styles/media';
+@use 'styles/colors';
+
+.body {
+  background-color: colors.$off-white;
+  padding: 10rem 0;
+
+  .paragraph {
+    color: colors.$other-black;
+    @include mixins.ArticleBody;
+    font-weight: 400;
+  }
+
+  .images {
+    & > p {
+      @include mixins.ImageCaption;
+      color: #000000;
+      margin-bottom: 6rem;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "FuseVC",
+  "short_name": "FUSEVC",
+  "theme_color": "#000000",
+  "display": "standalone",
+  "background_color": "#000000",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicons/16x.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/32px.png",
+      "sizes": "33x33",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/192px.png",
+      "sizes": "193x193",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/512px.png",
+      "sizes": "513x513",
+      "type": "image/png"
+    }
+  ]
+}

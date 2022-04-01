@@ -1,0 +1,166 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  overflow: hidden;
+
+  .firstFooter {
+    position: relative;
+    background-color: colors.$blue;
+    color: colors.$white;
+    padding-top: 5.9rem;
+    padding-bottom: 8rem;
+    .contImage {
+      position: relative;
+      width: 100%;
+      max-width: 17.7rem;
+      height: 5.4rem;
+      margin-bottom: 5.9rem;
+    }
+
+    .contPage {
+      position: relative;
+      &:not(:first-of-type) {
+        margin-top: 6rem;
+      }
+      @include media.onLg() {
+        margin-top: 0;
+      }
+      .title {
+        font-family: fonts.$text;
+        font-weight: 600;
+        margin-bottom: 2.4rem;
+        font-size: 1.4rem;
+        line-height: 1.76rem;
+        @include media.onLg() {
+          margin-bottom: 3.2rem;
+        }
+      }
+      .section {
+        font-family: fonts.$text;
+        color: colors.$white;
+        font-weight: 400;
+        &:not(:last-of-type) {
+          margin-bottom: 1.6rem;
+        }
+        font-size: 1.4rem;
+        line-height: 1.76rem;
+        @include media.onLg() {
+          font-size: 1.2rem;
+          line-height: 1.508rem;
+        }
+      }
+      .link {
+        color: inherit;
+      }
+    }
+
+    .subscribe {
+      margin-top: 9.4rem;
+      @include media.onLg() {
+        margin-top: 0;
+      }
+      .details {
+        margin-top: 2.4rem;
+        font-family: fonts.$text;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.96rem;
+      }
+    }
+  }
+
+  .secondFooter {
+    position: relative;
+    background-color: colors.$white;
+    color: colors.$black-light;
+    padding-top: 4rem;
+    padding-bottom: 2.4rem;
+    @include media.onLg() {
+      padding-top: 2.4rem;
+    }
+
+    .secondFooterContent {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      @include media.onLg() {
+        flex-direction: row;
+      }
+
+      .legalArea {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+        @include media.onLg() {
+          justify-content: flex-start;
+        }
+        .rights, .privacy, .terms, .link {
+          font-family: fonts.$text;
+          color: colors.$black-light;
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 1.76rem;
+        }
+        .rights {
+          margin-right: 0;
+          @include media.onLg() {
+            margin-right: 2.4rem;
+          }
+        }
+        .privacy {
+          margin-right: 0;
+          @include media.onLg() {
+            margin-right: 1.2rem;
+          }
+        }
+      }
+      
+      .socialArea {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 4rem;
+        align-self: center;
+        @include media.onLg() {
+          align-self: flex-end;
+          padding-bottom: 0;
+        }
+
+        .social {
+          &:not(:last-of-type) {
+            margin-right: 2.4rem;
+          }
+          .icon {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+.noPad {
+  padding: 0 !important;
+}
+.hide {
+  display: none;
+}
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

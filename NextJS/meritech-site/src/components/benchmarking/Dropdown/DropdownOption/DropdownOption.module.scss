@@ -1,0 +1,67 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 0 15px;
+  border-top: 1px solid colors.$tan-light;
+  cursor: pointer;
+
+  input {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    &[type='radio'] {
+      appearance: none;
+    }
+
+    &[type='checkbox'] {
+      appearance: none;
+      display: block;
+      width: 28px;
+      height: 28px;
+      border: 1px solid colors.$tan-dark;
+      border-radius: 4px;
+
+      &:checked {
+        border-color: colors.$green;
+        background-color: colors.$green;
+
+        background-image: url('~assets/images/icons/checkmark.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  &:hover {
+    color: colors.$green;
+
+    input[type='checkbox'] {
+      border-color: colors.$green;
+    }
+  }
+
+  .label {
+    flex-grow: 1;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.TextXSSemiBold();
+  }
+
+  &.multiSelect {
+    .label {
+      padding-left: 14px;
+    }
+  }
+
+  &.singleSelect {
+    &:first-child {
+      border-top: none;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.mainHero {
+  background-image: linear-gradient(158.9deg, #C496FF 18.59%, #1E6FE9 86.08%);
+  color: colors.$white;
+   
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    min-height: 90vh;
+    padding: 1.25rem 1.25rem;
+    
+    @include media.onLg() {
+      min-height: 39.375rem;
+    }
+  }
+
+  .header {
+    margin-bottom: 1.9375rem;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.375rem;
+    
+    @include media.onLg() {
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 5.375rem;
+      margin-bottom: 3.75rem;
+    }
+  }
+
+  .description {
+    font-weight: 300;
+    font-size: 32rpx;
+    line-height: 1.375rem;
+    letter-spacing: 0.03rem;
+    
+    @include media.onLg() {
+      font-weight: 300;
+      font-size: 1.5rem;
+      line-height: 2.125rem;
+      letter-spacing: 0.03rem;
+    }
+  }
+}

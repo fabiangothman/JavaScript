@@ -1,0 +1,72 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+  color: colors.$black;
+  overflow: hidden;
+  margin-bottom: 8.6rem;
+  @include media.onLg() {
+    margin-bottom: 8rem;
+  }
+  
+  .contImage {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2.4rem;
+    height: 22.3rem;
+    @include media.onLg() {
+      height: 53.7rem;
+    }
+    .image {
+      object-position: center center;
+    }
+  }
+
+  .featText {
+    position: relative;
+    text-align: left;
+    font-family: fonts.$text;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    @include media.onLg() {
+      font-size: 1.6rem;
+      line-height: 2.24rem;
+    }
+  }
+  .title {
+    position: relative;
+    text-align: left;
+    font-family: fonts.$header;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    @include media.onLg() {
+      font-size: 4.8rem;
+      line-height: 5rem;
+    }
+  }
+
+  .content {
+    position: relative;
+    text-align: left;
+    font-family: fonts.$text;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.52rem;
+    @include media.onLg() {
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+  }
+  
+}
+
+.link {
+  color: inherit;
+}

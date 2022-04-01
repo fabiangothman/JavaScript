@@ -1,0 +1,207 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.sectionContainer {
+  background-color: colors.$grey5;
+  position: relative;
+  overflow: hidden;
+
+  .bgContainer {
+    letter-spacing: 0.8px;
+    position: relative;
+
+    color: colors.$white;
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-position: center calc(50% - 150px);
+    padding: 6rem 2.4rem 7rem 2.4rem;
+    @include mixins.body;
+
+    @include media.onSm() {
+      background-position: center calc(50% - 250px);
+    }
+
+    @include media.onMd() {
+      background-position: center calc(50% - 350px);
+    }
+
+    @include media.onLg() {
+      padding: 10rem 2.4rem 10rem 0;
+      background-size: 1480px;
+      background-position: calc(50% - 0px) 0px;
+    }
+
+    @include media.onXxl() {
+      background-position: calc(50% - 140px) 0px;
+    }
+  }
+
+  .extraBg {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    background-color: colors.$grey1;
+
+    @include media.onLg() {
+      display: none;
+    }
+  }
+}
+
+.floatingIcon {
+  width: 160px;
+  top: -350px;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  @include media.onLg() {
+    top: -290px;
+    left: -45px;
+    width: 100%;
+  }
+}
+
+.workPlace {
+  margin: 0 0 4.8rem;
+  font-size: 1.8rem;
+  line-height: 22px;
+  @include media.onLg() {
+    margin: 0 0 6.4rem;
+  }
+}
+
+.borderTopLine {
+  border-top: 2px solid #fff;
+  margin-top: 8px;
+}
+
+.images {
+  padding: 0;
+  margin: 0;
+
+  .image {
+    position: relative;
+    min-height: 375px;
+    margin: 0 0 32px;
+  }
+
+  .firstImage {
+    width: 78%;
+    @include media.onLg() {
+      width: 48%;
+    }
+  }
+
+  .secondImage {
+    width: 18%;
+    @include media.onLg() {
+      width: 48%;
+    }
+  }
+  .imagesWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .imagesContainer {
+    margin-left: 0;
+    padding-top: 70px;
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    @include media.onLg() {
+      padding-top: 180px;
+      display: flex;
+    }
+  }
+
+  .swiperContainer {
+    display: flex;
+    padding-top: 70px;
+    margin-left: -20px;
+    margin-right: -39px;
+    @include media.onLg() {
+      display: none;
+    }
+
+    .slide {
+      .image {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.content {
+  position: relative;
+  margin: 0;
+  @include media.onLg() {
+    max-width: 100%;
+  }
+}
+
+.iconContainer {
+  display: none;
+
+  @include media.onLg() {
+    display: block;
+    position: absolute;
+    left: 50px;
+    top: 32px;
+  }
+}
+
+.location {
+  p {
+    font-size: 1.8rem;
+    line-height: 27px;
+    margin: 0;
+    letter-spacing: 0.8px;
+  }
+}
+
+.title {
+  @include mixins.errorPageText;
+  font-size: 3.6rem;
+  margin: 0 0 24px;
+  line-height: 37.8px;
+  max-width: 448px;
+  text-align: left;
+  @include media.onLg() {
+    margin: 0px 0 64px;
+    font-size: 4.8rem;
+    line-height: 50.4px;
+  }
+}
+
+.text {
+  @include mixins.body;
+  color: colors.$white;
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.8px;
+  p {
+    margin: 0;
+    &:first-child {
+      margin-bottom: 60vw;
+    }
+  }
+  @include media.onLg() {
+    max-width: 330px;
+    p {
+      &:first-child {
+        margin: 0 0 3rem;
+      }
+    }
+  }
+}

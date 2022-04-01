@@ -1,0 +1,53 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  .button {
+    color: colors.$brown-light;
+    background-color: transparent;
+    border: 0;
+    @include mixins.Text2XS;
+    &Actived {
+      color: colors.$green;
+      svg path {
+        stroke: colors.$green;
+      }
+    }
+  }
+
+  .arrow {
+    margin-left: 0.6rem;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    &Down {
+      transform: rotate(180deg);
+    }
+  }
+  .header {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include media.onMd() {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .title {
+    @include mixins.TextMd;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: colors.$brown-dark;
+    @include media.onLg() {
+      @include mixins.TextLg;
+      margin-bottom: 2.4rem;
+    }
+  }
+}

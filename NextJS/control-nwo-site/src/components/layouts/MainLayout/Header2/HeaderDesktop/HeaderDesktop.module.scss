@@ -1,0 +1,84 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$gray-light;
+  color: colors.$black-light;
+  &.gray-light{
+    background-color: colors.$gray-light;
+  }
+  &.blue{
+    background-color: colors.$blue;
+  }
+  &.white{
+    background-color: colors.$white;
+  }
+  &.gray-lighter{
+    background-color: colors.$gray-lighter;
+  }
+
+  .contHeader {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 1.1rem 1.2rem;
+
+    .iconArea {
+      position: relative;
+      flex: 1;
+      .contImage {
+        position: relative;
+        width: 100%;
+        max-width: 17.5rem;
+        height: 5.4rem;
+      }
+    }
+
+
+    .menuArea {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .navigation {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .item {
+          margin-right: 2.4rem;
+        }
+      }
+
+      .buttons {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .btnDemo {
+          flex: 1;
+          position: relative;
+          margin-right: 1.2rem;
+        }
+        .btnLogin {
+          position: relative;
+        }
+      }
+    }
+  }
+}
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

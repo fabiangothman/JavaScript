@@ -1,0 +1,120 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+  color: colors.$black;
+  overflow: hidden;
+  margin-bottom: 8.6rem;
+  @include media.onLg() {
+    margin-bottom: 8rem;
+  }
+
+  .contImage {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 2.4rem;
+    //max-width: 37.3rem;
+    max-width: 90rem;
+    @include media.onLg() {
+      max-width: 90rem;
+    }
+    .image {
+      object-position: center center;
+    }
+  }
+
+  .eventArea {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    @include media.onLg() {
+      flex-direction: row;
+    }
+
+    .dateCont {
+      position: relative;
+      background-color: colors.$white;
+      border-radius: 1.2rem;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      padding: 1.2rem;
+      margin-right: 1.2rem;
+      margin-bottom: 1.2rem;
+      @include media.onLg() {
+        flex-direction: column;
+        padding: 2.4rem;
+        margin-right: 2.4rem;
+        margin-bottom: 0;
+      }
+      .day {
+        position: relative;
+        text-align: center;
+        font-family: fonts.$header;
+        font-weight: 300;
+        font-size: 3.2rem;
+        line-height: 3.84rem;
+        margin-right: 0.5rem;
+        @include media.onLg() {
+          font-size: 6.4rem;
+          line-height: 7.68rem;
+          margin-right: 0;
+        }
+      }
+      .date {
+        position: relative;
+        text-align: center;
+        font-family: fonts.$text;
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 2.52rem;
+        @include media.onLg() {
+          font-size: 2rem;
+          line-height: 2.8rem;
+        }
+      }
+    }
+    .infoCont {
+      flex: 1;
+      position: relative;
+
+      .title {
+        position: relative;
+        text-align: left;
+        font-family: fonts.$header;
+        font-weight: 400;
+        margin-bottom: 1.2rem;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        @include media.onLg() {
+          font-size: 4.8rem;
+          line-height: 5rem;
+        }
+      }
+    
+      .text {
+        position: relative;
+        text-align: left;
+        font-family: fonts.$text;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.52rem;
+        @include media.onLg() {
+          font-size: 2rem;
+          line-height: 2.8rem;
+        }
+      }
+    }
+    
+  }
+  
+}
+
+.link {
+  color: inherit;
+}

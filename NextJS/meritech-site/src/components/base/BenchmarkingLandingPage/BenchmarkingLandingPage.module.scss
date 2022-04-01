@@ -1,0 +1,24 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0rem 0 7.5rem;
+  margin-bottom: 2.4rem;
+  @include media.onLg() {
+    padding: 0rem 0;
+  }
+
+  .title {
+    @include mixins.Title;
+    margin-bottom: 6.4rem;
+  }
+  .chartWrapper {
+    z-index: 0;
+  }
+  .filterWrapper {
+    position: sticky;
+    top: 130px;
+    align-self: flex-start;
+  }
+}

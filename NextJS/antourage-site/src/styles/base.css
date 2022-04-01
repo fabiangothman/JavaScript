@@ -1,0 +1,78 @@
+/*  Carousel CSS  */
+#carouselLoopSection .splide__slide img {
+  filter: grayscale(100%);
+}
+#carouselLoopSection .splide__slide.is-active.is-visible img{
+  filter: grayscale(0%);
+}
+
+/*  dataSection CSS  */
+#dataSection .splide .splide__list li {
+  display: table;
+}
+#dataSection .splide .splide__list li > *{
+  vertical-align: middle;
+  display: table-cell;
+}
+
+#dataSection .splide .splide__list li.splide__slide.is-active > * {
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+#dataSection .splide .splide__list li.splide__slide:not(.is-active) > * {
+  opacity: 0.5;
+  transition: opacity 0.3s linear;
+}
+
+#dataSection .splide .splide__list li.splide__slide.is-active #contArch {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+#dataSection .splide .splide__list li.splide__slide:not(.is-active) #contArch {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+#dataSection #comparatorShowArea.show{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+#dataSection #comparatorShowArea.hide{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+#dataSection .splide .splide__list li.splide__slide.is-active #contArch.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+#dataSection .splide .splide__list li.splide__slide.is-active #contArch.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+
+.camera_tag{
+    font-family: inherit !important;
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none !important;
+    border-radius: 2rem;
+    height: 34rem !important;
+    border: 1px dashed #6B7280;
+    width: 100% !important;
+    color: #6B7280 !important;
+    overflow: hidden;
+    
+}
+.camera_tag *{
+    background: inherit !important;
+    background-color: inherit !important;
+    color: inherit !important;
+}

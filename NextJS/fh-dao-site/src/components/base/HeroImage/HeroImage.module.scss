@@ -1,0 +1,79 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+  
+  .imageCont {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 24px 67px rgba(0, 0, 0, 0.25));
+    .square {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .topArea {
+          width: calc(100% - 2.4rem*2);
+          margin-bottom: 0.5rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .topLeftText, .topRightText{
+            @include mixins.TiemposHeadlineRegularItalicXs;
+          }
+        }
+        .externalSquare, .internalSquare {
+          position: relative;
+          border: 1px solid colors.$black;
+          width: calc(100% - 2.4rem*2);
+          height: calc(100% - 2.4rem*2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .bottomArea {
+          width: calc(100% - 2.4rem*2);
+          margin-top: 1.2rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .bottomLeftText, .bottomRightText{
+            @include mixins.TiemposHeadlineRegularItalicXs;
+          }
+        }
+      }
+    }
+  }
+  .bottomText{
+    margin-top: 0.5rem;
+    text-align: center;
+    @include mixins.TiemposHeadlineRegularItalicXs;
+  }
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

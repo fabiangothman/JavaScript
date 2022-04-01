@@ -1,0 +1,53 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.wrapper {
+  position: relative;
+  background-color: colors.$black-1000;
+
+  @include media.onMd() {
+    padding-top: 15rem;
+  }
+  
+  @include media.onLg() {
+    padding-top: 0;
+  }
+  
+  .fixedContainer {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+  }
+  
+  .inner {
+    position: relative;
+  }
+
+  .blocks {
+    position: absolute;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+  }
+
+  .animationColumn {
+    justify-content: center;
+    height: 45vh;
+    overflow: hidden;
+    z-index: 1;
+    display: none;
+
+    @include media.onLg() {
+      height: 100vh;
+      display: flex;
+    }
+
+    .animation {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  border: 1px solid colors.$tan-light;
+  border-radius: 50%;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  @include media.onLg() {
+    width: 48px;
+    height: 48px;
+  }
+}

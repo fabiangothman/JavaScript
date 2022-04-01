@@ -1,0 +1,217 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$white-1000;
+  color: colors.$white-1000;
+  overflow: hidden;
+
+  .contGeneralQuote {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    margin: 2.4rem 0.8rem 2.4rem 0.8rem;
+    @include media.onLg() {
+      height: 58.6rem;
+      max-width: 124rem;
+      margin: 10.1rem 5rem 9.9rem 5rem;
+    }
+    @include media.onXl() {
+      margin: 10.1rem 10rem 9.9rem 10rem;
+    }
+
+    .contQuote{
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      background-color: colors.$purple-1000;
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: row;
+      padding: 5.6rem 0 0 2.2rem;
+      @include media.onLg() {
+        padding: 0;
+      }
+
+      .contTabs {
+        flex: 2;
+        align-self: center;
+        @include media.onLg() {
+          margin-left: 10rem;
+        }
+
+        .tabs {
+          margin: 0 auto;
+
+          .tabList {
+            position: relative;
+            margin-bottom: 1.8rem;
+            .tab {
+              color: rgba(255, 255, 255, 0.5);
+              cursor: pointer;
+              @include mixins.TextXs;
+              @include media.onLg() {
+                @include mixins.TextSm;
+              }
+              display: inline-block;
+              &.tabSelected {
+                color: colors.$white-1000;
+                font-weight: 600;
+              }
+              padding-right: 1.9rem;
+              @include media.onLg() {
+                padding-right: 0;
+                &:not(:last-of-type) {
+                  margin-right: 2.4rem;
+                  margin-bottom: 0rem;
+                }
+              }
+            }
+          }
+
+          .tabPanel {
+            text-align: left;
+            &.panelSelected {
+              position: relative;
+            }
+
+            .text {
+              @include mixins.NormalTextMobileB;
+              padding-right: 1.9rem;
+              @include media.onLg() {
+                padding-right: 0;
+                @include mixins.TextMdB;
+              }
+            }
+
+            .contInfoResponsive {
+              display: block;
+              padding-top: 2rem;
+              @include media.onLg() {
+                display: none;
+              }
+
+              .contImage {
+                position: relative;
+                text-align: right;
+                overflow: hidden;
+                & > div {
+                  width: auto !important;
+                  height: 100% !important;
+                  min-height: 38.5rem !important;
+                }
+      
+                .image {
+                  width: auto !important;
+                  height: 100% !important;
+                  min-height: 38.5rem !important;
+                  object-position: bottom left;
+                }
+              }
+      
+              .contNames {
+                position: absolute;
+                bottom: 3rem;
+                left: 0rem;
+                z-index: 4;
+                .name, .role {
+                  @include mixins.TextMd2B;
+                  display: table;
+                  padding: 0.4rem 1.2rem;
+                  @include media.onLg() {
+                    padding: 1.2rem;
+                  }
+                }
+                .name {
+                  background-color: colors.$white-1000;
+                  color: colors.$purple-1000;
+                  margin-bottom: 0.6rem;
+                }
+                .role {
+                  background-color: colors.$black-1000;
+                  color: colors.$white-1000;
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+      .contInfo {
+        flex: 3;
+        position: relative;
+        display: none;
+        @include media.onLg() {
+          display: block;
+        }
+        .contImage {
+          max-width: 80rem;
+          position: relative;
+          height: 100%;
+          & > div {
+            overflow: visible !important;
+            position: absolute !important;
+            bottom: 0;
+            max-width: 80rem;
+            width: 100% !important;
+            height: 69rem !important;
+          }
+
+          .image {
+            overflow: visible;
+            //top: -5rem !important;
+            object-position: top left;
+          }
+        }
+
+        .contNames {
+          position: absolute;
+          bottom: 10.9rem;
+          right: 8.7rem;
+          z-index: 4;
+          .name, .role {
+            @include mixins.NormalTextB;
+            padding: 1.2rem;
+            display: table;
+          }
+          .name {
+            background-color: colors.$white-1000;
+            color: colors.$purple-1000;
+            margin-bottom: 0.6rem;
+          }
+          .role {
+            background-color: colors.$black-1000;
+            color: colors.$white-1000;
+          }
+        }
+      }
+    }
+
+    .topQuote, .bottomQuote {
+      position: absolute;
+      z-index: 3;
+      width: 6.6rem;
+      @include media.onLg() {
+        width: 12.2rem;
+      }
+    }
+    .topQuote {
+      top: -3rem;
+      left: -1.3rem;
+      @include media.onLg() {
+        left: -3rem;
+      }
+    }
+    .bottomQuote {
+      bottom: -3rem;
+      right: -1.3rem;
+      @include media.onLg() {
+        right: -3rem;
+      }
+    }
+  }
+}

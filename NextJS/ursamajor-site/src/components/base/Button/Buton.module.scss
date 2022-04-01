@@ -1,0 +1,69 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.button {
+  display: inline-block;
+  @include mixins.bodyHeavy;
+  font-size: 1.4rem;
+  padding: 1.4rem 3.6rem;
+  max-width: 300px;
+  font-weight: bold;
+  margin: 0 0 15px;
+  transition: all 0.15s ease-in-out;
+  border-radius: 0 0 10px 0;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+
+  &:hover {
+    color: colors.$white;
+    background-color: colors.$orange;
+  }
+}
+
+.primary {
+  background-color: colors.$white;
+  color: colors.$black;
+  padding: 1.5rem 3.6rem;
+}
+
+.secondary {
+  border: 2px solid colors.$black;
+  background-color: colors.$black;
+  color: colors.$white;
+
+  &:hover {
+    border: 2px solid colors.$orange;
+  }
+}
+
+.tertiary {
+  background-color: transparent;
+  border: 2px solid colors.$orange;
+  color: colors.$orange;
+  padding: 1.3rem 3.4rem;
+}
+
+.quarnary {
+  background-color: colors.$black;
+  color: colors.$white;
+}
+
+.quinary {
+  background-color: colors.$orange;
+  color: colors.$white;
+  padding: 1.3rem 3.6rem;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.senary {
+  background-color: transparent;
+  border: 2px solid colors.$orange;
+  color: colors.$orange;
+}

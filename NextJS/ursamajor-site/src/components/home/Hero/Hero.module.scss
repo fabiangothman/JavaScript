@@ -1,0 +1,118 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.wrapper {
+  overflow: hidden;
+  .heroContainer {
+    overflow: hidden;
+    color: colors.$white;
+    background-color: colors.$black;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media.onLg() {
+      align-items: flex-start;
+    }
+
+    .imageContainer {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      margin: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      z-index: 3;
+
+      div {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      img,
+      video {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+      }
+
+      video {
+        object-position: 67% 0; 
+        @media screen and (min-width: 768px) {
+          object-position: center;
+        }
+        @media screen and (max-width: 768px) and (max-height: 640px) {
+          object-position: 62% 0;
+        }
+      }
+    }
+
+    .textContainer {
+      text-align: left;
+      position: relative;
+      z-index: 3;
+      margin: auto 25px;
+      p {
+        font-size: 18px;
+        line-height: 27px;
+        max-width: 241px;
+        @include media.onSm() {
+          max-width: 400px;
+        }
+      }
+
+      @include media.onLg() {
+        padding-top: 110px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .title {
+      @include mixins.displayHeavy;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 4.8rem;
+      line-height: 50.4px;
+      max-width: 267px;
+      @include media.onLg() {
+        @include mixins.major;
+        font-size: 6.4rem;
+        line-height: 67.2px;
+        max-width: 550px;
+      }
+    }
+
+    .smallTitle {
+      @include mixins.displayHeavy;
+      text-transform: uppercase;
+      @include media.onLg() {
+        @include mixins.majorHeavy;
+      }
+    }
+
+    p {
+      @include mixins.captionLight;
+      @include media.onLg() {
+        @include mixins.captionLight;
+        line-height: 27px;
+        letter-spacing: 2px;
+        max-width: 350px;
+      }
+    }
+  }
+}

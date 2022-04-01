@@ -1,0 +1,66 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  @include mixins.SectionSmallerPadding;
+  background-color: colors.$white;
+
+  .card {
+    display: block;
+    margin-bottom: 2.4rem;
+  }
+
+  .subscribeMobileForm {
+    @include media.onMd() {
+      display: none;
+    }
+    div {
+      display: flex;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .featurePost {
+    display: block;
+    margin-bottom: 4.8rem;
+  }
+  .title {
+    @include mixins.TitleMobile;
+    margin-bottom: 2.4rem;
+    @include media.onLg() {
+      @include mixins.MiddleTitle;
+      margin-bottom: 21.9rem;
+    }
+  }
+
+  .subscribe {
+    margin-top: 0;
+    background-color: colors.$white;
+    position: sticky;
+    top: 140px;
+    display: none;
+    @include media.onLg() {
+      display: flex;
+    }
+  }
+
+  .loadMore {
+    @include mixins.TextLg;
+    margin-right: 1.6rem;
+    font-weight: 600;
+    &Area {
+      margin-top: 4.8rem;
+      display: flex;
+      align-items: center;
+    }
+    &Button {
+      border-radius: 0;
+      width: 100%;
+      background: #fff;
+      height: 53px;
+      font-weight: 600;
+      @include mixins.TextMd;
+    }
+  }
+}

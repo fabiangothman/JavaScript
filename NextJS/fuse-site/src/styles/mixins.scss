@@ -1,0 +1,189 @@
+@use './colors';
+@use './fonts';
+@use './media';
+
+$header-desktop-height: 133px;
+$header-mobile-height: 96px;
+
+@mixin Text {
+  font-size: 2rem;
+  line-height: 24px;
+}
+
+@mixin ItalicText {
+  @include Text;
+  font-style: italic;
+}
+
+@mixin BigText {
+  font-size: 4rem;
+  line-height: 48px;
+}
+
+@mixin MiddleText {
+  font-size: 2.4rem;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+@mixin SmallText {
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+@mixin Caption {
+  font-size: 1.6rem;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+@mixin CtaSmall {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: auto;
+}
+
+@mixin CtaLarge {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: auto;
+}
+
+@mixin CtaLargeMobile {
+  @include CtaLarge;
+  font-size: 1.6rem;
+}
+
+@mixin Subhead {
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  font-weight: 500;
+}
+
+@mixin SubheadMobile {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 500;
+}
+
+@mixin PortfolioBody {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 150%;
+}
+
+@mixin PortfolioBodyMobile {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+@mixin CompanyName {
+  font-size: 1.8rem;
+  line-height: 180%;
+  font-weight: 400;
+}
+
+@mixin CompanyNameMobile {
+  font-size: 1.6rem;
+  line-height: 180%;
+  font-weight: 400;
+}
+
+@mixin ArticleBody {
+  font-size: 2rem;
+  line-height: 220%;
+}
+
+@mixin ImageCaption {
+  font-size: 1.4rem;
+  line-height: 180%;
+}
+
+@mixin CaptionStrong {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+// Titles
+
+@mixin SmallTitle {
+  font-size: 4rem;
+  line-height: 48px;
+}
+
+@mixin SmallerTitle {
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+@mixin ItalicH1 {
+  @include H1;
+  font-style: italic;
+}
+
+@mixin H1 {
+  font-size: 9.6rem;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin H1Mobile {
+  font-size: 7.2rem;
+  line-height: 120%;
+}
+
+@mixin H2 {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 72px;
+}
+
+@mixin H2Mobile {
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 43px;
+}
+
+@mixin H3 {
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 58px;
+}
+
+@mixin H3Mobile {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+@mixin ItalicH3 {
+  @include H3;
+  font-style: italic;
+}
+
+@mixin H4 {
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 43.72px;
+}
+
+@mixin H4Mobile {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+@mixin H5 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin SectionPadding {
+  padding: 8rem 0;
+  @include media.onLg() {
+    padding: 12rem 0;
+  }
+}

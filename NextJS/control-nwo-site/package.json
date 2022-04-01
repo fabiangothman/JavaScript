@@ -1,0 +1,47 @@
+{
+  "name": "control-nwo-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "next --port 3002",
+    "clean": "rm -rf ./.next && rm -rf ./out",
+    "build": "yarn generate-sitemap && yarn clean && next build",
+    "export": "yarn build && next export",
+    "start": "next start",
+    "generate-sitemap": "node buildSitemap.js"
+  },
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.11.1",
+    "@contentful/rich-text-types": "^15.11.1",
+    "@splidejs/react-splide": "^0.6.20",
+    "@splidejs/splide-extension-auto-scroll": "^0.3.7",
+    "animated-scroll-to": "2.0.12",
+    "axios": "0.21.0",
+    "classnames": "^2.3.1",
+    "contentful": "^9.1.6",
+    "flexboxgrid2": "7.2.1",
+    "formik": "2.2.5",
+    "framer-motion": "2.9.5",
+    "imagemin-mozjpeg": "9.0.0",
+    "imagemin-optipng": "8.0.0",
+    "imagemin-svgo": "8.0.0",
+    "imagemin-webp": "6.0.0",
+    "lodash": "4.17.20",
+    "next": "10.2.3",
+    "next-compose-plugins": "2.2.1",
+    "next-optimized-images": "2.6.2",
+    "path": "0.12.7",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-ga": "3.3.0",
+    "sass": "1.29.0",
+    "swiper": "6.3.5",
+    "yup": "0.32.6"
+  }
+}

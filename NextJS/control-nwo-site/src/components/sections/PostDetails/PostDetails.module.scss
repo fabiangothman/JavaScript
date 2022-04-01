@@ -1,0 +1,147 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$gray-light;
+  color: colors.$black;
+  padding: calc(12.6rem - 7rem) 0 9rem;
+  @include media.onLg() {
+    padding: calc(15.6rem - 7.6rem) 0 12rem;
+  }
+
+  .contImage {
+    position: relative;
+    width: 100%;
+    margin-bottom: 4rem;
+    height: 27.6rem;
+    @include media.onLg() {
+      height: 53.7rem;
+    }
+    .image {
+      object-position: center center;
+    }
+  }
+  
+  .reverse {
+    position: relative;
+    flex-direction: column-reverse;
+    @include media.onLg() {
+      flex-direction: row;
+    }
+    .title {
+      position: relative;
+      text-align: left;
+      font-family: fonts.$header;
+      font-weight: 500;
+      margin-bottom: 8rem;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      @include media.onLg() {
+        font-size: 4.8rem;
+        line-height: 5rem;
+      }
+    }
+    .date {
+      position: relative;
+      text-align: right;
+      font-family: fonts.$text;
+      font-weight: 600;
+      margin-bottom: 4rem;
+      font-size: 1.6rem;
+      line-height: 2.24rem;
+      @include media.onLg() {
+        margin-bottom: 8rem;
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    padding-bottom: calc(9rem - 4rem);
+    @include media.onLg() {
+      padding-bottom: calc(16rem - 4rem);
+    }
+    .h1 {
+      text-align: center;
+      font-family: fonts.$header;
+      font-weight: 400;
+      padding-top: calc(9rem - 4rem);
+      padding-bottom: 9rem;
+      line-height: 4.8rem;
+      @include media.onLg() {
+        padding-top: calc(16rem - 4rem);
+        padding-bottom: 16rem;
+        font-size: 4.8rem;
+        line-height: 7rem;
+      }
+    }
+    .h2 {
+      text-align: left;
+      font-family: fonts.$header;
+      font-weight: 400;
+      padding-top: calc(5rem - 4rem);
+      padding-bottom: 5rem;
+      font-size: 2.4rem;
+      line-height: 3.84rem;
+      @include media.onLg() {
+        padding-top: calc(8rem - 4rem);
+        padding-bottom: 8rem;
+        font-size: 3.2rem;
+        line-height: 5.12rem;
+      }
+    }
+    .text {
+      font-family: fonts.$text;
+      font-weight: 400;
+      margin: 0;
+      padding-bottom: 4rem;
+      font-size: 1.8rem;
+      line-height: 2.52rem;
+      @include media.onLg() {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
+    }
+    .image{
+      position: relative;
+      padding: 4rem 0;
+      p {
+        font-family: fonts.$text;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.96rem;
+      }
+    }
+    ul li {
+      .text {
+        margin: 0;
+      }
+    }
+  }
+
+  .socialArea {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9rem;
+    @include media.onLg() {
+      margin-bottom: 16rem;
+    }
+
+    .social {
+      &:not(:last-of-type) {
+        margin-right: 2.4rem;
+      }
+      .icon {
+        vertical-align: middle;
+      }
+    }
+  }
+  
+}

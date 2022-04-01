@@ -1,0 +1,154 @@
+@use './colors';
+@use './fonts';
+@use './media';
+
+@mixin major {
+  font-family: fonts.$replicaHeavy;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 7.2rem;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+@mixin majorHeavy {
+  font-family: fonts.$replicaHeavy;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 4.8rem;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+}
+
+@mixin displayMono {
+  font-family: fonts.$replicaMono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.6rem;
+  line-height: 42px;
+  letter-spacing: -2px;
+  font-feature-settings: 'ss09' on, 'zero' on;
+}
+
+@mixin displayLight {
+  font-family: fonts.$replica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.2rem;
+  line-height: 110%;
+}
+
+@mixin displayHeavy {
+  font-family: fonts.$replicaHeavy;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.6rem;
+  line-height: 110%;
+}
+
+@mixin headlineHeavy {
+  font-family: fonts.$replicaHeavy;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.4rem;
+  line-height: 32px;
+}
+
+@mixin headlineLight {
+  font-family: fonts.$replica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.4rem;
+  line-height: 32px;
+}
+
+@mixin body {
+  font-family: fonts.$replica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 27px;
+}
+
+@mixin bodyHeavy {
+  font-family: fonts.$replicaHeavy;
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 18px;
+}
+
+@mixin headerLight {
+  font-family: fonts.$replica;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+}
+
+@mixin subheaderHeavy {
+  font-family: fonts.$replicaHeavy;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+}
+
+@mixin subheaderLight {
+  font-family: fonts.$replica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin captionHeavy {
+  font-family: fonts.$replicaHeavy;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.6rem;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+@mixin captionLight {
+  font-family: fonts.$replica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+}
+
+@mixin monoLink {
+  font-family: fonts.$replicaMono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin monoBody {
+  font-family: fonts.$replicaMono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 21px;
+  letter-spacing: -0.5px;
+}
+
+@mixin errorPageText {
+  font-family: fonts.$replicaHeavy;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 6.4rem;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}

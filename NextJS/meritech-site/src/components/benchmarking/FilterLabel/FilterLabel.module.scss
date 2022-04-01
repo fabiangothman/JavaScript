@@ -1,0 +1,12 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.wrapper {
+  margin-bottom: 12px;
+
+  .label {
+    color: colors.$brown-lighter;
+    text-transform: uppercase;
+    @include mixins.TextXSSemiBold();
+  }
+}

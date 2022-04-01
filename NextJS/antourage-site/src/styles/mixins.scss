@@ -1,0 +1,250 @@
+@use './colors';
+@use './media';
+
+@mixin TextMobile {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 400;
+}
+@mixin TextDesktop {
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  font-weight: 400;
+}
+@mixin Text {
+  @include TextMobile;
+  @include media.onLg() {
+    @include TextDesktop;
+  }
+}
+
+@mixin TextMobileB {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}
+@mixin TextDesktopB {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 600;
+}
+@mixin TextB {
+  @include TextMobileB;
+  @include media.onLg() {
+    @include TextDesktopB;
+  }
+}
+
+@mixin LinkDesktop {
+  font-size: 1.2rem;
+  line-height: 14.63px;
+  letter-spacing: 0.05em;
+}
+
+@mixin TextXs {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  font-weight: 400;
+}
+@mixin TextXsB {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  font-weight: 600;
+}
+
+@mixin TextSm {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+}
+@mixin TextSmB {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}
+
+@mixin TextMd {
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  font-weight: 400;
+}
+@mixin TextMdB {
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  font-weight: 600;
+}
+
+@mixin TextMd2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 400;
+}
+@mixin TextMd2B {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 600;
+}
+
+@mixin TextLg {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 400;
+}
+@mixin TextLgB {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 600;
+}
+
+@mixin TextxLB_1 {
+  font-size: 24rem;
+  line-height: 19.2rem;
+  font-weight: 700;
+}
+@mixin TextxLB_2 {
+  font-size: 6.4rem;
+  line-height: 9.6rem;
+  font-weight: 700;
+}
+@mixin TextxLB_3 {
+  font-size: 12rem;
+  line-height: 19.2rem;
+  font-weight: 700;
+}
+
+//  NormalText
+@mixin NormalTextMobile {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+}
+@mixin NormalTextDesktop {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 400;
+}
+@mixin NormalText {
+  @include NormalTextMobile;
+  @include media.onLg() {
+    @include NormalTextDesktop;
+  }
+}
+
+@mixin NormalTextMobileB {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}
+@mixin NormalTextDesktopB {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 600;
+}
+@mixin NormalTextB {
+  @include NormalTextMobileB;
+  @include media.onLg() {
+    @include NormalTextDesktopB;
+  }
+}
+
+@mixin BigTextMobile {
+  font-size: 3.6rem;
+  line-height: 4.68rem;
+  font-weight: 400;
+}
+@mixin BigTextDesktop {
+  font-size: 4.8rem;
+  line-height: 7.2rem;
+  font-weight: 400;
+}
+@mixin BigText {
+  @include BigTextMobile;
+  @include media.onLg() {
+    @include BigTextDesktop;
+  }
+}
+
+//  Titles
+@mixin TitleMobile {
+  font-size: 3.6rem;
+  line-height: 4.68rem;
+  font-weight: 600;
+}
+@mixin TitleDesktop {
+  font-size: 4.8rem;
+  line-height: 7.2rem;
+  font-weight: 600;
+}
+@mixin Title {
+  @include TitleMobile;
+  @include media.onLg() {
+    @include TitleDesktop;
+  }
+}
+
+@mixin TitleMobileSB {
+  font-size: 3.6rem;
+  line-height: 4.68rem;
+  font-weight: 700;
+}
+
+//  Header
+@mixin H1 {
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 7.2rem;
+}
+@mixin H2 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 6rem;
+}
+@mixin H3 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4.8rem;
+}
+@mixin H4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+}
+@mixin H5 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+}
+
+//  Sections
+@mixin SectionPadding {
+  padding: 4.8rem 0;
+  @include media.onLg() {
+    padding: 20rem 0;
+  }
+}
+
+// svg shapes for images
+@mixin ImageMaskV1($repeat: round, $size: 100% auto, $position: center, $image: '../../public/images/pics-svg-mask.svg') {
+  mask-image: url($image);
+  mask-repeat: $repeat;
+  mask-size: $size;
+  mask-position: $position;
+}
+@mixin ImageMaskV2($repeat: round, $size: 100% auto, $position: center, $image: '../../public/images/pics-svg-mask-2.svg') {
+  mask-image: url($image);
+  mask-repeat: $repeat;
+  mask-size: $size;
+  mask-position: $position;
+}
+@mixin ImageMaskV3($repeat: round, $size: 100% auto, $position: center, $image: '../../public/images/pics-svg-mask-3.svg') {
+  mask-image: url($image);
+  mask-repeat: $repeat;
+  mask-size: $size;
+  mask-position: $position;
+}
+@mixin ImageMaskV4($repeat: round, $size: 100% auto, $position: center, $image: '../../public/images/pics-svg-mask-4.svg') {
+  mask-image: url($image);
+  mask-repeat: $repeat;
+  mask-size: $size;
+  mask-position: $position;
+}

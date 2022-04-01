@@ -1,0 +1,91 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  @include mixins.SectionSmallerPadding;
+  overflow: hidden;
+  position: relative;
+  background: colors.$white;
+
+  .mobileBackground {
+    position: absolute;
+    top: -9rem;
+    left: 0;
+    background-repeat: no-repeat;
+  }
+
+  .mobileBackground {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background-size: cover;
+    // background-image: url('/images/portfolio-bg-mobile.png');
+    @include media.onMd() {
+      background-size: initial;
+      //   background-image: url('/images/portfolio-bg-desktop.png');
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .title {
+    @include mixins.TitleMobile;
+
+    // MiddleTitle
+    // margin-bottom: 1.2rem;
+    @include media.onLg() {
+      @include mixins.MiddleTitle;
+      //   margin-bottom: 3.6rem;
+    }
+  }
+
+  .filter {
+    &Wrapper {
+      border-bottom: 0.1rem solid colors.$tan-light;
+      margin-bottom: 3.6rem;
+    }
+    &Link {
+      border: 0;
+      background: transparent;
+      @include mixins.LinkDesktop;
+      text-transform: uppercase;
+      @include mixins.Link;
+      &Actived {
+        color: var(--headerMenuActived);
+        font-weight: 600;
+      }
+    }
+    &List {
+      display: inline-block;
+      margin-right: 4.8rem;
+      margin-top: 3.6rem;
+      margin-bottom: 2.4rem;
+      //   @include media.onLg() {
+      //     margin-bottom: 7.2rem;
+      //   }
+    }
+  }
+
+  .grid {
+    position: relative;
+    &Child {
+      height: 12rem;
+      margin-bottom: 0;
+      @include media.onXs() {
+        height: 15rem;
+      }
+      @include media.onSm() {
+        height: 19.3rem;
+      }
+    }
+    &Item {
+      max-width: 19.3rem;
+      margin: 0 auto;
+    }
+  }
+}

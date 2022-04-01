@@ -1,0 +1,35 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$gray-light;
+  color: colors.$black;
+  
+  .title {
+    position: relative;
+    text-align: left;
+    font-family: fonts.$text;
+    font-weight: 600;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+  .postsList {
+    position: relative;
+    margin-bottom: calc(12.7rem - 4.7rem);
+    @include media.onLg() {
+      margin-bottom: calc(26.8rem - 2rem);
+    }
+    .post {
+      position: relative;
+      margin-bottom: 4.7rem;
+      @include media.onLg() {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  
+}

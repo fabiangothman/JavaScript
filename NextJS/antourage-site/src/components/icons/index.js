@@ -1,0 +1,24 @@
+/* eslint-disable import/prefer-default-export */
+export { default as WhiteLogo } from './whiteLogo';
+export { default as Twitter } from './Twitter';
+export { default as LinkedIn } from './LinkedIn';
+export { default as Instagram } from './Instagram';
+export { default as DiagonalArrow } from './DiagonalArrow';
+export { default as HamburgerIcon } from './HamburgerIcon';
+export { default as LeftArrowBolder } from './LeftArrowBolder';
+export { default as Close } from './Close';
+export { default as GreenBackground } from './GreenBackground';
+export { default as LineDecorator } from './LineDecorator';
+export { default as Mouse } from './Mouse';
+export { default as GreenBackgroundForDesktop } from './GreenBackgroundForDesktop';
+export { default as SwipeUp } from './SwipeUp';
+export { default as PortfolioBackground } from './PortfolioBackground';
+export { default as UpArrow } from './UpArrow';
+export { default as AntourageLogo } from './AntourageLogo';
+export { default as Stain1 } from './Stain1';
+export { default as Stain2 } from './Stain2';
+export { default as ExIcon } from './ExIcon';
+export { default as Quotes } from './Quotes';
+export { default as Stain3 } from './Stain3';
+export { default as Stain4 } from './Stain4';
+export { default as Stain5 } from './Stain5';

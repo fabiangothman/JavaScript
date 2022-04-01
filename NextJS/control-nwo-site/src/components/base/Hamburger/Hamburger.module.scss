@@ -1,0 +1,61 @@
+@use 'styles/colors';
+@use 'styles/media';
+
+.hamburgerItem {
+  display: inline-block;
+  position: relative;
+  width: 1.75rem;
+  top: -0.25rem;
+  
+  @include media.onLg() {
+    display: none;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    .bar1, .bar2, .bar3 {
+      background-color: colors.$primary;
+      display: block;
+      height: 0.125rem;
+      left: 0;
+      position: absolute;
+      top: .2rem;
+      transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+      width: 100%;
+    }
+
+    .bar1 {
+      transform: translate3d(0, -0.625rem, 0) rotate(0);
+    }
+
+    .bar2 {
+      transform: translate3d(0, 0rem, 0) rotate(0);
+      opacity: 1;
+    }
+
+    .bar3 {
+      transform: translate3d(0, 0.625rem, 0) rotate(0);
+    }
+  }
+}
+.open{
+  &.hamburgerItem {
+    z-index: 101;
+    .bar1 {
+      transform: translate3d(0, 0, 0) rotate(135deg);
+    }
+
+    .bar2 {
+      transform: translate3d(0, 0, 0) rotate(-135deg);
+      opacity: 0;
+    }
+
+    .bar3 {
+      transform: translate3d(0, 0, 0) rotate(-135deg);
+    }
+  }
+}

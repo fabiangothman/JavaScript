@@ -1,0 +1,14 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.wrapper {
+  .title {
+    text-transform: uppercase;
+    color: colors.$brown-lighter;
+    @include mixins.Text2XS();
+  }
+
+  .axisFigure {
+    margin: 12px 0;
+  }
+}

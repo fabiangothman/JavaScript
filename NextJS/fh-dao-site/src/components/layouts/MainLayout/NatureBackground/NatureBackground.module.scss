@@ -1,0 +1,50 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  //overflow: hidden;
+  
+  .topNature1 {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 22.1rem;
+  }
+  .topNature2 {
+    position: absolute;
+    z-index: 2;
+    top: -1.4rem;
+    left: 0;
+  }
+  .topNature3 {
+    position: absolute;
+    z-index: 2;
+    top: -0.9rem;
+    right: 0;
+  }
+  .topNature4 {
+    position: absolute;
+    z-index: 2;
+    top: 0rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

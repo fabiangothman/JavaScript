@@ -1,0 +1,37 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+
+  .col {
+    margin-bottom: 1.2rem;
+    padding: 0 !important;
+    @include media.onLg() {
+      padding: 0 0.6rem !important;
+      &:first-of-type{
+        padding-left: 0 !important;
+      }
+      &:last-of-type{
+        padding-right: 0 !important;
+      }
+    }
+  }
+
+  .feedback {
+    position: relative;
+  }
+  .success {
+    text-align: right;
+    color: colors.$blue;
+  }
+  .error {
+    text-align: right;
+    color: colors.$red;
+  }
+}
+
+.noPad {
+  padding: 0 !important;
+}

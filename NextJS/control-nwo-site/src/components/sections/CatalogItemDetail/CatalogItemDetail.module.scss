@@ -1,0 +1,77 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$gray-light;
+  color: colors.$black;
+  padding: calc(17.5rem - 7rem) 0 8rem;
+  @include media.onLg() {
+    padding: calc(19.6rem - 7.6rem) 0 12rem;
+  }
+  
+  .title {
+    position: relative;
+    text-align: center;
+    font-family: fonts.$header;
+    font-weight: 300;
+    font-size: 3.2rem;
+    line-height: 3.84rem;
+    margin-bottom: 6.2rem;
+    @include media.onLg() {
+      font-size: 6.4rem;
+      line-height: 7.68rem;
+      margin-bottom: 12rem;
+    }
+  }
+  
+  .contCard {
+    margin-bottom: 11.3rem;
+  }
+
+  .contExtra {
+    margin-top: calc(13.7rem - 11.3rem);
+    @include media.onLg() {
+      margin-top: calc(16.4rem - 11.3rem);
+    }
+
+    .contImage {
+      position: relative;
+      margin: auto;
+      width: 100%;
+      max-width: 33rem;
+      @include media.onLg() {
+        max-width: 53rem;
+      }
+      .image {
+        object-position: center center;
+      }
+    }
+
+    .contText {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .text {
+        position: relative;
+        text-align: left;
+        font-family: fonts.$header;
+        font-weight: 400;
+        margin-bottom: 4rem;
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-top: 8rem;
+        @include media.onLg() {
+          font-size: 4rem;
+          line-height: 6rem;
+          margin-top: 0rem;
+        }
+      }
+    }
+
+  }
+}

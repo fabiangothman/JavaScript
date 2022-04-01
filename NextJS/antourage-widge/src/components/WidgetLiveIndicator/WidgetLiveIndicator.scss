@@ -1,0 +1,60 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  padding: 8px;
+  background-color: var(--ANTOURAGE--color_title_bg);
+  color: var(--ANTOURAGE--color_title_text);
+
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity calc(var(--ANTOURAGE--ms_animation_duration)/2) ease-in-out;
+  pointer-events: none;
+
+  bottom: calc(var(--ANTOURAGE--widget_size) * 0.47);
+  right: calc(var(--ANTOURAGE--widget_size) * 0.1);
+
+
+  @media (min-width:1025px) {
+    bottom: calc(var(--ANTOURAGE--widget_size) * 0.35);
+    right: calc(var(--ANTOURAGE--widget_size) * 0.45);
+  }
+
+  .live {
+    flex-shrink: 0;
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    background-color: var(--ANTOURAGE--color_live);
+    border-radius: 50%;
+    animation: blinker 2s linear infinite;
+
+    @keyframes blinker {
+      25% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  }
+
+  .titleText {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+:global(.__ANTOURAGE_ACTIVE__) {
+  .wrapper {
+    opacity: 0;
+  }
+}

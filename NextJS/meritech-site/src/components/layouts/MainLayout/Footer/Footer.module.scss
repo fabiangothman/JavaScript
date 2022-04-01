@@ -1,0 +1,231 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  z-index: 2;
+  padding: 6.4rem 0;
+  position: relative;
+  background-color: colors.$brown-darker;
+  @include media.onLg() {
+  }
+  .logo {
+    margin-bottom: 6.4rem;
+    @include media.onLg() {
+      width: 153px;
+      height: 24px;
+      margin-bottom: 31.4rem;
+    }
+  }
+  .list {
+    column-count: 2;
+    // margin-bottom: 11.5rem;
+    @include media.onLg() {
+      column-count: 1;
+      //   margin-bottom: 6.4rem;
+      //   padding-bottom: 6.4rem;
+      display: flex;
+      //   border-bottom: 1px solid colors.$tan-light;
+    }
+    &Item {
+      display: block;
+      &:not(:first-of-type) {
+        margin-top: 3.6rem;
+      }
+      @include media.onLg() {
+        &:not(:first-of-type) {
+          margin-left: 6.4rem;
+          margin-top: 0rem;
+        }
+      }
+    }
+  }
+  .link {
+    @include mixins.TextMobile;
+    color: colors.$brown-light;
+    outline: none !important;
+    &:hover {
+      border-color: colors.$white;
+      //   color: colors.$brown-dark;
+    }
+    @include media.onLg() {
+      @include mixins.TextMd;
+    }
+  }
+
+  .text,
+  .addressesLink,
+  .subscribe {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: colors.$dark-white;
+    line-height: 14.63px;
+    @include media.onLg() {
+      @include mixins.TextMd;
+      b {
+        opacity: 0.5;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.8rem;
+        display: block;
+        @include mixins.Text2XS;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .addressesLink {
+    // color: colors.$brown-light;
+    &:hover {
+      //   color: colors.$brown-dark;
+      text-decoration: underline;
+    }
+  }
+  .title {
+    font-weight: 600;
+  }
+
+  .content {
+    position: relative;
+  }
+
+  .clockIcon {
+    display: none;
+    path:first-of-type {
+      stroke: #494643;
+    }
+    @include media.onLg() {
+      display: block;
+    }
+  }
+
+  .icons {
+    margin-bottom: 2.5rem;
+    @include media.onLg() {
+      margin-top: 1.2rem;
+      margin-bottom: 0;
+    }
+    path {
+      fill: #f1f1ee;
+    }
+  }
+
+  .address {
+    @include media.onLg() {
+      order: -1;
+    }
+  }
+
+  .box {
+    margin-bottom: 2.5rem;
+    @include media.onLg() {
+      min-height: 5.4rem;
+    }
+  }
+
+  .socialMedia {
+    margin-right: 1.5rem;
+    border-color: #f1f1ee40;
+    @include media.onLg() {
+      margin-right: 1.4rem;
+    }
+  }
+
+  .borderTop {
+    border-top: 1px solid colors.$tan-light;
+    padding-top: 2.4rem;
+    @include media.onLg() {
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+
+  .goToTop {
+    display: none;
+    @include media.onLg() {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      button {
+        background: transparent;
+      }
+      svg {
+        transform: rotate(-90deg);
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  &.green {
+    background-color: colors.$green;
+    .subscribe {
+      &Form {
+        p {
+          color: #82bbad;
+        }
+        ::placeholder {
+          color: #82bbad;
+        }
+        button {
+          // border-color: #f1f1ee40;
+          svg {
+            path {
+              stroke: #82bbad;
+            }
+          }
+        }
+      }
+    }
+  }
+  .subscribe {
+    margin-top: 2.5rem;
+    @include media.onLg() {
+      margin-top: 0;
+    }
+    &Form {
+      height: auto;
+      background-color: inherit;
+      border: none;
+      margin-top: 0;
+      margin-bottom: 5rem;
+      padding: 0;
+      input {
+        border-style: dotted;
+        border-color: #f1f1ee40;
+      }
+      p {
+        color: #828180;
+      }
+      button {
+        border-color: #f1f1ee40;
+        svg {
+          path {
+            stroke: #828180;
+          }
+        }
+      }
+    }
+    b {
+      color: colors.$dark-white;
+      opacity: 1;
+    }
+    a {
+      border-bottom: 1px solid #f1f1ee40;
+      color: colors.$dark-white;
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  .borderBottom {
+    border-bottom: 1px solid colors.$tan-light;
+    padding-bottom: 2.4rem;
+    @include media.onLg() {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}

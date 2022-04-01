@@ -1,0 +1,73 @@
+@use 'styles/colors';
+@use 'styles/media';
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+
+  @include media.onLg() {
+    flex-direction: row;
+  }
+}
+
+.left {
+  width: 100%;
+  @include media.onLg() {
+    width: 50%;
+  }
+
+  & > div {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  width: 100%;
+  padding: 40px 24px;
+
+  @include media.onLg() {
+    width: 50%;
+    padding: 60px 100px;
+  }
+
+  @include media.onXl() {
+    width: 50%;
+    padding: 87px 144px;
+  }
+}
+
+.headline {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  color: colors.$black-1000;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+
+  @include media.onLg() {
+    margin-bottom: 40px;
+  }
+}
+
+.body {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  font-feature-settings: 'salt' on;
+  color: colors.$black-1000;
+
+  @include media.onLg() {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}

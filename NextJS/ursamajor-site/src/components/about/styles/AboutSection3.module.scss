@@ -1,0 +1,117 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.sectionContainer {
+  background: colors.$grey1;
+  color: colors.$grey3;
+  padding: 6.4rem 2.4rem 0 2.4rem;
+  letter-spacing: 0.4px;
+  @include mixins.body;
+
+  @include media.onLg() {
+    padding: 6.4rem 2.4rem 0 0;
+  }
+
+  .end {
+    .bearContainer {
+      svg {
+        display: inline-block;
+        width: 36px;
+        height: 24px;
+        margin: 7rem 0 5rem 0;
+
+        @include media.onLg() {
+          margin: 9rem 0 9rem 0;
+        }
+      }
+    }
+  }
+
+  .borderTopLine {
+    border-top: 2px solid #fff;
+    margin-top: 8px;
+  }
+
+  .contentCol {
+    padding: 0;
+    position: relative;
+  }
+
+  .headline {
+    @include mixins.displayHeavy;
+    color: colors.$white;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0 0 2.4rem;
+    line-height: 37.8px;
+    @include media.onLg() {
+      margin: 0 0 6.4rem;
+      font-size: 4.8rem;
+      line-height: 50.4px;
+    }
+  }
+
+  .advisorsHeadline {
+    @include mixins.body;
+    line-height: 22px;
+    margin: 0;
+    color: colors.$white;
+    margin-bottom: 4.8rem;
+    @include media.onLg() {
+      margin-bottom: 6.4rem;
+    }
+  }
+
+  .description {
+    @include mixins.body;
+    color: colors.$white;
+    line-height: 27px;
+    margin: 0 0 3rem;
+    letter-spacing: 0.8px;
+    @include media.onLg() {
+      margin: 0 0 6.4rem;
+      max-width: 330px;
+    }
+  }
+
+  .members {
+    margin-bottom: -6.4rem;
+    margin-left: -16px;
+    margin-right: -16px;
+    @include media.onLg() {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    .member {
+      position: relative;
+    }
+    .image {
+      width: 100%;
+      height: 580px;
+      margin-bottom: 2.4rem;
+      position: relative;
+      @include media.onLg() {
+        height: 375px;
+      }
+    }
+    .name {
+      @include mixins.bodyHeavy;
+      color: colors.$white;
+      line-height: 27px;
+      margin: 0;
+    }
+    .title {
+      color: colors.$white;
+      font-size: 1.8rem;
+      line-height: 27px;
+      margin: 0;
+      margin-bottom: 4.8rem;
+      letter-spacing: 0.8px;
+      @include media.onLg() {
+        margin-bottom: 6.4rem;
+      }
+    }
+  }
+}

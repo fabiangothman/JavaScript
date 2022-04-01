@@ -1,0 +1,114 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.wrapper {
+  position: relative;
+
+  .field {
+    display: flex;
+    width: 100%;
+    border: 1px solid colors.$tan-light;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 12px 6px;
+    border-radius: 4px;
+    // background: colors.$dark-white;
+    background: colors.$white;
+    color: colors.$brown-light;
+    @include mixins.TextXSSemiBold;
+
+    cursor: pointer;
+
+    .value {
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+    }
+
+    .icon {
+      flex-grow: 0;
+      margin-left: 10px;
+      svg {
+        transform: rotate(180deg);
+        transition: transform 150ms ease-in-out;
+      }
+    }
+  }
+
+  &.open {
+    .icon {
+      svg {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .pane {
+    display: none;
+    // background-color: colors.$dark-white;
+    background-color: colors.$white;
+    position: absolute;
+    border: 1px solid colors.$tan-light;
+    border-radius: 4px;
+    left: 0;
+    width: 100%;
+    min-width: 240px;
+    z-index: 1;
+    &.reducedHeight {
+      .options {
+        max-height: 150px;
+      }
+    }
+    .stats {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 14px 14px 15px;
+
+      .statsCounter {
+        display: block;
+        @include mixins.TextXSSemiBold;
+        color: colors.$brown-light;
+      }
+
+      .statsClear {
+        display: block;
+        @include mixins.Text2XS;
+        color: colors.$brown-light;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          color: colors.$green;
+        }
+      }
+    }
+
+    .options {
+      max-height: 174px;
+      overflow-y: auto;
+      padding: 0 14px;
+
+      @include media.onLg() {
+        max-height: 200px;
+      }
+    }
+  }
+
+  &.open {
+    .pane {
+      display: block;
+    }
+  }
+
+  &.right {
+    .pane {
+      left: unset;
+      right: 0;
+    }
+  }
+}

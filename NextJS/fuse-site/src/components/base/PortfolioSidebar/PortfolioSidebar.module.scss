@@ -1,0 +1,46 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.sidebar {
+  position: relative;
+  display: inline-flex;
+  @include media.onLg() {
+    padding-left: 1.5rem;
+    position: absolute;
+    left: 0;
+  }
+  & > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  &Slide {
+    padding-left: 2rem;
+    margin-top: 1.6rem;
+  }
+
+  &Item {
+    color: #c8c8c8;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  &SubItem {
+    & > a {
+      color: #c8c8c8;
+    }
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+    &Active {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      & > svg {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+}

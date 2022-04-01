@@ -1,0 +1,133 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.sectionContainer {
+  background: colors.$black;
+  padding: 6.4rem 1.7rem 0 1.7rem;
+
+  @include media.onLg() {
+    padding: 9rem 2.5rem 9rem 0;
+  }
+}
+.standardsCol {
+  padding: 0 8px;
+
+  @include media.onLg() {
+    padding: 0 8px 0 0;
+  }
+}
+
+.title {
+  color: colors.$white;
+  margin-bottom: 4.8rem;
+
+  @include media.onLg() {
+    margin-bottom: 10rem;
+  }
+  position: relative;
+  &:after {
+    display: none;
+    content: '';
+    width: 48px;
+    height: 3px;
+    position: absolute;
+    bottom: -67px;
+    background-color: colors.$white;
+    left: 0;
+    @include media.onLg() {
+      display: block;
+    }
+  }
+  @include mixins.displayHeavy;
+  @include media.onLg() {
+    @include mixins.major;
+    font-size: 4.8rem;
+    line-height: 50.4px;
+    max-width: 270px;
+  }
+}
+
+.desc {
+  margin-top: 0;
+  color: colors.$white;
+  @include mixins.body;
+  letter-spacing: 0.8px;
+  line-height: 27px;
+  @include media.onLg() {
+    max-width: 320px;
+  }
+}
+
+.shorterDivider {
+  margin-top: 48px;
+  margin-bottom: -3px;
+  width: 48px;
+  border-bottom: 3px solid colors.$white;
+  display: block;
+
+  @include media.onLg() {
+    display: none;
+  }
+}
+
+.image {
+  position: relative;
+  min-height: 644px;
+  width: 100%;
+}
+
+.imagesWrapper {
+  @include media.onLg() {
+    margin-top: -400px;
+  }
+}
+
+.hideOnMobile {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}
+
+.featureTitle {
+  @include mixins.majorHeavy;
+  color: colors.$white;
+  margin: 0;
+  margin-top: 5.6rem;
+  margin-bottom: 2rem;
+  line-height: 27px;
+  letter-spacing: 0.8px;
+  font-size: 18px;
+}
+
+.hideOnDesktop {
+  @include media.onLg() {
+    display: none;
+  }
+}
+
+.mobileRow {
+  margin-bottom: 4rem !important;
+}
+
+.mobileChangeOrder {
+  order: -1;
+}
+
+.mobileContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  margin-bottom: 4rem;
+}
+
+.featureDescription {
+  color: colors.$white;
+  margin: 0;
+  letter-spacing: 0.8px;
+  line-height: 27px;
+  font-size: 18px;
+}

@@ -1,0 +1,265 @@
+@use './colors';
+@use './media';
+@use './mixins';
+
+:root {
+  --blue-1000: #006EFF;
+  --orange-1000: #FFA000;
+  --pink-1000: #FF78E6;
+  --purple-1000: #8D48FF;
+  --green-1000: #17DDAB;
+  --red-1000: #FB3F39;
+
+  --gray-900: #1F2227;
+  --gray-800: #1F2937;
+  --gray-700: #374151;
+  --gray-600: #4B5563;
+  --gray-500: #6B7280;
+  --gray-400: #9CA3AF;
+  --gray-300: #D1D5DB;
+  --gray-200: #E5E7EB;
+  --gray-100: #F3F4F6;
+  --gray-50: #F9FAFB;
+
+  --black-1000: #080808;
+  --white-1000: #FFFFFF;
+}
+
+html {
+  font-size: 10px;
+}
+
+html,
+body {
+  height: 100%;
+  //overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.container-fluid {
+  padding: 0;
+
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  @include mixins.Text;
+}
+
+h1 {
+  @include mixins.H1;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  @include mixins.H2;
+}
+
+h3 {
+  @include mixins.H3;
+}
+
+h4 {
+  @include mixins.H4;
+}
+
+h5 {
+  @include mixins.H5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    .row {
+      margin-right: -24px;
+      margin-left: -24px;
+    }
+
+    .col-xs,
+    .col-xs-1,
+    .col-xs-2,
+    .col-xs-3,
+    .col-xs-4,
+    .col-xs-5,
+    .col-xs-6,
+    .col-xs-7,
+    .col-xs-8,
+    .col-xs-9,
+    .col-xs-10,
+    .col-xs-11,
+    .col-xs-12,
+    .col-xs-offset-0,
+    .col-xs-offset-1,
+    .col-xs-offset-2,
+    .col-xs-offset-3,
+    .col-xs-offset-4,
+    .col-xs-offset-5,
+    .col-xs-offset-6,
+    .col-xs-offset-7,
+    .col-xs-offset-8,
+    .col-xs-offset-9,
+    .col-xs-offset-10,
+    .col-xs-offset-11,
+    .col-xs-offset-12,
+    .col-sm,
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12,
+    .col-sm-offset-0,
+    .col-sm-offset-1,
+    .col-sm-offset-2,
+    .col-sm-offset-3,
+    .col-sm-offset-4,
+    .col-sm-offset-5,
+    .col-sm-offset-6,
+    .col-sm-offset-7,
+    .col-sm-offset-8,
+    .col-sm-offset-9,
+    .col-sm-offset-10,
+    .col-sm-offset-11,
+    .col-sm-offset-12,
+    .col-md,
+    .col-md-1,
+    .col-md-2,
+    .col-md-3,
+    .col-md-4,
+    .col-md-5,
+    .col-md-6,
+    .col-md-7,
+    .col-md-8,
+    .col-md-9,
+    .col-md-10,
+    .col-md-11,
+    .col-md-12,
+    .col-md-offset-0,
+    .col-md-offset-1,
+    .col-md-offset-2,
+    .col-md-offset-3,
+    .col-md-offset-4,
+    .col-md-offset-5,
+    .col-md-offset-6,
+    .col-md-offset-7,
+    .col-md-offset-8,
+    .col-md-offset-9,
+    .col-md-offset-10,
+    .col-md-offset-11,
+    .col-md-offset-12,
+    .col-lg,
+    .col-lg-1,
+    .col-lg-2,
+    .col-lg-3,
+    .col-lg-4,
+    .col-lg-5,
+    .col-lg-6,
+    .col-lg-7,
+    .col-lg-8,
+    .col-lg-9,
+    .col-lg-10,
+    .col-lg-11,
+    .col-lg-12,
+    .col-lg-offset-0,
+    .col-lg-offset-1,
+    .col-lg-offset-2,
+    .col-lg-offset-3,
+    .col-lg-offset-4,
+    .col-lg-offset-5,
+    .col-lg-offset-6,
+    .col-lg-offset-7,
+    .col-lg-offset-8,
+    .col-lg-offset-9,
+    .col-lg-offset-10,
+    .col-lg-offset-11,
+    .col-lg-offset-12,
+    .col-xl,
+    .col-xl-1,
+    .col-xl-2,
+    .col-xl-3,
+    .col-xl-4,
+    .col-xl-5,
+    .col-xl-6,
+    .col-xl-7,
+    .col-xl-8,
+    .col-xl-9,
+    .col-xl-10,
+    .col-xl-11,
+    .col-xl-12,
+    .col-xl-offset-0,
+    .col-xl-offset-1,
+    .col-xl-offset-2,
+    .col-xl-offset-3,
+    .col-xl-offset-4,
+    .col-xl-offset-5,
+    .col-xl-offset-6,
+    .col-xl-offset-7,
+    .col-xl-offset-8,
+    .col-xl-offset-9,
+    .col-xl-offset-10,
+    .col-xl-offset-11,
+    .col-xl-offset-12 {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.disableScroll {
+  overflow: hidden;
+  padding-top: 68px;
+  header {
+    position: fixed;
+    background: colors.$white-1000;
+    top: 0;
+    @include media.onLg() {
+      position: initial;
+    }
+  }
+  @include media.onLg() {
+    overflow: initial;
+  }
+}

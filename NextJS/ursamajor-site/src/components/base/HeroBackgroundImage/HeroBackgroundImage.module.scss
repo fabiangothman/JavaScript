@@ -1,0 +1,15 @@
+@use 'styles/media';
+
+.heroDesktopImage {
+  display: none;
+  @include media.onMd() {
+    display: block;
+  }
+}
+
+.heroMobileImage {
+  display: block;
+  @include media.onMd() {
+    display: none;
+  }
+}

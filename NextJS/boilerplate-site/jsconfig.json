@@ -1,0 +1,34 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "~api": [
+        "./api/"
+      ],
+      "~hooks/*": [
+        "./hooks/*"
+      ],
+      "~baseComponents/*": [
+        "./components/base/*"
+      ],
+      "~layouts/*": [
+        "./components/layouts/*"
+      ],
+      "~sections/*": [
+        "./components/sections/*"
+      ],
+      "~styles/*": [
+        "./styles/*"
+      ],
+      "~grid": [
+        "./components/grid"
+      ],
+      "~assets/*": [
+        "./assets/*"
+      ]
+    }
+  },
+}

@@ -1,0 +1,710 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.sectionContainer {
+  color: colors.$white;
+  background-color: colors.$grey1;
+  padding: 6.4rem 2.5rem 0 2.5rem;
+  overflow: hidden;
+
+  @include media.onLg() {
+    padding: 10rem 2.5rem 20rem 0;
+  }
+}
+
+.slide {
+  position: relative;
+}
+
+.mob {
+  display: block;
+
+  @include media.onLg() {
+    display: none;
+  }
+}
+
+.desk {
+  display: none;
+
+  @include media.onLg() {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    justify-content: center;
+  }
+}
+
+.centerImage {
+  min-height: 350px;
+  position: relative;
+  margin: 0 auto 24px;
+}
+
+.sideImage {
+  min-height: 275px;
+  position: relative;
+  margin: 0 auto 24px;
+
+  @include media.onLg() {
+    min-height: 800px;
+  }
+}
+
+.title {
+  @include mixins.bodyHeavy;
+  margin-bottom: 2.4rem;
+  font-size: 3.6rem;
+  line-height: 37.8px;
+  text-transform: uppercase;
+  @include media.onLg() {
+    font-size: 4.8rem;
+    margin-bottom: 6.4rem;
+    line-height: 50.4px;
+    max-width: 380px;
+  }
+}
+
+.aboveTitle {
+  @include mixins.body;
+  margin-top: 0;
+  margin-bottom: 4.8rem;
+  line-height: 22px;
+  @include media.onLg() {
+    max-width: 330px;
+    margin-bottom: 6.4rem;
+    line-height: 27px;
+  }
+}
+
+.description {
+  @include mixins.body;
+  line-height: 27px;
+  letter-spacing: 0.8px;
+  margin-bottom: 4.8rem;
+  @include media.onLg() {
+    max-width: 330px;
+  }
+}
+
+.features {
+  @include media.onLg() {
+    margin-top: 0.8rem;
+  }
+  .featuresTitles {
+    @include mixins.bodyHeavy;
+    margin-bottom: 32px;
+    position: relative;
+    display: flex;
+    margin-right: 0px;
+    justify-content: space-between;
+    @include media.onSm {
+      & > div {
+        width: 33%;
+        padding: 0 8px;
+        &:first-of-type {
+          padding-left: 0;
+        }
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: 2px;
+      background: colors.$grey4;
+      @include media.onSm {
+        bottom: -2px;
+      }
+    }
+  }
+
+  .tabTitle {
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0 0 10px;
+    transition: border 0.25s ease-in-out;
+    border-bottom: 4px solid transparent;
+    color: colors.$grey4;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    @include media.onSm {
+      margin: 0 24px 0 0;
+    }
+  }
+
+  .isActive {
+    display: inline-block;
+    color: colors.$orange;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 6px;
+      background: colors.$orange;
+      left: 0;
+      z-index: 2;
+      bottom: -6px;
+    }
+  }
+
+  .featuresBlocks {
+    position: relative;
+    min-height: 220px;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: 80px;
+    @include media.onSm() {
+      margin-bottom: 0;
+    }
+
+    .block {
+      opacity: 0;
+      position: absolute;
+      transition: opacity 0.15s ease-in-out;
+
+      .item {
+        margin-bottom: 3.6rem;
+        @include media.onLg() {
+          margin-bottom: 0rem;
+        }
+      }
+
+      .iconWrapper {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 1px solid colors.$grey2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.4rem;
+      }
+
+      .heading {
+        @include mixins.captionHeavy;
+        font-size: 1.8rem;
+        line-height: 20px;
+        min-height: 40px;
+        margin-bottom: 2.4rem;
+
+        @include media.onLg() {
+          min-height: 60px;
+        }
+
+        @include media.onXl() {
+          min-height: 40px;
+        }
+      }
+
+      .text {
+        @include mixins.captionLight;
+        font-size: 1.8rem;
+        color: colors.$grey4;
+        line-height: 22px;
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    .blockShow {
+      opacity: 1;
+    }
+  }
+}
+
+.hideOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+    transform: translateY(100px);
+  }
+}
+
+.swiper {
+  margin-top: 33.8rem;
+  @include media.onSm() {
+    margin-top: 10rem;
+  }
+  @include media.onMd() {
+    margin-top: 8rem;
+  }
+  @include media.onLg() {
+    margin-top: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+.engineCard {
+  max-width: 400px;
+  margin: auto auto 6.4rem;
+
+  &Image {
+    position: relative;
+    margin: auto;
+
+    &Left {
+      width: 240px;
+      height: 483px;
+      margin-bottom: 8.4rem;
+      transform: translateX(20px);
+
+      @include media.onSm() {
+        width: 327px;
+        transform: translateX(20px);
+      }
+      @include media.onLg() {
+        width: 247px;
+        transform: translateX(15px);
+      }
+
+      @media only screen and (min-width: 1280px) {
+        width: 247px;
+      }
+      @media only screen and (min-width: 1365px) {
+        width: 247px;
+      }
+      &:after {
+        content: '';
+        border-radius: 50%;
+        width: 320px;
+        height: 320px;
+        border: 6px solid colors.$white;
+        position: absolute;
+        left: -60px;
+        bottom: -40px;
+        z-index: 1;
+        right: 20px;
+        margin: auto;
+        @include media.onSm() {
+          width: 250px;
+          height: 250px;
+          left: -15px;
+        }
+        @include media.onLg() {
+          width: 250px;
+          height: 250px;
+          left: -20px;
+        }
+        @media only screen and (min-width: 1280px) {
+          width: 280px;
+          height: 280px;
+          left: -35px;
+        }
+        @media only screen and (min-width: 1365px) {
+          width: 300px;
+          height: 300px;
+          left: -45px;
+        }
+      }
+
+      svg {
+        position: absolute;
+        right: -19px;
+        bottom: -40px;
+
+        @include media.onSm() {
+          right: 55px;
+        }
+        @include media.onLg() {
+          right: 16px;
+        }
+        @media only screen and (min-width: 1280px) {
+          right: 1px;
+        }
+        @media only screen and (min-width: 1365px) {
+          right: -9px;
+        }
+      }
+    }
+
+    &Middle {
+      width: 240px;
+      height: 483px;
+      margin-bottom: 8.4rem;
+      transform: translateX(11px);
+
+      @include media.onSm() {
+        width: 327px;
+        transform: translateX(11px);
+      }
+      @include media.onLg() {
+        width: 247px;
+        transform: translateX(11px);
+      }
+
+      @media only screen and (min-width: 1280px) {
+        width: 247px;
+      }
+      @media only screen and (min-width: 1365px) {
+        width: 247px;
+      }
+
+      &:after {
+        content: '';
+        border-radius: 50%;
+        width: 320px;
+        height: 320px;
+        border: 6px solid colors.$white;
+        position: absolute;
+        left: -51px;
+        bottom: -40px;
+        z-index: 1;
+        right: 20px;
+        margin: auto;
+        @include media.onSm() {
+          width: 250px;
+          height: 250px;
+          left: -5px;
+        }
+        @include media.onLg() {
+          width: 250px;
+          height: 250px;
+          left: -15px;
+        }
+        @media only screen and (min-width: 1280px) {
+          width: 280px;
+          height: 280px;
+          left: -30px;
+        }
+        @media only screen and (min-width: 1365px) {
+          width: 300px;
+          height: 300px;
+          left: -40px;
+        }
+      }
+
+      svg {
+        position: absolute;
+        right: -30px;
+        bottom: -40px;
+
+        @include media.onSm() {
+          right: 50px;
+        }
+        @include media.onLg() {
+          right: 11px;
+        }
+        @media only screen and (min-width: 1280px) {
+          right: -4px;
+        }
+        @media only screen and (min-width: 1365px) {
+          right: -14px;
+        }
+      }
+    }
+
+    &Right {
+      width: 240px;
+      height: 483px;
+      margin-bottom: 8.4rem;
+      transform: translateX(1px);
+
+      @include media.onSm() {
+        width: 220px;
+        transform: none;
+      }
+      @include media.onLg() {
+        width: 222px;
+        transform: none;
+      }
+      &:after {
+        content: '';
+        border-radius: 50%;
+        width: 320px;
+        height: 320px;
+        border: 6px solid colors.$white;
+        position: absolute;
+        left: -42px;
+        bottom: -40px;
+        z-index: 1;
+        right: 20px;
+        margin: auto;
+        @include media.onSm() {
+          width: 250px;
+          height: 250px;
+          left: -15px;
+        }
+        @include media.onLg() {
+          width: 250px;
+          height: 250px;
+          left: -15px;
+        }
+        @media only screen and (min-width: 1280px) {
+          width: 280px;
+          height: 280px;
+          left: -30px;
+        }
+        @media only screen and (min-width: 1365px) {
+          width: 300px;
+          height: 300px;
+          left: -40px;
+        }
+      }
+
+      svg {
+        position: absolute;
+        right: -38px;
+        bottom: -40px;
+
+        @include media.onSm() {
+          right: -15px;
+        }
+        @include media.onLg() {
+          right: -14px;
+        }
+        @media only screen and (min-width: 1280px) {
+          right: -29px;
+        }
+        @media only screen and (min-width: 1365px) {
+          right: -39px;
+        }
+      }
+    }
+
+    img {
+      z-index: 9;
+    }
+  }
+  &Title {
+    @include mixins.bodyHeavy;
+    font-size: 4.8rem;
+    line-height: 50.4px;
+    padding-bottom: 1.2rem;
+    border-bottom: 3px solid colors.$white;
+    margin: 0;
+    margin-bottom: 1.6rem;
+    color: colors.$white;
+  }
+
+  &Feature {
+    border-bottom: 1px solid colors.$grey2;
+    margin-bottom: 1.6rem;
+    padding: 0 0 1.6rem 0;
+
+    @include media.onLg() {
+      &:last-child {
+        margin-bottom: 0;
+        padding: 0;
+      }
+    }
+
+    .weight {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .oxRich {
+        @include mixins.bodyHeavy;
+        font-size: 1.8rem;
+        line-height: 18.9px;
+        text-align: end;
+        margin: 0;
+        max-width: 200px;
+        transform: translateY(5px);
+
+        @include media.onXl() {
+          display: none;
+        }
+      }
+    }
+  }
+  &FeatureTitle {
+    @include mixins.bodyHeavy;
+    font-size: 2.4rem;
+    line-height: 25.2px;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+    color: colors.$white;
+    min-width: 150px;
+    @media screen and (min-width: 992px) and (max-width: 1005px) {
+      font-size: 2.3rem;
+    }
+    &Pending {
+      @include media.onLg() {
+        color: colors.$grey4;
+      }
+
+      &Expendable {
+        @include mixins.captionLight;
+        margin-right: 2.4rem;
+        display: inline-block;
+        font-size: 1.8rem;
+        display: inline-block;
+        letter-spacing: 0;
+        line-height: 2.7rem;
+        text-transform: none;
+
+        @include media.onLg() {
+          &:after {
+            content: ', ';
+          }
+
+          &:last-of-type::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .unit {
+      @include mixins.body;
+      display: inline-block;
+      margin: 0;
+      font-size: 2.4rem;
+      line-height: 25.2px;
+    }
+  }
+  &FeatureDescription {
+    @include mixins.monoLink;
+    font-size: 1.2rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 16px;
+    color: colors.$white;
+    &Reusable {
+      color: colors.$grey3;
+
+      @include media.onLg() {
+        height: 71px;
+      }
+
+      @media screen and (min-width: 1200px) and (max-width: 1440px) {
+        height: 90px;
+      }
+
+      @media screen and (min-width: 1440px) and (max-width: 1490px) {
+        height: 90px;
+      }
+
+      @media only screen and (min-width: 1490px) {
+        height: 86px;
+      }
+
+      span {
+        @include mixins.captionLight;
+        font-size: 1.8rem;
+        margin-right: 1.4rem;
+        display: inline-block;
+        letter-spacing: 0;
+        line-height: 2.8rem;
+        text-transform: none;
+
+        @include media.onLg() {
+          margin-right: 0.4rem;
+          &:after {
+            content: ', ';
+          }
+
+          &:last-of-type::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &Status {
+    @include mixins.monoLink;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 1.2rem;
+    border: 1px solid colors.$white;
+    margin-bottom: 2.4rem;
+    letter-spacing: 2px;
+    line-height: 1.6rem;
+    display: none;
+    @include media.onXl() {
+      display: inline-block;
+    }
+  }
+  .statusMobile {
+    margin: 0 0 2.4rem;
+    display: inline-block;
+    @include media.onXl() {
+      display: none;
+    }
+  }
+}
+
+.pendingCard {
+  color: colors.$grey4;
+
+  h4 {
+    border-bottom: 3px solid colors.$grey4;
+  }
+
+  @include media.onLg() {
+    margin-bottom: 292px;
+  }
+
+  .engineCardImageRight {
+    > div {
+
+      left: -8% !important;
+      right: -7% !important;
+
+      @include media.onMd() {
+        left: -12% !important;
+        right: -11% !important;
+      }
+    }
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border: 2px solid colors.$orange;
+  color: colors.$orange;
+  padding: 1.4rem 3rem;
+  width: 100%;
+  text-align: center;
+  max-width: 100%;
+  margin: 2.4rem 0 0;
+  @include media.onXl() {
+    max-width: 170px;
+  }
+}
+
+.onTheWayCardHeight {
+  height: 46px;
+
+  @media screen and (min-width: 1200px) and (max-width: 1440px) {
+    height: 65px;
+  }
+
+  @media screen and (min-width: 1440px) and (max-width: 1490px) {
+    height: 65px;
+  }
+
+  @media only screen and (min-width: 1490px) {
+    height: 61px;
+  }
+}
+
+.first {
+  @include media.onXl() {
+    padding-right: 12px;
+  }
+}
+
+.second {
+  @include media.onXl() {
+    padding: 0 6px;
+  }
+}
+
+.last {
+  @include media.onXl() {
+    padding-left: 12px;
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1220px) {
+    min-width: 260px;
+  }
+}

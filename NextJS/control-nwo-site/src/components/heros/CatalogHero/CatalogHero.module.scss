@@ -1,0 +1,42 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$gray-lighter;
+  color: colors.$gray-dark;
+  padding: calc(17.5rem - 7rem) 0 8rem;
+  @include media.onLg() {
+    padding: calc(19.6rem - 7.6rem) 0 12rem;
+  }
+  
+  .title {
+    position: relative;
+    text-align: center;
+    font-family: fonts.$header;
+    font-weight: 300;
+    font-size: 3.2rem;
+    line-height: 3.84rem;
+    margin-bottom: 2rem;
+    @include media.onLg() {
+      font-size: 6.4rem;
+      line-height: 7.68rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .text {
+    position: relative;
+    text-align: center;
+    font-family: fonts.$text;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.52rem;
+    @include media.onLg() {
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+  }
+  
+}

@@ -1,0 +1,108 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  background-color: colors.$gray-lighter;
+  padding-top: 6rem;
+  @include media.onLg() {
+    padding-top: 0;
+  }
+  
+  .parallax {
+    position: relative;
+    overflow: hidden;
+    height: 31rem;
+    @include media.onLg() {
+      height: 125rem;
+    }
+    .contImage {
+      position: relative;
+      will-change: transform;
+      //transform: translateY(0%);
+      width: auto;
+      height: 100%;
+      //height: calc(100% + 700px);
+      .image {
+        background: linear-gradient(
+          172.6deg,
+          #A965FF 29.63%,
+          #4689EF 94.25%
+        );
+        object-position: top left;
+      }
+    }
+  }
+
+  .info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+    .highlighted {
+      font-family: fonts.$text;
+      font-weight: 400;
+      font-size: 2.4rem;
+      line-height: 3.84rem;
+      margin-bottom: 2.4rem;
+      @include media.onLg() {
+        font-size: 3.2rem;
+        line-height: 5.12rem;
+        margin-bottom: 6rem;
+      }
+    }
+    .stats {
+      padding-bottom: 6rem;
+      @include media.onLg() {
+        padding-bottom: 0;
+      }
+      .stat {
+        &:not(:last-of-type) {
+          margin-bottom: 4rem;
+        }
+        @include media.onLg() {
+          &:not(:last-of-type) {
+            margin-bottom: 6rem;
+          }
+        }
+        .number {
+          font-family: fonts.$header;
+          font-size: 7.2rem;
+          font-weight: 300;
+          line-height: 8.64rem;
+          margin-bottom: 1.2rem;
+          @include media.onLg() {
+            margin-bottom: 2.2rem;
+          }
+        }
+        .text {
+          font-family: fonts.$text;
+          font-weight: 400;
+          font-size: 1.8rem;
+          line-height: 2.52rem;
+          @include media.onLg() {
+            font-size: 2rem;
+            line-height: 2.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.noPad {
+  padding: 0 !important;
+}
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

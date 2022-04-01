@@ -1,0 +1,62 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  color: colors.$black;
+  .reverseRow {
+    flex-direction: row-reverse;
+  }
+
+  .videoWrapper {
+    position: relative;
+    height: 100%;
+  }
+
+  .infoWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 2rem 3.1rem;
+    min-height: auto;
+    @include media.onLg() {
+      padding: 7.2rem 8.1rem 14.8rem;
+      min-height: 65.8rem;
+    }
+    .title {
+      position: relative;
+      text-align: left;
+      font-family: fonts.$header;
+      color: colors.$blue;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      font-size: 2.4rem;
+      line-height: 3.36rem;
+      @include media.onLg() {
+        font-size: 4.8rem;
+        line-height: 6.72rem;
+      }
+    }
+    .text1, .text2 {
+      position: relative;
+      text-align: left;
+      font-family: fonts.$text;
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 2.52rem;
+      @include media.onLg() {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
+    }
+    .text2 {
+      margin-top: 2rem;
+    }
+  }
+  
+}
+.noPad {
+  padding: 0 !important;
+}

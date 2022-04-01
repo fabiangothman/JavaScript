@@ -1,0 +1,70 @@
+@use "@fontsource/poppins/scss/mixins" as Poppins;
+
+@include Poppins.fontFace(
+  $weight: 600,
+  $display: fallback,
+  $fontDir: "~@fontsource/poppins/files",
+  $fontName: "__ANTOURAGE__Poppins"
+);
+
+.widget {
+  all: revert;
+
+  * {
+    all: revert;
+    box-sizing: border-box;
+  }
+}
+
+.widget {
+  font-family: '__ANTOURAGE__Poppins', sans-serif;
+  font-weight: 600;
+  position: fixed;
+  z-index: 99999;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 1000ms ease-in-out;
+
+  .overlay {
+    z-index: -1;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--ANTOURAGE--color_overlay_bg);
+    will-change: opacity;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+
+  }
+
+  .hitbox {
+    width: calc(var(--ANTOURAGE--widget_size) * 0.5);
+    height: calc(var(--ANTOURAGE--widget_size) * 0.5);
+  }
+}
+
+:global(.__ANTOURAGE_ACTIVE__) {
+  &.widget {
+    .overlay {
+      opacity: var(--ANTOURAGE--opacity_overlay);
+    }
+  }
+}
+
+:global(.__ANTOURAGE_HIDDEN__) {
+  &.widget {
+    opacity: 0;
+  }
+}

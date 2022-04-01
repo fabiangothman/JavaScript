@@ -1,0 +1,371 @@
+@use './colors';
+@use './media';
+@use './mixins';
+
+:root {
+  --black: #333333;
+  --green: #12846b;
+  --dark-green: #094034;
+  --white: #ffffff;
+  --darker-white: #e3e3dd;
+  --dark-white: #f1f1ee;
+  --tan-lighter: #d9d9cd;
+  --tan-light: #dcdcd4;
+  --tan-dark: #bcbcb0;
+  --brown-light: #494643;
+  --brown-dark: #231f20;
+  --brown-lighter: #757372;
+}
+
+[data-theme='light'] {
+  --background: var(--dark-white);
+  --text: var(--brown-dark);
+  --headerMenu: var(--brown-light);
+  --headerMenuActived: var(--brown-dark);
+  --headerMenuHovered: var(--brown-lighter);
+  --headerBorderColor: var(--tan-light);
+  --mobileMenuLink: var(--brown-light);
+}
+
+[data-theme='dark'] {
+  --background: var(--brown-dark);
+  --text: var(--dark-white);
+  --headerMenu: var(--dark-white);
+  --headerMenuActived: var(--tan-lighter);
+  --headerMenuHovered: var(--tan-light);
+  --headerBorderColor: rgba(241, 241, 238, 0.2);
+  --mobileMenuLink: var(--dark-white);
+}
+
+html {
+  font-size: 10px;
+}
+
+html,
+body,
+body > div {
+  height: 100%;
+}
+
+html.sticky-scroll {
+  scroll-snap-type: y mandatory;
+}
+
+html {
+  scroll-snap-type: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  background-color: colors.$brown-darker;
+}
+
+.container-fluid {
+  padding: 0;
+
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  @include mixins.Text;
+}
+
+h1 {
+  @include mixins.H1;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  @include mixins.H2;
+}
+
+h3 {
+  @include mixins.H3;
+}
+
+h4 {
+  @include mixins.H4;
+}
+
+h5 {
+  @include mixins.H5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    .row {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
+
+    .col-xs,
+    .col-xs-1,
+    .col-xs-2,
+    .col-xs-3,
+    .col-xs-4,
+    .col-xs-5,
+    .col-xs-6,
+    .col-xs-7,
+    .col-xs-8,
+    .col-xs-9,
+    .col-xs-10,
+    .col-xs-11,
+    .col-xs-12,
+    .col-xs-offset-0,
+    .col-xs-offset-1,
+    .col-xs-offset-2,
+    .col-xs-offset-3,
+    .col-xs-offset-4,
+    .col-xs-offset-5,
+    .col-xs-offset-6,
+    .col-xs-offset-7,
+    .col-xs-offset-8,
+    .col-xs-offset-9,
+    .col-xs-offset-10,
+    .col-xs-offset-11,
+    .col-xs-offset-12,
+    .col-sm,
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12,
+    .col-sm-offset-0,
+    .col-sm-offset-1,
+    .col-sm-offset-2,
+    .col-sm-offset-3,
+    .col-sm-offset-4,
+    .col-sm-offset-5,
+    .col-sm-offset-6,
+    .col-sm-offset-7,
+    .col-sm-offset-8,
+    .col-sm-offset-9,
+    .col-sm-offset-10,
+    .col-sm-offset-11,
+    .col-sm-offset-12,
+    .col-md,
+    .col-md-1,
+    .col-md-2,
+    .col-md-3,
+    .col-md-4,
+    .col-md-5,
+    .col-md-6,
+    .col-md-7,
+    .col-md-8,
+    .col-md-9,
+    .col-md-10,
+    .col-md-11,
+    .col-md-12,
+    .col-md-offset-0,
+    .col-md-offset-1,
+    .col-md-offset-2,
+    .col-md-offset-3,
+    .col-md-offset-4,
+    .col-md-offset-5,
+    .col-md-offset-6,
+    .col-md-offset-7,
+    .col-md-offset-8,
+    .col-md-offset-9,
+    .col-md-offset-10,
+    .col-md-offset-11,
+    .col-md-offset-12,
+    .col-lg,
+    .col-lg-1,
+    .col-lg-2,
+    .col-lg-3,
+    .col-lg-4,
+    .col-lg-5,
+    .col-lg-6,
+    .col-lg-7,
+    .col-lg-8,
+    .col-lg-9,
+    .col-lg-10,
+    .col-lg-11,
+    .col-lg-12,
+    .col-lg-offset-0,
+    .col-lg-offset-1,
+    .col-lg-offset-2,
+    .col-lg-offset-3,
+    .col-lg-offset-4,
+    .col-lg-offset-5,
+    .col-lg-offset-6,
+    .col-lg-offset-7,
+    .col-lg-offset-8,
+    .col-lg-offset-9,
+    .col-lg-offset-10,
+    .col-lg-offset-11,
+    .col-lg-offset-12,
+    .col-xl,
+    .col-xl-1,
+    .col-xl-2,
+    .col-xl-3,
+    .col-xl-4,
+    .col-xl-5,
+    .col-xl-6,
+    .col-xl-7,
+    .col-xl-8,
+    .col-xl-9,
+    .col-xl-10,
+    .col-xl-11,
+    .col-xl-12,
+    .col-xl-offset-0,
+    .col-xl-offset-1,
+    .col-xl-offset-2,
+    .col-xl-offset-3,
+    .col-xl-offset-4,
+    .col-xl-offset-5,
+    .col-xl-offset-6,
+    .col-xl-offset-7,
+    .col-xl-offset-8,
+    .col-xl-offset-9,
+    .col-xl-offset-10,
+    .col-xl-offset-11,
+    .col-xl-offset-12 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+#chart {
+  position: relative;
+}
+
+.tooltip {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .value {
+    &-name,
+    &-value {
+      @include mixins.LinkDesktop;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    &-name {
+      width: 100%;
+      margin-bottom: 2px;
+    }
+    &-value {
+      position: relative;
+      bottom: 2px;
+    }
+    &-abbreviation {
+      @include mixins.Text2XS;
+      text-transform: uppercase;
+      color: colors.$green;
+    }
+  }
+}
+
+#lines-chart {
+  .tooltip-hide-group {
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+  }
+
+  &:hover {
+    .tooltip-hide-group {
+      opacity: 1;
+    }
+  }
+}
+
+.graph-group {
+  overflow: hidden;
+}
+
+.tooltip-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .company-age-label,
+  .founding-to-ipo-label,
+  .ipo-to-today-label {
+    @include mixins.Text2XS;
+    text-transform: uppercase;
+    color: colors.$green;
+  }
+
+  .ipo-to-today-label {
+    color: #2364aa;
+  }
+
+  .founding-to-ipo-number,
+  .ipo-to-today-number,
+  .company-age-number {
+    @include mixins.LinkDesktop;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    bottom: 2px;
+  }
+}
+
+.tooltip-row-title {
+  @include mixins.LinkDesktop;
+  font-weight: 600;
+  letter-spacing: 0;
+  position: relative;
+  bottom: 2px;
+}
+
+*:focus-visible {
+  outline: 1px solid colors.$green;
+}
+
+.white-background {
+  background-color: colors.$white !important;
+  header,
+  .subscribe-form,
+  .blog-content-menu {
+    background-color: inherit !important;
+  }
+}
+
+.SRLStage .SRLContainer .SRLElementWrapper img {
+  max-width: 90%;
+}

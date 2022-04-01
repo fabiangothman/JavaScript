@@ -1,0 +1,22 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$gray-light;
+  color: colors.$black;
+
+  .list {
+    position: relative;
+    margin-bottom: calc(12.7rem - 4.7rem);
+    @include media.onLg() {
+      margin-bottom: calc(26.8rem - 2rem);
+    }
+    .event {
+      position: relative;
+      margin-bottom: 8rem;
+    }
+  }
+  
+}

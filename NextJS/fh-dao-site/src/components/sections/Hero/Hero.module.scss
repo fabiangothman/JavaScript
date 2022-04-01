@@ -1,0 +1,222 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  z-index: 1;
+
+  .background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      157.89deg,
+      #B3D9EC 5.94%,
+      #E8C1D9 71.52%,
+      #FFFFFF 91.12%
+    );
+    z-index: 7;
+    
+    .content {
+      position: relative;
+      margin-top: 0.7rem;
+      z-index: 8;
+
+      .rowWrapper {
+        position: relative;
+        flex-direction: row-reverse;
+        @include media.onLg() {
+          flex-direction: row;
+        }
+
+        .title {
+          @include mixins.FinancierRegularXl;
+          margin-top: 0;
+          @include media.onLg() {
+            margin-top: 2.4rem;
+          }
+        }
+        .subtitle {
+          @include mixins.FinancierRegularXl;
+          @include mixins.TiemposHeadlineRegularXl;
+        }
+        .text {
+          @include mixins.RobotoRegularMd;
+          margin-top: 0.4rem;
+          margin-bottom: 3.6rem;
+          max-width: 100%;
+          @include media.onLg() {
+            margin-top: 2.4rem;
+            margin-bottom: 5.8rem;
+            max-width: 51.9rem;
+          }
+        }
+        .button {
+          margin-bottom: 4rem;
+          @include media.onLg() {
+            margin-bottom: 6.4rem;
+          }
+        }
+
+        .contFeatured {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          .heroImageCont {
+            position: relative;
+            margin-bottom: 3.3rem;
+            @include media.onLg() {
+              position: absolute;
+              margin-bottom: 0;
+            }
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            .heroImage {
+              position: relative;
+              width: 100%;
+              height: auto;
+              margin: 0 auto;
+              max-width: 33.1rem;
+              z-index: 10;
+              @include media.onLg() {
+                max-width: 64.4rem;
+              }
+            }
+          }
+
+          .lightWrapper {
+            position: relative;
+            pointer-events: none;
+            .sunLight1Pos {
+              position: absolute;
+              width: 70vw;
+              //background-color: rgba(0,0,0,0.5);
+              z-index: 9;
+              top: 12.7rem;
+              right: 0;
+              .image {
+                object-position: top left;
+              }
+            }
+            .sunLight2Pos {
+              position: absolute;
+              width: 70vw;
+              //background-color: rgba(0,0,0,0.5);
+              z-index: 9;
+              top: 22.7rem;
+              right: 4rem;
+              .image {
+                object-position: top left;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .bottomNature1 {
+      position: absolute;
+      z-index: 6;
+      bottom: -4px;
+      left: 0;
+    }
+    .bottomNature2 {
+      position: absolute;
+      z-index: 6;
+      bottom: -0.4rem;
+      overflow: hidden;
+      right: 0;
+      /*left: 0;
+      max-width: 100%;
+      right: auto;
+      svg {
+        margin-left: -50rem;
+      }
+      @include media.onLg() {
+        left: auto;
+        right: 0;
+        svg {
+          margin-left: 0;
+        }
+      }*/
+    }
+    .bottomNature2Mobile {
+      width: 100%;
+      position: absolute;
+      z-index: 6;
+      bottom: -0.4rem;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      overflow: hidden;
+      svg {
+        width: 100%;
+      }
+    }
+    .bottomTreesLayer1 {
+      position: absolute;
+      z-index: 5;
+      bottom: -4px;
+      left: 0;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .bottomTreesLayer2 {
+      position: absolute;
+      z-index: 4;
+      bottom: -4px;
+      right: 0;
+    }
+    .bottomMountainsLayer1 {
+      position: absolute;
+      z-index: 3;
+      bottom: -4px;
+      left: 0;
+      max-width: 100%;
+      svg {
+        max-width: 100%;
+      }
+    }
+    .bottomMountainsLayer2 {
+      position: absolute;
+      z-index: 2;
+      bottom: -4px;
+      left: 0;
+      max-width: 100%;
+      svg {
+        max-width: 100%;
+      }
+    }
+    .bottomMountainsLayer3 {
+      position: absolute;
+      z-index: 1;
+      bottom: 6rem;
+      right: 0;
+    }
+    .bottomMountainsLayer4 {
+      position: absolute;
+      z-index: 0;
+      bottom: -4px;
+      right: 0;
+    }
+  }
+  
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

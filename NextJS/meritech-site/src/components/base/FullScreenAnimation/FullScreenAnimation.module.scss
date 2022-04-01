@@ -1,0 +1,150 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.timeline {
+  position: sticky;
+  width: 100%;
+  max-width: 95%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  height: 0;
+  top: 60px;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  @include media.onLg() {
+    top: 105px;
+    justify-content: flex-start;
+  }
+  &Visible {
+    opacity: 1;
+  }
+  &Point {
+    position: relative;
+    right: 13.3px;
+    transition: transform 0.3s ease;
+    // bottom: -2px;
+    z-index: 2;
+    // left: -1px;
+    * {
+      stroke: colors.$green;
+    }
+    rect {
+      fill: colors.$green;
+    }
+  }
+  &FinalPoint {
+    position: absolute;
+    right: 28px;
+    bottom: calc(var(--pageHeight) * -1 + 95px);
+    @include media.onLg() {
+      left: 3.7px;
+      right: initial;
+      bottom: calc(-100vh + 175px);
+    }
+  }
+  &Line {
+    height: calc(var(--pageHeight) - 100px);
+    width: 2px;
+    background-image: linear-gradient(
+      180deg,
+      #12846b00,
+      #12846b,
+      #12846b,
+      #12846b00
+    );
+    @include media.onLg() {
+      height: calc(100vh - 180px);
+    }
+  }
+
+  &TracedLine {
+    position: absolute;
+    right: 38px;
+    bottom: calc(var(--pageHeight) * -1 + 55px);
+    @include media.onLg() {
+      right: initial;
+      bottom: calc(-100vh + 125px);
+      left: 14.5px;
+    }
+  }
+
+  &Highlight {
+    color: colors.$white;
+    position: relative;
+    left: 20px;
+    top: 59px;
+    @include mixins.Text2XS;
+    display: none;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 63px;
+      height: 1px;
+      background: colors.$white;
+      right: -73px;
+      top: 5px;
+    }
+    @include media.onLg() {
+      display: initial;
+    }
+  }
+
+  &SwiperUp {
+    padding: 0;
+    position: fixed;
+    bottom: 40px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    p {
+      color: colors.$dark-white;
+      @include mixins.Text2XS;
+      text-transform: uppercase;
+      margin-right: 9.6px;
+    }
+    @include media.onLg() {
+      display: none;
+    }
+  }
+
+  &Mouse {
+    color: colors.$dark-white;
+    @include mixins.Text2XS;
+    text-transform: uppercase;
+    position: absolute;
+    left: 105px;
+    bottom: calc(-100vh + 175px);
+    display: none;
+    @include media.onLg() {
+      display: initial;
+    }
+    &:before {
+      content: 'NEXT';
+      position: absolute;
+      color: colors.$dark-white;
+      left: -40px;
+      @include mixins.Text2XS;
+      top: 7px;
+    }
+  }
+}
+
+.component {
+  position: relative;
+  .layer {
+    width: 100%;
+    position: sticky;
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .currentView {
+    pointer-events: initial;
+  }
+}

@@ -1,0 +1,35 @@
+@use '~styles/media';
+
+.wrapper {
+  position: absolute;
+  z-index: -1;
+  width: 773px;
+  height: 534px;
+  top: 15rem;
+  background-image: url('~assets/images/testimonial-left-background.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &Left {
+    background-image: url('~assets/images/testimonial-left-background.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    right: 51%;
+    top: -160px;
+    width: 773px;
+    height: 684px;
+  }
+
+  &Right {
+    background-image: url('~assets/images/testimonial-right-background.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 58%;
+    top: -80px;
+    width: 667px;
+    height: 605px;
+  }
+}

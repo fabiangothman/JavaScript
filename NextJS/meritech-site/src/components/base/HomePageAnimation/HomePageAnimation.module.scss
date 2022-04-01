@@ -1,0 +1,97 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  padding: 0;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  .section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    transform: translate3d(0px, 100%, 0px);
+    opacity: 1;
+    &:after {
+      background: radial-gradient(
+        69.84% 136.5% at 58.5% 50%,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.85) 100%
+      );
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    &Actived {
+      opacity: 1;
+      transform: translate3d(0px, 0, 0px);
+    }
+    &Next {
+      transform: translate3d(0px, 100%, 0px);
+    }
+    &Prev {
+      opacity: 1;
+      transform: translate3d(0px, 0, 0px);
+    }
+  }
+
+  .title {
+    color: colors.$white;
+    @include mixins.TitleMobile;
+    max-width: 954px;
+    @include media.onLg() {
+      @include mixins.Text5XL;
+      font-size: 6.4rem;
+    }
+    @media screen and (min-width: 1500px) {
+      @include mixins.Text5XL;
+    }
+  }
+
+  .image {
+    position: relative;
+  }
+
+  .content {
+    padding-top: 130px;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include media.onLg() {
+      padding-top: 195px;
+      padding-bottom: 154px;
+      padding-left: 60px;
+      max-width: 95%;
+    }
+  }
+
+  .videoWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: colors.$black-pure;
+    & > div {
+      width: 100%;
+      height: 100vh;
+    }
+    video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+}

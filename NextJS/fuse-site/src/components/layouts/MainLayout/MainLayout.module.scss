@@ -1,0 +1,24 @@
+.wrapper {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  &.animatedBackground {
+    background-image: url('~assets/images/home_bg.jpg');
+    background-repeat: repeat-y;
+    background-position-x: center;
+    background-attachment: fixed;
+    animation-name: animatedBackground;
+    animation-duration: 120s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes animatedBackground {
+    0% {
+      background-position-y: 2344px;
+    }
+    100% {
+      background-position-y: 0;
+    }
+  }
+}

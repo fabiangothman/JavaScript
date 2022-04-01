@@ -1,0 +1,101 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$gray-900;
+  color: colors.$white-1000;
+  overflow: hidden;
+
+  .title {
+    @include mixins.Title;
+    text-align: center;
+    margin: 4rem 0 6rem 0;
+    @include media.onMd() {
+      margin: 11.7rem 0 11rem 0;
+    }
+  }
+
+  .contCards {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    @include media.onMd() {
+      margin-bottom: 17.9rem;
+    }
+
+    .card {
+      margin-bottom: 10rem;
+      @include media.onMd() {
+        margin-bottom: 0;
+      }
+      .contCardHead, .contCardBody {
+        position: relative;
+        margin: 0px auto;
+        max-width: 40rem;
+        overflow: hidden;
+        padding: 0 2rem;
+        @include media.onXl() {
+          padding: 0;
+        }
+
+        .contImage {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          margin-bottom: 1.2rem;
+          @include media.onMd() {
+            margin-bottom: 2.4rem;
+          }
+
+          .image {
+            width: 100%;
+            height: auto;
+            position: relative;
+            object-position: bottom;
+          }
+        }
+
+        .contInfo {
+          position: relative;
+          text-align: center;
+          .name, .text {
+            margin-bottom: 1.2rem;
+            @include media.onMd() {
+              margin-bottom: 2.4rem;
+            }
+          }
+          .name {
+            @include mixins.TextB;
+          }
+          .text {
+            font-family: "Source Sans Pro";
+            @include mixins.Text;
+          }
+        }
+
+      }
+    }
+  }
+
+  // Color formats
+  .green:hover{
+    background-color: colors.$green-1000;
+    color: colors.$black-1000;
+  }
+  .purple:hover{
+    background-color: colors.$purple-1000;
+    color: colors.$white-1000;
+  }
+  .red:hover{
+    background-color: colors.$red-1000;
+    color: colors.$white-1000;
+  }
+  .blue:hover{
+    background-color: colors.$blue-1000;
+    color: colors.$white-1000;
+  }
+
+}

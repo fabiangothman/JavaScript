@@ -1,0 +1,39 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.description {
+  background-color: colors.$gray-lightest;
+  padding: 0;
+}
+
+.formContainer {
+  padding: 2.4375rem 1.25rem;
+
+  @include media.onLg() {
+    padding: 5.25rem 2.5rem 3.75rem;
+  }
+}
+
+.textContainer {
+  padding: 2.4375rem 1.25rem 1.25rem;
+
+  @include media.onLg() {
+    padding: 5.25rem 2.5rem 3.75rem;
+  }
+
+  .header {
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+    line-height: 2.125rem;
+    text-align: left;
+
+    @include media.onLg() {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      line-height: 4.1875rem;
+    }
+  }
+}
+

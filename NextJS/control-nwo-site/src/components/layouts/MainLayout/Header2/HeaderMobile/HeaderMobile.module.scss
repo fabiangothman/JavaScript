@@ -1,0 +1,147 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+
+  .header, .disableBackground {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .header {
+    z-index: 200;
+
+    .contHeader {
+      position: relative;
+      color: colors.$black-light;
+      padding: 1.735rem 0;
+      background-color: colors.$gray-light;
+      color: colors.$black-light;
+      &.gray-light{
+        background-color: colors.$gray-light;
+      }
+      &.blue{
+        background-color: colors.$blue;
+      }
+      &.white{
+        background-color: colors.$white;
+      }
+      &.gray-lighter{
+        background-color: colors.$gray-lighter;
+      }
+
+      .contImage {
+        position: relative;
+        width: 100%;
+        max-width: 11.5rem;
+        height: 3.531rem;
+      }
+      .contImageAction {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        .imageAction {
+          cursor: pointer;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .dropdownMenu {
+      position: relative;
+      background-color: colors.$white;
+      border-top: 1px solid colors.$gray-light;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .wrapperMenu {
+        position: relative;
+        .menu{
+          position: relative;
+          display: block;
+          .item {
+            &:first-of-type {
+              border-top: 1px solid colors.$gray-light;
+            }
+          }
+          &.closeMenu {
+            display: none;
+          }
+        }
+
+        .submenu {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          display: none;
+          .item {
+            &:first-of-type {
+              border-top: 1px solid colors.$gray-light;
+            }
+          }
+          &.openSubmenu {
+            display: block;
+          }
+        }
+        @-webkit-keyframes submenu {
+          100% { left: 0; }
+        }
+        @keyframes submenu {
+          100% { left: 0; }
+        }
+      }
+      .contButtons {
+        position: relative;
+        padding: calc(2rem - 0.6rem) 0;
+        border-top: 1px solid colors.$gray-light;
+        .buttons {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          .btnDemo {
+            position: relative;
+            margin: 0.6rem 0.6rem 0.6rem 0;
+          }
+          .btnLogin {
+            position: relative;
+            width: 100%;
+            max-width: 14.8rem;
+            margin: 0.6rem 0  0.6rem 0.6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .disableBackground {
+    z-index: 199;
+    background: linear-gradient(
+      158.9deg,
+      #C496FF 18.59%,
+      #1E6FE9 86.08%
+    );
+    opacity: 0.4;
+  }
+}
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

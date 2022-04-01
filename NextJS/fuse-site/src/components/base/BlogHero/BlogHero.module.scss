@@ -1,0 +1,108 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+
+.hero {
+  padding-top: mixins.$header-mobile-height;
+  position: relative;
+  z-index: 1;
+  @include media.onLg() {
+    padding-top: mixins.$header-desktop-height;
+  }
+
+  .container {
+    position: relative;
+
+    .contentWrapper {
+      min-height: 25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @include media.onLg() {
+        min-height: 38rem;
+      }
+    }
+    .author {
+      display: block;
+      @include mixins.SubheadMobile;
+      @include media.onLg() {
+        @include mixins.Subhead;
+      }
+
+      padding-bottom: 2.5rem;
+
+      @include media.onLg() {
+        padding-bottom: 4.5rem;
+      }
+    }
+
+    .title {
+      margin-bottom: 2rem;
+      margin-top: 0;
+      font-family: 'Tomato Grotesk';
+      & > a {
+        color: colors.$off-white;
+      }
+
+      @include mixins.H2Mobile;
+      @include media.onLg() {
+        @include mixins.H2;
+      }
+    }
+
+    .imageLayer {
+      position: absolute;
+      top: 0;
+      left: 8px;
+      right: 8px;
+      bottom: 0;
+
+      z-index: -1;
+
+      .imageLineDesktop {
+        display: none;
+        @include media.onLg() {
+          display: block;
+        }
+      }
+
+      .imageLineMobile {
+        display: block;
+        @include media.onLg() {
+          display: none;
+        }
+      }
+
+      .linesColumn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-right: 3rem;
+      }
+
+      .imageColumn {
+        position: relative;
+
+        .imageWrapper {
+          display: flex;
+          align-items: flex-end;
+          width: 100%;
+          position: absolute;
+          bottom: -8rem;
+          @include media.onLg() {
+            bottom: -12rem;
+          }
+
+          .imageInner {
+            flex-grow: 1;
+            height: 20rem;
+            position: relative;
+            @include media.onLg() {
+              height: 39.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

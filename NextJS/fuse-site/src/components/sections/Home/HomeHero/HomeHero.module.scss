@@ -1,0 +1,62 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+
+.hero {
+  position: relative;
+  padding-top: 6rem;
+  @include media.onLg() {
+    padding-top: 6rem;
+  }
+
+  .titleColumn {
+    position: relative;
+    z-index: 1;
+
+    .bars {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      transform: translateX(20%);
+      display: none;
+      z-index: -1;
+
+      @include media.onLg() {
+        display: block;
+      }
+    }
+
+    .title {
+      margin: 0;
+      font-family: 'Tomato Grotesk';
+      @include mixins.H1Mobile;
+      @include media.onLg() {
+        @include mixins.H1;
+      }
+    }
+  }
+
+  .logo {
+    width: 22rem;
+    display: none;
+
+    @include media.onLg() {
+      display: block;
+    }
+  }
+
+  .description {
+    @include mixins.Caption;
+    color: colors.$off-white;
+    opacity: 0.8;
+    margin-top: 4rem;
+    font-weight: 400;
+    @include media.onLg() {
+      margin-top: 15rem;
+    }
+  }
+
+  .ctaButton {
+    margin-top: 2.8rem;
+  }
+}

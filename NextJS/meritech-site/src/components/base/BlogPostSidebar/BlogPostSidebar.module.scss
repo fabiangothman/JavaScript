@@ -1,0 +1,69 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  padding-top: 2.4rem;
+  padding-bottom: 4.8rem;
+  height: 100%;
+  @include media.onLg() {
+    padding-top: 8.9rem;
+    padding-bottom: 7.2rem;
+  }
+  .backButton {
+    border: 0;
+    width: auto;
+    height: auto;
+    color: colors.$brown-light;
+    @include mixins.TextMd;
+    font-weight: 600;
+
+    &Wrapper {
+      position: relative;
+      //   left: 36px;
+      margin-right: 36px;
+      @include media.onLg() {
+        left: 0;
+        margin-right: 0;
+      }
+    }
+    &Icon {
+      left: 0px;
+      margin-right: 36px;
+      top: 5px;
+      transform: rotate(-90deg);
+      @include media.onLg() {
+        // span {
+        //   position: absolute;
+        //   left: -36px;
+        // }
+      }
+    }
+    @include media.onLg() {
+      left: -4.4rem;
+      position: relative;
+    }
+    &:after {
+      top: -1.6rem;
+      position: absolute;
+      width: 85px;
+      height: 1px;
+      background: colors.$green;
+      left: 4.4rem;
+      @include media.onLg() {
+        content: '';
+      }
+    }
+  }
+  .subscribe {
+    position: sticky;
+    top: calc(100vh - 340px);
+    background: var(--background);
+    z-index: 2;
+    bottom: 20px;
+    display: none;
+    @include media.onLg() {
+      display: flex;
+    }
+  }
+}

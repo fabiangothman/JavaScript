@@ -1,0 +1,17 @@
+@use 'styles/colors';
+@use 'styles/media';
+
+.description p {
+  margin: 0 0 2rem 0;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+.wrapper {
+  blockquote {
+    border-left: 0.25rem solid colors.$gray-400;
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}

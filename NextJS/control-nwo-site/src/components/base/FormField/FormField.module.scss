@@ -1,0 +1,39 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.wrapper {
+  margin-bottom: 1.25rem;
+  position: relative;
+  width: 100%;
+
+  &:first-child {
+    margin-right: 1.25rem;
+  }
+  
+  .input,
+  textarea {
+    font-family: fonts.$text;
+    font-size: 1.5rem;
+    line-height: 2.125rem;
+    letter-spacing: 0.03em;
+    background-color: colors.$blue-light;
+    border: none;
+    padding: 1.5rem;
+    width: 100%;
+
+    &::placeholder {
+      color: colors.$gray-dark;
+      opacity: .4;
+    }
+  }
+
+  textarea {
+    min-height: 17.875rem;
+  }
+  
+  .formFeedback {
+    bottom: 0;
+    position: absolute;
+  }
+}

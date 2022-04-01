@@ -1,0 +1,7 @@
+<script>
+  var PARTNER_ID = "PARTNER_ID"; // Replace this with your partner ID
+
+  window._ANTOURAGE_CONFIG = {
+    partner_id: PARTNER_ID,
+  };
+</script>

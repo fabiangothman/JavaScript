@@ -1,0 +1,94 @@
+@use 'styles/colors';
+@use 'styles/media';
+
+.container {
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  padding: 40px 24px 40px 0;
+
+  @include media.onMd() {
+    padding: 110px 40px 123px;
+  }
+}
+.infoContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  margin-left: 25px;
+
+  @include media.onMd() {
+    margin-left: 53px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+.objectivesContainer {
+  display: flex;
+  flex-direction: column;
+  
+  @include media.onSm() {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+.containerText {
+  width: 100%;
+  position: relative;
+  display: flex;
+  margin-bottom: 80px;
+
+  @include media.onSm() {
+    margin-bottom: 70px;
+    width: 50%;
+  }
+  @include media.onLg() {
+    margin-bottom: 120px;
+  }
+}
+
+.number {
+  font-weight: 600;
+  font-size: 128px;
+  line-height: 192px;
+  letter-spacing: -0.01em;
+  color: #17ddab;
+  opacity: 0.4;
+  position: absolute;
+  top: -5px;
+  z-index: 0;
+
+  @include media.onMd() {
+    top: -60px;
+    font-size: 240px;
+    line-height: 150%;
+  }
+}
+
+.text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.01em;
+  margin-left: 25px;
+  max-width: 100%;
+  z-index: 1;
+
+  @include media.onMd() {
+    margin-left: 53px;
+    font-size: 36px;
+    line-height: 130%;
+    max-width: 542px;
+  }
+}

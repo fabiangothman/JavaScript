@@ -1,0 +1,86 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  background-color: colors.$gray-lighter;
+  padding-top: 5.8rem;
+  @include media.onLg() {
+    padding-top: 0;
+  }
+  overflow: hidden;
+
+  .parallax {
+    position: relative;
+    overflow: hidden;
+    height: 31rem;
+    @include media.onLg() {
+      height: 71.1rem;
+    }
+  
+    .contImage {
+      position: relative;
+      will-change: transform;
+      //transform: translateY(0%);
+      width: auto;
+      height: 100%;
+      //height: calc(100% + 700px);
+      .image {
+        background: linear-gradient(
+          172.6deg,
+          #A965FF 29.63%,
+          #4689EF 94.25%
+        );
+        object-position: top left;
+      }
+    }
+  }
+
+  .info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .highlighted {
+      font-family: fonts.$text;
+      margin-bottom: 2.4rem;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 2.52rem;
+      @include media.onLg() {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 2.8rem;
+      }
+    }
+    .text {
+      font-family: fonts.$header;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 3.84rem;
+      margin-bottom: 5.7rem;
+      @include media.onLg() {
+        font-size: 3.2rem;
+        font-weight: 400;
+        line-height: 5.12rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.noPad {
+  padding: 0 !important;
+}
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

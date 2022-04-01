@@ -1,0 +1,267 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$black-1000;
+  color: colors.$white-1000;
+  overflow: hidden;
+  height: 100%;
+
+  .container {
+    position: relative;
+    height: 100%;
+    padding-top: 17.9rem;
+    padding-bottom: 9.6rem;
+    text-align: center;
+    z-index: 3;
+    @include media.onMd() {
+      padding-top: 37.265rem;
+      padding-bottom: 20.2rem;
+    }
+    .title{
+      margin-bottom: 14.7rem;
+      @include mixins.H4;
+      @include media.onMd() {
+        margin-bottom: 19.635rem;
+        @include mixins.TitleDesktop;
+      }
+    }
+    .text {
+      @include mixins.NormalText;
+    }
+    
+  }
+
+  .shapesImage {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 19rem;
+    transform: translate(-50%,-50%);
+    display: none;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      top: 37rem;
+      display: block;
+    }
+    & > div {
+      @include media.onMd() {
+        max-width: 78.1rem !important;
+      }
+    }
+    .image {
+      object-position: center;
+    }
+  }
+  .shapesImageMobile {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 19rem;
+    transform: translate(-50%,-50%);
+    display: block;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      display: none;
+    }
+    & > div {
+      max-width: 37.5rem !important;
+    }
+    .image {
+      object-position: center;
+    }
+  }
+
+  .blobsImage {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    animation-duration: 12s;
+    animation-delay: -4s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      top: 40rem;
+      display: block;
+    }
+    & > div {
+      @include media.onMd() {
+        max-width: 71.2rem !important;
+        left: -10rem;
+      }
+    }
+    .image {
+      object-position: center;
+    }
+  }
+  .blobsImageMobile {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 14rem;
+    transform: translate(-50%,-50%);
+    display: block;
+    animation-duration: 12s;
+    animation-delay: -4s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      display: none;
+    }
+    & > div {
+      max-width: 37.9rem !important;
+      left: 3rem;
+    }
+    .image {
+      object-position: center;
+    }
+  }
+
+  .laKingsImage {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 24rem;
+    transform: translate(-50%,-50%);
+    animation-duration: 12s;
+    animation-delay: -6s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      top: 49rem;
+    }
+    & > div {
+      max-width: 9.719rem !important;
+      left: 14rem;
+      @include media.onMd() {
+        max-width: 13.581rem !important;
+        left: 27rem;
+      }
+    }
+    .image {
+      object-position: center;
+    }
+  }
+  .playingBallImage {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 17rem;
+    transform: translate(-50%,-50%);
+    animation-duration: 12s;
+    animation-delay: -3s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      top: 35rem;
+    }
+    & > div {
+      max-width: 10.734rem !important;
+      left: 22rem;
+      @include media.onMd() {
+        max-width: 14.341rem !important;
+        left: 30rem;
+      }
+    }
+    .image {
+      object-position: center;
+    }
+  }
+  .teamImage {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 19rem;
+    transform: translate(-50%,-50%);
+    animation-duration: 12s;
+    animation-delay: -1s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      top: 37rem;
+    }
+    & > div {
+      max-width: 11.752rem !important;
+      right: 20rem;
+      @include media.onMd() {
+        max-width: 16.423rem !important;
+        right: 33rem;
+      }
+    }
+    .image {
+      object-position: center;
+    }
+  }
+  .conferenceImage {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 13rem;
+    transform: translate(-50%,-50%);
+    animation-duration: 12s;
+    animation-delay: -7s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      top: 48rem;
+    }
+    & > div {
+      max-width: 10.734rem !important;
+      left: 9rem;
+      @include media.onMd() {
+        max-width: 16.255rem !important;
+        left: 9rem;
+      }
+    }
+    .image {
+      object-position: center;
+    }
+  }
+  .volleyballImage {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 25.5rem;
+    transform: translate(-50%,-50%);
+    animation-duration: 12s;
+    animation-delay: -5s;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    @include media.onMd() {
+      top: 35rem;
+    }
+    & > div {
+      max-width: 10.262rem !important;
+      right: 8rem;
+      @include media.onMd() {
+        max-width: 14.34rem !important;
+        right: 15rem;
+      }
+    }
+    .image {
+      object-position: center;
+    }
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-50%, calc(-50% + 14px)) rotate(2deg);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+}

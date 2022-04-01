@@ -1,0 +1,39 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.team {
+  background-color: colors.$gray-background;
+  padding: 1.25rem;
+
+  @include media.onLg() {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .header {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 1.875rem;
+    text-align: left;
+  }
+  
+  .personCell {
+    @include media.onLg() {
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+
+      &:first-child {
+        padding-left: 0.5rem;
+      }
+
+      &:last-child {
+        padding-right: 0.5rem;
+      }
+    }
+  }
+
+  .person {
+    margin-bottom: 3.75rem;
+  }
+}
+

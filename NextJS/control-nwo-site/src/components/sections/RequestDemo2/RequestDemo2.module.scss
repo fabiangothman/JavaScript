@@ -1,0 +1,24 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  padding: 6rem 0;
+  @include media.onLg() {
+    padding: 8rem 0;
+  }
+
+  .title {
+    text-align: center;
+    font-family: fonts.$header;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    font-size: 2.4rem;
+    line-height: 3.36rem;
+    @include media.onLg() {
+      font-size: 4.8rem;
+      line-height: 6.72rem;
+    }
+  }
+}

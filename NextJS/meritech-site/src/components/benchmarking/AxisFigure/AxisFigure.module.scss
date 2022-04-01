@@ -1,0 +1,44 @@
+@use 'styles/colors';
+
+.wrapper {
+  .aspectRatioContainer {
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+
+    .inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-left: 1px solid colors.$tan-light;
+      border-bottom: 1px solid colors.$tan-light;
+
+      .axis {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        right: 30%;
+        bottom: 10%;
+
+        &.axisX {
+          border-bottom: 1px solid colors.$tan-dark;
+        }
+
+        &.axisY {
+          //   left: 20%;
+          right: 20%;
+          border-left: 1px solid colors.$tan-dark;
+        }
+
+        &.highlighted {
+          border-color: colors.$green;
+          border-width: 1.5px;
+        }
+      }
+    }
+  }
+}

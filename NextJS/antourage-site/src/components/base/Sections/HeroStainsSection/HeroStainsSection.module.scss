@@ -1,0 +1,118 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$black-1000;
+  color: colors.$white-1000;
+  text-align: center;
+  height: 100vh;
+
+  .contBlobs {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    min-height: 50rem;
+    z-index: 3;
+
+    .titlesArea {
+      margin-bottom: 2.4rem;
+      @include media.onMd() {
+        margin-bottom: 4.8rem;
+      }
+      p {
+        @include mixins.Title;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .text {
+      @include mixins.NormalText;
+      margin-bottom: 2.4rem;
+      @include media.onMd() {
+        margin-bottom: 4.8rem;
+      }
+    }
+
+    .contButton {
+      position: relative;
+      & :hover {
+        background-color: colors.$green-1000;
+        color: colors.$black-1000;
+
+        svg path{
+          fill: colors.$black-1000;
+        }
+      }
+
+      .buttonText {
+        margin-right: 0.5rem;
+        @include media.onMd() {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+  
+  .topStain {
+    position: absolute;
+    z-index: 1;
+    max-width: 45rem !important;
+    top: -40rem;
+    right: -20rem;
+    @include media.onLg() {
+      top: -40rem;
+      right: -22rem;
+      max-width: none !important;
+    }
+  }
+  .leftImage {
+    position: absolute;
+    width: 16.97rem;
+    height: 20.3rem;
+    z-index: 1;
+    bottom: -0rem;
+    left: -5rem;
+    @include media.onLg() {
+      width: 42.8rem;
+      height: 51.24rem;
+      bottom: -10rem;
+      left: -10rem;
+    }
+    .image {
+      object-position: top right;
+      width: 100%;
+      position: relative;
+      @include mixins.ImageMaskV3(no-repeat, auto 100%, right);
+    }
+  }
+  .rightImage {
+    position: absolute;
+    width: 16.97rem;
+    height: 20.3rem;
+    z-index: 1;
+    top: 10rem;
+    right: -5rem;
+    @include media.onLg() {
+      width: 42.8rem;
+      height: 51.24rem;
+      top: 7rem;
+      right: -12rem;
+    }
+    .image {
+      object-position: top left;
+      width: 100%;
+      position: relative;
+      @include mixins.ImageMaskV4(no-repeat, auto 100%, left);
+    }
+  }
+  
+}

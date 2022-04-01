@@ -1,0 +1,118 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+@use 'styles/fonts';
+
+.component {
+  position: relative;
+  background-color: transparent;
+  z-index: 3;
+
+  .container {
+    position: relative;
+    padding-top: 8.8rem;
+    padding-bottom: 6.4rem;
+    @include media.onLg() {
+      padding-top: 14.7rem;
+      padding-bottom: 20rem;
+    }
+
+    .iconWrapper {
+      position: relative;
+      text-align: left;
+      width: auto;
+      width: 19rem;
+      height: 4.302rem;
+      @include media.onLg() {
+        width: 24.731rem;
+        height: 5.6rem;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .menuLinksDesktop {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow: hidden;
+      justify-content: flex-end;
+      @include media.onLg() {
+        justify-content: flex-start;
+      }
+      .menuItemTxt{
+        &:not(:last-of-type) {
+          margin-right: 5.7rem;
+        }
+        &:last-of-type {
+          margin-right: 5.1rem;
+        }
+        .item {
+          @include mixins.MenuText;
+          color: colors.$black;
+        }
+      }
+      .menuItem{
+        &:not(:last-of-type) {
+          margin-right: 3.5rem;
+          @include media.onLg() {
+            margin-right: 4.5rem;
+          }
+        }
+      }
+    }
+
+    .menuLinksMobile {
+      position: relative;
+      .topContent {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid colors.$black;
+        padding-top: 4.8rem;
+        padding-bottom: 2.4rem;
+
+        .menuItemTxt{
+          &:not(:last-of-type) {
+            margin-right: 3.8rem;
+          }
+          .item {
+            @include mixins.MenuText;
+            color: colors.$black;
+          }
+        }
+      }
+      .bottomContent {
+        margin-top: 2.4rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        .menuItem {
+          &:not(:last-of-type) {
+            margin-right: 3.6rem;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

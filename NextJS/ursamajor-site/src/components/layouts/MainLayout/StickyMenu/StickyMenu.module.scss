@@ -1,0 +1,105 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  nav {
+    position: fixed;
+    z-index: 4;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    mix-blend-mode: difference;
+    display: flex;
+    align-items: center;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      @include media.onLg() {
+        display: flex;
+        flex-direction: column;
+      }
+
+      li {
+        margin: 11px 24px;
+      }
+    }
+
+    .active {
+      padding-left: 12px;
+      position: relative;
+      &:before {
+        content: '';
+        width: 30px;
+        height: 2px;
+        background-color: colors.$white;
+        position: absolute;
+        top: 7px;
+        left: -30px;
+      }
+    }
+
+    .link {
+      color: colors.$white;
+      @include mixins.displayMono;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+
+      @include media.onLg() {
+        &:hover {
+          color: colors.$orange;
+        }
+      }
+    }
+  }
+
+  .bearIcon {
+    position: fixed;
+    margin: 115px auto 0;
+    z-index: 4;
+    margin: auto;
+    bottom: 20%;
+
+    .bearContainer {
+      margin: 0 24px;
+
+      svg {
+        display: inline-block;
+        height: 28px;
+        width: 48px;
+      }
+    }
+  }
+
+  .logoIcon {
+    mix-blend-mode: difference;
+    color: colors.$white;
+    position: fixed;
+    margin: auto 0;
+    top: 20%;
+    z-index: 1;
+
+    .smallLogo {
+      margin: 0 24px;
+
+      a {
+        display: inline-block;
+      }
+
+      svg {
+        display: inline-block;
+        width: 48px;
+      }
+    }
+  }
+}

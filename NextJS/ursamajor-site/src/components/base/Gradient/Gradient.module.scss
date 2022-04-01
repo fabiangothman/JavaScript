@@ -1,0 +1,21 @@
+@use 'styles/media';
+
+.gradientMain {
+  position: absolute;
+  width: 25%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: none;
+  z-index: 3;
+  pointer-events: none;
+
+  @include media.onLg() {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+}

@@ -1,0 +1,119 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/fonts';
+
+.button {
+  align-self: flex-start;
+  cursor: pointer;
+  display: flex;
+  flex-basis: auto;
+  font-family: fonts.$menu;
+  font-size: 1.8rem;
+  line-height: 2.194rem;
+  font-style: normal;
+  font-weight: 500;
+  border-style: none;
+  padding: 1rem 1.6rem;
+}
+
+.labelWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon {
+  margin-right: 1.6rem;
+  width: 1.9rem;
+  
+  @include media.onLg() {
+    margin-right: 2.125rem;
+    width: 1.1875rem;
+  }
+}
+
+.colorBlack {
+  border-color: colors.$black;
+}
+
+.colorBlue {
+  border-color: colors.$blue;
+  background-color: colors.$blue;
+}
+
+.outlined {
+  border-width: 0.0625rem;
+  border-style: solid;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  font-weight: 400;  
+}
+
+.rounded {
+  border-radius: 3.125rem;
+  z-index: 1;
+  color: colors.$gray-dark;
+
+  &:before {
+    background-color: colors.$blue;
+    content: "";
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    top: 0;
+    transition: all .2s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: colors.$white !important;
+    font-weight: 400;
+    .icon {
+      filter: brightness(0) invert(1);
+    }
+    &:before {
+      left: 0;
+    }
+  }
+}
+
+.reversed {
+  &.button {
+    padding: 0.625rem 0 !important;
+  }
+
+  .labelWrapper {
+    flex-direction: row-reverse;
+
+    .icon {
+      margin-right: 0;
+      margin-left: 0.9375rem;
+      width: 0.8125rem;
+      
+      @include media.onLg() {
+        margin-left: 1.125rem;
+        width: 1.1875rem;
+      }
+    }
+  }
+}
+
+.circled {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 3.75rem;
+  justify-content: center;
+  margin: 0;
+  min-width: auto;
+  padding: 0;
+  width: 3.75rem;
+
+  .icon {
+    margin-right: 0;
+    width: auto;
+  }
+}

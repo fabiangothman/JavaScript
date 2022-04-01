@@ -1,0 +1,55 @@
+{
+ "name": "FUTURE QUEST",
+ "icons": [
+  {
+   "src": "/manifest/apple-touch-icon-57x57.png",
+   "sizes": "57x57",
+   "type": "image/png"
+  },
+  {
+    "src": "/manifest/apple-touch-icon-72x72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+   },
+  {
+    "src": "/manifest/apple-touch-icon-114x114.png",
+    "sizes": "114x114",
+    "type": "image/png"
+   },
+  {
+    "src": "/manifest/apple-touch-icon-120x120.png",
+    "sizes": "120x120",
+    "type": "image/png"
+   },
+  {
+    "src": "/manifest/apple-touch-icon-144x144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+   },
+  {
+    "src": "/manifest/apple-touch-icon-152x152.png",
+    "sizes": "152x152",
+    "type": "image/png"
+   },
+  {
+    "src": "/manifest/favicon-16x16.png",
+    "sizes": "16x16",
+    "type": "image/png"
+   },
+  {
+    "src": "/manifest/favicon-32x32.png",
+    "sizes": "32x32",
+    "type": "image/png"
+   },
+  {
+    "src": "/manifest/favicon.ico",
+    "sizes": "32x32",
+    "type": "image/x-icon"
+   },
+  {
+    "src": "/manifest/mstile-144x144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+   }
+]
+}

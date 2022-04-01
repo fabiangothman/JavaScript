@@ -1,0 +1,67 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$white;
+  color: colors.$black;
+  padding: 9.6rem 0 0;
+  @include media.onLg() {
+    padding: 20.5rem 0 10.9rem;
+  }
+  .row {
+    margin-bottom: 0;
+    @include media.onLg() {
+      margin-bottom: 18rem;
+    }
+    &.reverseRow {
+      flex-direction: initial;
+      @include media.onLg() {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .textArea {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      .text {
+        text-align: left;
+        font-family: fonts.$text;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 2.8rem;
+        margin-bottom: 10rem;
+        @include media.onLg() {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .contImage {
+      position: relative;
+      margin: auto;
+      width: 100%;
+      max-width: 32.6rem;
+      margin-bottom: 8rem;
+      //height: 21.733rem;
+      @include media.onLg() {
+        max-width: 47.55rem;
+        margin-bottom: 0;
+        //height: 31.7rem;
+      }
+      .image {
+        object-position: center center;
+      }
+    }
+  }
+
+}
+
+.noPad {
+  padding: 0 !important;
+}

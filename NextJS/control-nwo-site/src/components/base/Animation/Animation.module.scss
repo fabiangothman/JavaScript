@@ -1,0 +1,18 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.videoWrapper {
+  position: relative;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.animation {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+}

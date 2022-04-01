@@ -1,0 +1,26 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.person {
+  margin-bottom: 1.25rem;
+
+  .imageWrapper {
+    margin-bottom: 1.25rem;
+
+    @include media.onLg() {
+      margin-bottom: 3.75rem;
+      min-height: 37.5rem;
+    }
+  }
+  
+  .caption {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1rem;
+  }
+
+  .description {
+    margin-top: 1.25rem;
+  }
+}

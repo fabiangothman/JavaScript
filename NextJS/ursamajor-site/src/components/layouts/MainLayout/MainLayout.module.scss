@@ -1,0 +1,15 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.grey {
+  background-color: colors.$white;
+}
+
+.black {
+  background-color: colors.$black;
+}
+
+.darkGrey {
+  background-color: colors.$grey1;
+}

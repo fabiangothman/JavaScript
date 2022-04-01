@@ -1,0 +1,19 @@
+{
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "~types": ["./types/"],
+      "~api/*": ["./api/*"],
+      "~hooks/*": ["./hooks/*"],
+      "~baseComponents/*": ["./components/base/*"],
+      "~charts/*": ["./components/charts/*"],
+      "~benchmarkingComponents/*": ["./components/benchmarking/*"],
+      "~layouts/*": ["./components/layouts/*"],
+      "~sections/*": ["./components/sections/*"],
+      "~styles/*": ["./styles/*"],
+      "~grid": ["./components/grid"],
+      "~assets/*": ["./assets/*"]
+    }
+  }
+}

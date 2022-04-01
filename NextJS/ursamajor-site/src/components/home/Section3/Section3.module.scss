@@ -1,0 +1,618 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.sectionContainer {
+  overflow: hidden;
+  color: colors.$white;
+  background-color: colors.$grey1;
+  padding: 0 25px 0 25px !important;
+
+  .imageCol {
+    pointer-events: none;
+    padding-bottom: 35px;
+
+    @include media.onLg() {
+      padding-bottom: 0;
+      transform: translateY(-100px);
+    }
+  }
+
+  @include media.onLg() {
+    padding: 0 25px 0 0 !important;
+    margin-bottom: -170px;
+  }
+
+  .mainTitleSection {
+    .mainTitle {
+      @include mixins.displayHeavy;
+      text-transform: uppercase;
+      margin: 0 0 34px 0;
+      line-height: 37.8px;
+      font-size: 36px;
+
+      @include media.onLg() {
+        max-width: 400px;
+        font-size: 48px;
+        line-height: 50.4px;
+      }
+    }
+  }
+
+  .engineCard {
+    &Image {
+      position: relative;
+      // height: 728px;
+      width: 283px;
+      margin: auto;
+      z-index: 1;
+
+      &First {
+        margin-bottom: -20px;
+        margin-top: 250px;
+        width: 230px;
+        transform: translateY(-60px);
+        left: 20px;
+
+        @include media.onSm() {
+          width: 283px;
+        }
+
+        @include media.onLg() {
+          margin-bottom: 0;
+          margin-top: 0;
+          margin-bottom: 80px;
+        }
+
+        &:after {
+          content: '';
+          border-radius: 50%;
+          width: 317px;
+          height: 317px;
+          border: 6px solid colors.$white;
+          position: absolute;
+          left: -64px;
+          bottom: -30px;
+          z-index: -1;
+
+          @include media.onSm() {
+            width: 400px;
+            height: 400px;
+            left: -82px;
+            bottom: -30px;
+          }
+
+          @include media.onLg() {
+            width: 380px;
+            height: 380px;
+            left: -68px;
+            bottom: -30px;
+          }
+
+          @include media.onXlWithMargin() {
+            width: 400px;
+            height: 400px;
+            left: -81px;
+            bottom: -30px;
+          }
+        }
+
+        svg {
+          position: absolute;
+          bottom: -30px;
+          right: -24px;
+          z-index: 1;
+
+          @include media.onSm() {
+            right: -36px;
+          }
+
+          @include media.onLg() {
+            right: -30px;
+          }
+
+          @include media.onXlWithMargin() {
+            right: -37px;
+          }
+        }
+      }
+
+      &Second {
+        margin-bottom: -40px;
+        margin-top: 130px;
+        width: 210px;
+        transform: translateX(-10px) translateY(-70px);
+        left: 20px;
+
+        @include media.onSm() {
+          width: 273px;
+        }
+
+        @include media.onLg() {
+          margin-top: 20px;
+          margin-bottom: 80px;
+        }
+
+        @include media.onXl() {
+          margin-top: 20px;
+          margin-bottom: 80px;
+        }
+
+        &:after {
+          content: '';
+          border-radius: 50%;
+          width: 317px;
+          height: 317px;
+          border: 6px solid colors.$white;
+          position: absolute;
+          left: -64px;
+          bottom: -30px;
+          z-index: -1;
+
+          @include media.onSm() {
+            width: 400px;
+            height: 400px;
+            left: -78px;
+            bottom: -30px;
+          }
+
+          @include media.onLg() {
+            width: 380px;
+            height: 380px;
+            left: -68px;
+            bottom: -30px;
+          }
+
+          @include media.onXlWithMargin() {
+            width: 400px;
+            height: 400px;
+            left: -77px;
+            bottom: -30px;
+          }
+        }
+
+        svg {
+          position: absolute;
+          bottom: -30px;
+          right: -44px;
+          z-index: 1;
+
+          @include media.onSm() {
+            bottom: -30px;
+            right: -50px;
+          }
+
+          @include media.onLg() {
+            bottom: -30px;
+            right: -40px;
+          }
+
+          @include media.onXlWithMargin() {
+            bottom: -30px;
+            right: -51px;
+          }
+        }
+      }
+
+      &Third {
+        margin-bottom: -140px;
+        margin-top: 200px;
+        width: 230px;
+        transform: translateX(-20px) translateY(-140px);
+        left: 20px;
+
+        @include media.onSm() {
+          width: 320px;
+        }
+
+        @include media.onLg() {
+          margin-top: 80px;
+          margin-bottom: 80px;
+        }
+
+        &:after {
+          content: '';
+          border-radius: 50%;
+          width: 317px;
+          height: 317px;
+          border: 6px solid colors.$white;
+          position: absolute;
+          left: -42px;
+          bottom: -30px;
+          z-index: -1;
+
+          @include media.onSm() {
+            width: 400px;
+            height: 400px;
+            left: -36px;
+            bottom: -30px;
+          }
+
+          @include media.onLg() {
+            width: 380px;
+            height: 380px;
+            left: -27px;
+            bottom: -30px;
+          }
+
+          @include media.onXlWithMargin() {
+            width: 400px;
+            height: 400px;
+            left: -36px;
+            bottom: -30px;
+          }
+        }
+
+        svg {
+          position: absolute;
+          bottom: -30px;
+          right: -40px;
+          z-index: 1;
+
+          @include media.onSm() {
+            right: -40px;
+          }
+
+          @include media.onLg() {
+            right: -25px;
+          }
+
+          @include media.onXlWithMargin() {
+            right: -40px;
+          }
+        }
+      }
+    }
+
+    &Title {
+      @include mixins.bodyHeavy;
+      font-size: 48px;
+      line-height: 55.4px;
+      order: 2;
+      margin: 0 0 5px 0;
+
+      @include media.onLg() {
+        order: 0;
+      }
+    }
+
+    &Feature {
+      border-bottom: 1px solid colors.$grey2;
+      padding: 1.6rem 0;
+
+      &:first-child {
+        border-top: 3px solid colors.$white;
+        padding-top: 1.2rem;
+      }
+
+      &:last-child {
+        .oxRich {
+          display: none;
+        }
+        &:last-child {
+          p {
+            color: colors.$grey4;
+          }
+        }
+      }
+
+      .weight {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .oxRich {
+          @include mixins.bodyHeavy;
+          font-size: 1.8rem;
+          line-height: 18.9px;
+          text-align: end;
+          margin: 0 0 -20px 0;
+
+          @include media.onLg() {
+            line-height: 25.2px;
+            font-size: 2.4rem;
+            margin: 0 0 -15px 0;
+          }
+
+          @media only screen and (min-width: 1358px) {
+            font-size: 2.4rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &FeatureTitle {
+      @include mixins.bodyHeavy;
+      font-size: 24px;
+      line-height: 105%;
+      font-weight: 900;
+      margin: 6px 0;
+      min-width: 150px;
+
+      @include media.onLg() {
+        min-width: 200px;
+      }
+
+      .unit {
+        @include mixins.body;
+        display: inline-block;
+        margin: 0;
+        font-size: 2.4rem;
+        line-height: 25.2px;
+      }
+    }
+
+    &FeatureDescription {
+      @include mixins.monoLink;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    &ReusableDescription {
+      @include mixins.displayLight;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 30px;
+      text-transform: initial;
+      letter-spacing: 0px;
+    }
+
+    &Status {
+      @include mixins.monoLink;
+      padding: 8px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 12px;
+      line-height: 16px;
+      border: 1px solid colors.$white;
+      margin: 0 0 24px 0;
+      letter-spacing: 2px;
+
+      @include media.onLg() {
+        margin: 0 0 6px 0;
+      }
+    }
+
+    .cardTitle {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      @include media.onLg() {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+
+  .sectionName {
+    padding: 64px 0 24px 0;
+
+    @include media.onLg() {
+      padding: 100px 0 44px 0;
+    }
+
+    h5 {
+      color: colors.$white;
+      @include mixins.headerLight;
+      font-size: 18px;
+    }
+
+    .separator {
+      display: flex;
+      align-content: flex-end;
+      flex-direction: column;
+      justify-content: center;
+
+      .divider {
+        width: 100%;
+        border-bottom: 2px solid colors.$white;
+      }
+    }
+  }
+
+  p {
+    @include mixins.body;
+  }
+}
+
+.slide {
+  position: relative;
+}
+
+.mainPad {
+  padding: 0;
+  margin: 0;
+  @include media.onLg() {
+    padding: 0 25px 0 0;
+    margin: 0 10px 0 0;
+  }
+
+  @include media.onXlWithMargin() {
+    padding: 0 15px 0 0;
+  }
+}
+
+.contentDescription {
+  @include mixins.body;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  max-width: 400px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 30px 0 -160px 0;
+
+  @include media.onLg() {
+    flex-direction: row;
+    margin: 30px 0 124px 0;
+  }
+
+  .learnMore {
+    @include media.onLg() {
+      margin-left: 15px;
+    }
+  }
+}
+
+.longBtn {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+
+  @include media.onLg() {
+    display: inline-block;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+.slideButtons {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 30px 0 0 0;
+
+  @include media.onLg() {
+    margin: 30px 0 124px 0;
+  }
+}
+
+.mob {
+  display: block;
+
+  @include media.onLg() {
+    display: none;
+  }
+}
+
+.middleSectionPadding {
+  margin-top: 20px;
+}
+
+.endSectionPadding {
+  margin-top: 60px;
+  padding-bottom: 64px;
+
+  @include media.onLg() {
+    padding-bottom: 0;
+    margin-bottom: -10px;
+  }
+}
+
+.sideImage {
+  min-height: 275px;
+  position: relative;
+  margin: 0 auto 24px;
+
+  @include media.onLg() {
+    min-height: 800px;
+  }
+}
+
+.description {
+  @include mixins.body;
+  line-height: 27px;
+  @include media.onLg() {
+    max-width: 330px;
+  }
+}
+
+.features {
+  border-top: 2px solid colors.$white;
+  padding-top: 7.2rem;
+  margin-top: 1rem;
+
+  .featuresTitles {
+    @include mixins.bodyHeavy;
+    margin: 0 0 32px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background: colors.$grey4;
+    }
+  }
+
+  .tabTitle {
+    margin: 0 24px 0 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0 0 10px;
+    transition: border 0.25s ease-in-out;
+    border-bottom: 4px solid transparent;
+    color: colors.$grey4;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+  }
+
+  .isActive {
+    display: inline-block;
+    color: colors.$orange;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 6px;
+      background: colors.$orange;
+      left: 0;
+      z-index: 2;
+      bottom: -6px;
+    }
+  }
+
+  .featuresBlocks {
+    position: relative;
+    min-height: 220px;
+    margin-left: -8px;
+    margin-right: -8px;
+
+    .block {
+      opacity: 0;
+      position: absolute;
+      transition: opacity 0.15s ease-in-out;
+
+      .heading {
+        @include mixins.captionHeavy;
+        font-size: 1.8rem;
+        line-height: 20px;
+        margin-bottom: 2.4rem;
+      }
+
+      .text {
+        @include mixins.captionLight;
+        font-size: 1.8rem;
+        color: colors.$grey4;
+        line-height: 22px;
+      }
+    }
+
+    .blockShow {
+      opacity: 1;
+    }
+  }
+}
+
+.mob {
+  display: block;
+
+  @include media.onLg() {
+    display: none;
+  }
+}

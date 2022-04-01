@@ -1,0 +1,69 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .button {
+    text-decoration: none;
+
+    .content {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      @include mixins.RobotoBoldSm;
+      border-width: 1px;
+      border-style: solid;
+      background-color: colors.$black;
+      color: colors.$blue-white;
+      border-color: transparent;
+      padding-top: 2.3rem;
+      padding-bottom: 2.5rem;
+      @include media.onLg() {
+        padding-top: 2.7rem;
+        padding-bottom: 2.8rem;
+      }
+    }
+  }
+}
+
+.bg_transparent{background-color: transparent !important;}
+.bg_black{background-color: colors.$black !important;}
+.bg_blue-white{background-color: colors.$blue-white !important;}
+.bg_white{background-color: colors.$white !important;}
+
+.txt_transparent{color: transparent !important;}
+.txt_black{color: colors.$black !important;}
+.txt_blue-white{color: colors.$blue-white !important;}
+.txt_white{color: colors.$white !important;}
+
+.bor_transparent{border-color: transparent !important;}
+.bor_black{border-color: colors.$black !important;}
+.bor_blue-white{border-color: colors.$blue-white !important;}
+.bor_white{border-color: colors.$white !important;}
+
+.bortop_transparent{border-top-color: transparent !important;}
+.bortop_black{border-top-color: colors.$black !important;}
+.bortop_blue-white{border-top-color: colors.$blue-white !important;}
+.bortop_white{border-top-color: colors.$white !important;}
+
+.borbottom_transparent{border-bottom-color: transparent !important;}
+.borbottom_black{border-bottom-color: colors.$black !important;}
+.borbottom_blue-white{border-bottom-color: colors.$blue-white !important;}
+.borbottom_white{border-bottom-color: colors.$white !important;}
+
+.borleft_transparent{border-left-color: transparent !important;}
+.borleft_black{border-left-color: colors.$black !important;}
+.borleft_blue-white{border-left-color: colors.$blue-white !important;}
+.borleft_white{border-left-color: colors.$white !important;}
+
+.borright_transparent{border-right-color: transparent !important;}
+.borright_black{border-right-color: colors.$black !important;}
+.borright_blue-white{border-right-color: colors.$blue-white !important;}
+.borright_white{border-right-color: colors.$white !important;}
+
+.shadow {
+  box-shadow: 0px 18px 31px rgba(0, 0, 0, 0.25);
+}
