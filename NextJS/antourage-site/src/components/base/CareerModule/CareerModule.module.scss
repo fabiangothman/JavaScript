@@ -1,0 +1,98 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.component {
+  position: relative;
+  background: colors.$gray-900;
+  color: white;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .leftStain {
+    position: absolute;
+    z-index: 1;
+    top: -3rem;
+    left: 0;
+    @include media.onLg() {
+      top: 0;
+    }
+  }
+  .rightStain {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    display: none;
+    @include media.onLg() {
+      display: block;
+    }
+  }
+
+  .content {
+    position: relative;
+    padding-top: 16.4rem;
+    padding-bottom: 8rem;
+    @include media.onLg() {
+      padding-top: 18rem;
+      padding-bottom: 12rem;
+    }
+    .eyebrow {
+      @include mixins.TextMd2B;
+      margin-bottom: 0.6rem;
+      @include media.onLg() {
+        @include mixins.TextMdB;
+      }
+    }
+  
+    .headline {
+      @include mixins.Title;
+      margin-bottom: 2.8rem;
+      @include media.onLg() {
+        margin-bottom: 4.7rem;
+      }
+    }
+
+    .contImage {
+      position: relative;
+      width: 4.9rem;
+      height: 5rem;
+      margin-bottom: 1.1rem;
+      margin-top: 0;
+      @include media.onLg() {
+        margin-top: 4rem;
+      }
+    }
+    .itemText {
+      @include mixins.Text;
+      margin-bottom: 5rem;
+      @include media.onLg() {
+        margin-bottom: 0;
+      }
+    }
+  
+    .body {
+      @include mixins.Text;
+      margin-top: 2rem;
+      margin-bottom: 2.4rem;
+      @include media.onLg() {
+        margin-top: 9.2rem;
+        margin-bottom: 2.7rem;
+      }
+    }
+  
+    .ctaArrowIcon {
+      margin-left: 10px;
+      svg {
+        height: 14px;
+        width: 14px;
+        stroke: #000;
+        path {
+          fill: #000;
+        }
+      }
+    }
+  }
+  
+}

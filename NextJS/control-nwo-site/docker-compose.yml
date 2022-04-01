@@ -1,0 +1,24 @@
+version: '2'
+services:
+  node:
+    image: node:12.22.10-slim
+    command: sh -c "yarn --pure-lockfile && yarn export"
+    working_dir: /app
+    environment:
+      - NEXT_PUBLIC_API_URL
+      - NEXT_PUBLIC_APP_URL
+      - NEXT_PUBLIC_OWN_URL
+      - SPACE
+      - TOKEN
+    volumes:
+      - .:/app/
+  aws:
+    image: amazon/aws-cli:2.2.7
+    environment:
+      - AWS_DEFAULT_REGION
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+    volumes:
+      - .:/app/
+
+

@@ -1,0 +1,158 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.header {
+  background-color: colors.$gray-light;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+
+  @include media.onLg() {
+    position: relative;
+  }
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 1.25rem 0.75rem;
+
+
+  .logoWrapper,
+  .hamburgerWrapper {
+    height: 2.0625rem;
+    z-index: 1010;
+  }
+
+  .logoLink {
+    width: 7.1875rem;
+    display: block;
+
+    @include media.onLg() {
+      width: 10.9375rem;
+    }
+  }
+
+  @include media.onLg() {
+    padding: 1.5625rem 1.375rem;
+
+    .logoWrapper {
+      height: 3.125rem;
+    }
+  }
+}
+
+.menuWrapper {
+  display: none;
+
+  @include media.onLg() {
+    display: flex;
+  }
+}
+
+.menuOpenWrapper {
+  background-color: transparent;
+  height: 100%;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include media.onLg() {
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: auto;
+  }
+}
+
+.menuOpen {
+  &.menuWrapper {
+    display: flex;
+  }
+
+  .menu {
+    background-color: colors.$white;
+    z-index: 101;
+
+    @include media.onLg() {
+      background-color: transparent;
+    }
+  }
+}
+
+
+.menu {
+  align-items: center;
+  color: colors.$gray-dark;
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat;
+  font-weight: 400;
+  justify-content: flex-start;
+  left: 0;
+  overflow: auto;
+  padding: 5.625rem 0 3.25rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  li {
+    align-items: center;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 1.5rem;
+    text-align: center;
+    width: 100%;
+
+    a {
+      display: block;
+      padding: 1rem 0;
+
+      &:hover {
+        color: colors.$blue;
+        transition: color .2s ease-in-out;
+      }
+    }
+
+    @include media.onLg() {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0 30px;
+      width: auto;
+    }
+  }
+
+
+  @include media.onLg() {
+    flex-direction: row;
+    padding: 0;
+    position: relative;
+  }
+
+  .loginButton, .requestButton {
+    margin-top: 26px;
+
+    @include media.onLg() {
+      margin: 0;
+      margin-left: 20px;
+    }
+  }
+
+  :global {
+    .active{
+      color: colors.$blue;
+      transition: color .2s ease-in-out;
+    }
+  }
+}

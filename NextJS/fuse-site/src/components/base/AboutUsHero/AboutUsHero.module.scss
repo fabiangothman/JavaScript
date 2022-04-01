@@ -1,0 +1,73 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+
+.hero {
+  padding-top: calc(8rem + #{mixins.$header-mobile-height});
+  padding-bottom: 10.9rem;
+  position: relative;
+  background-image: url('~assets/images/about_us_hero_bars_mobile.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  @include media.onLg() {
+    background-image: url('~assets/images/about_us_hero_bars_desktop.svg');
+    padding-top: calc(8rem + #{mixins.$header-desktop-height});
+    padding-bottom: 18rem;
+  }
+  .title {
+    margin-bottom: 4rem;
+    z-index: 2;
+    @include media.onLg() {
+      margin-bottom: 8rem;
+    }
+    font-family: 'Tomato Grotesk';
+    & > u {
+      text-decoration: none;
+      color: colors.$off-white;
+      font-size: inherit;
+      @include media.onLg() {
+        background-image: url('~assets/icons/white-indicator.svg');
+        background-position: bottom;
+        background-size: auto auto;
+        background-repeat: no-repeat;
+        padding-bottom: 1.3rem;
+      }
+    }
+    @include mixins.H3Mobile;
+    @include media.onLg() {
+      @include mixins.H3;
+    }
+  }
+
+  .blurredWrapper {
+    position: absolute;
+    z-index: 1;
+    filter: blur(5px);
+    bottom: 4rem;
+    left: -8rem;
+    @include media.onMd() {
+      bottom: 16rem;
+      left: 0;
+    }
+    @include media.onLg() {
+      bottom: 16rem;
+      left: 0;
+    }
+  }
+
+  .higherColumn {
+    z-index: 2;
+
+    a {
+      color: colors.$off-white;
+      @include media.onLg() {
+        background-image: url('~assets/icons/white-indicator.svg');
+        background-position: bottom;
+        background-size: auto auto;
+        background-repeat: repeat-x;
+        font-size: inherit;
+        padding-bottom: 1.7rem;
+      }
+    }
+  }
+}

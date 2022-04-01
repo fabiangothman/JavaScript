@@ -1,0 +1,78 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.contRow{
+  align-items: center;
+}
+
+.mobileMenu {
+  padding: 1.7rem 0px;
+  position: relative;
+  width: 100%;
+
+  .logo {
+    max-width: 13.7rem;
+    max-height: 2.6rem;
+  }
+  .contActionButton{
+    text-align: right;
+
+    .actionButton{
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+    }
+  }
+
+  .navigation{
+    padding-top: 4.3rem;
+    .list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      
+      &Item {
+        position: relative;
+        @include mixins.TextSmB;
+        &:not(&:last-of-type) {
+          margin-bottom: 2.4rem;
+        }
+        .current {
+          color: colors.$green-1000;
+        }
+        &Link {
+          color: colors.$white-1000;
+          &:hover {
+            color: colors.$green-1000;
+          }
+        }
+      }
+    }
+
+    .contButton {
+      text-align: center;
+      margin: 4.3rem 0;
+
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .openMenu {
+    display: block;
+    //transform: scaleY(1);
+  }
+  .closeMenu {
+    display: none;
+    /*transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.26s ease;*/
+  }
+
+}

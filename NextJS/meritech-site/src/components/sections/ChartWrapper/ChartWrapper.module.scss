@@ -1,0 +1,38 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0rem 0 10rem;
+  //   margin-bottom: 2.4rem;
+  background-color: colors.$white;
+  @include media.onLg() {
+    padding: 0rem 0 2.4rem;
+    margin-bottom: 0;
+  }
+
+  .hidden {
+    overflow: hidden;
+  }
+
+  .title {
+    display: none;
+    @include media.onLg() {
+      display: block;
+    }
+    @include mixins.TitleSm;
+    margin-bottom: 3.6rem;
+  }
+
+  .chartNotes {
+    margin-top: 3.6rem;
+  }
+  .chartWrapper {
+    z-index: 0;
+  }
+  .filterWrapper {
+    position: sticky;
+    top: 130px;
+    align-self: flex-start;
+  }
+}

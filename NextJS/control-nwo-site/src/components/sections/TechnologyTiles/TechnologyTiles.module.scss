@@ -1,0 +1,20 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.tiles {
+  padding: 0;
+
+  .row {
+    min-height: 40.625rem;
+  }
+
+  .header {
+    color: colors.$primary;
+    text-align: left;
+  }
+
+  .text {
+    margin: 1.875rem 0 0;
+  }
+}

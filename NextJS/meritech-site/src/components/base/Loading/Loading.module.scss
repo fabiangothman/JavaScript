@@ -1,0 +1,30 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.loadingWrapper {
+  height: 50vh;
+  @include media.onLg() {
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('~assets/images/icons/loading-background-line.svg');
+  background-size: 100% 5rem;
+
+  .loading {
+    border: 0.1rem solid colors.$green;
+    background: colors.$green-light;
+    padding: 2.4rem 9.4rem;
+    text-align: center;
+    h3 {
+      @include mixins.LinkDesktop();
+
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    p {
+      @include mixins.LinkDesktop();
+    }
+  }
+}

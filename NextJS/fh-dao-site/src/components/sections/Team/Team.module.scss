@@ -1,0 +1,38 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .content {
+    position: relative;
+    padding-top: calc(9.6rem / 2);
+    @include media.onLg() {
+      padding-top: calc(6.4rem / 2);
+    }
+
+    .title {
+      @include mixins.FinancierRegularXl;
+      word-break: break-word;
+      padding-bottom: calc(6.4rem - 2.4rem);
+      @include media.onLg() {
+        padding-bottom: calc(10.3rem - 2.4rem);
+      }
+    }
+
+    .card {
+      position: relative;
+      margin-top: 2.4rem;
+    }
+
+    .divider{
+      margin-top: 7.4rem;
+      @include media.onLg() {
+        margin-top: 10.6rem;
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,67 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.header {
+  background-color: transparent;
+
+  .static {
+    position: relative;
+    overflow: hidden;
+  }
+  .fixed {
+    position: fixed;
+    z-index: 100001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    .transparent {
+      //transition: all ease 0.5s;
+      background-color: transparent;
+      padding: 0;
+      @include media.onLg() {
+        padding: 2rem 0;
+      }
+    }
+    .dark {
+      transition: all ease 0.5s;
+      background-color: colors.$gray-900;
+    }
+  }
+
+  .desktopMenu {
+    position: relative;
+    display: none;
+    @include media.onLg() {
+      display: block;
+    }
+  }
+  .mobileMenu {
+    position: relative;
+    display: flex;
+    @include media.onLg() {
+      display: none;
+    }
+  }
+  .openBg{
+    background-color: colors.$gray-800;
+  }
+  .closeBg{
+    background-color: transparent;
+  }
+}
+
+// Header base color
+.black {
+  background-color: colors.$black-1000;
+}
+.transparent {
+  background-color: transparent;
+}
+.gray {
+  background-color: colors.$gray-900;
+}
+.gray800 {
+  background-color: colors.$gray-800;
+}

@@ -1,0 +1,52 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .slider {
+    position: relative;
+
+    .content {
+      margin-bottom: 6.4rem;
+      .name {
+        @include mixins.RobotoRegularMd3;
+        margin-bottom: 3.6rem;
+        @include media.onLg() {
+          margin-bottom: 6.8rem;
+        }
+      }
+      .paragraph {
+        margin: 0;
+        padding: 0;
+        @include mixins.RobotoRegularMd2;
+        &:not(:last-of-type) {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .actions {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .arrow {
+        position: relative;
+        &:hover {
+          cursor: pointer;
+          & g {
+            opacity: 1;
+          }
+        }
+      }
+      .progress {
+        @include mixins.FinancierRegularMd;
+      }
+    }
+  }
+  
+}

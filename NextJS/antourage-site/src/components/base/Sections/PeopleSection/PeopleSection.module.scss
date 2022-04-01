@@ -1,0 +1,110 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$gray-100;
+  color: colors.$gray-900;
+  overflow: hidden;
+
+  .title {
+    @include mixins.Title;
+    text-align: center;
+    margin: 4rem 0 6rem 0;
+    @include media.onMd() {
+      margin: 11.7rem 0 11rem 0;
+    }
+  }
+
+  .contCards {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3.4rem;
+    @include media.onMd() {
+      margin-bottom: 14.2rem;
+    }
+
+    .contCard {
+      position: relative;
+      margin: 0px auto;
+      max-width: 35rem;
+      overflow: hidden;
+      margin-bottom: 4.4rem;
+      @include media.onMd() {
+        margin-bottom: 8.7rem;
+      }
+
+      .contImage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 5.6rem;
+        @include media.onMd() {
+          margin-bottom: 7.8rem;
+        }
+
+        .image {
+          width: 100%;
+          height: 332px;
+          position: relative;
+
+          @include mixins.ImageMaskV1();
+        }
+
+        .secondShape {
+          @include mixins.ImageMaskV2();
+          display: none;
+        }
+
+        .contInfo {
+          position: absolute;
+          bottom: -5rem;
+          left: 0.5rem;
+
+          .name,
+          .role {
+            padding: 1.2rem;
+            @include mixins.NormalTextB;
+            display: table;
+          }
+          .name {
+            margin-bottom: 1.2rem;
+          }
+          .role {
+            background-color: colors.$gray-900;
+            color: colors.$white-1000;
+          }
+        }
+      }
+
+      .contText {
+        font-family: 'Source Sans Pro';
+        text-align: left;
+        @include mixins.TextSm;
+        @include media.onLg() {
+          @include mixins.TextDesktop;
+        }
+      }
+    }
+  }
+
+  // Color formats
+  .green {
+    background-color: colors.$green-1000;
+    color: colors.$black-1000;
+  }
+  .purple {
+    background-color: colors.$purple-1000;
+    color: colors.$white-1000;
+  }
+  .red {
+    background-color: colors.$red-1000;
+    color: colors.$white-1000;
+  }
+  .blue {
+    background-color: colors.$blue-1000;
+    color: colors.$white-1000;
+  }
+}

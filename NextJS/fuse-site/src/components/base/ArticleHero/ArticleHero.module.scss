@@ -1,0 +1,111 @@
+@use 'styles/mixins';
+@use 'styles/media';
+@use 'styles/colors';
+
+.hero {
+  position: relative;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: calc(7.2rem + #{mixins.$header-mobile-height});
+  padding-bottom: 5.6rem;
+  @include media.onLg() {
+    padding-top: calc(4.1rem + #{mixins.$header-desktop-height});
+    padding-bottom: 14.8rem;
+  }
+
+  &Background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 206px;
+    height: 158px;
+    z-index: 1;
+    @include media.onLg() {
+      width: 584px;
+      height: 371px;
+    }
+  }
+
+  .higherColumn {
+    z-index: 3;
+  }
+
+  .linesCol {
+    position: absolute;
+    z-index: 2;
+    &Left {
+      display: none;
+      svg {
+        right: 2rem;
+      }
+      @include media.onLg() {
+        display: block;
+      }
+    }
+
+    &Right {
+      right: 0;
+      bottom: 0;
+      svg {
+        left: -2rem;
+        @include media.onLg() {
+          left: 2rem;
+        }
+      }
+
+      img {
+        position: absolute;
+        bottom: 0;
+        right: -10rem;
+        z-index: -1;
+        height: 50%;
+      }
+    }
+
+    svg {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .svgDesktop {
+    display: none;
+
+    @include media.onLg() {
+      display: initial;
+    }
+  }
+
+  .svgMobile {
+    @include media.onLg() {
+      display: none;
+    }
+  }
+
+  .title {
+    font-family: 'Tomato Grotesk';
+    margin: 0;
+    z-index: 2;
+    @include mixins.H3Mobile;
+    @include media.onLg() {
+      @include mixins.H3;
+    }
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+
+    @include media.onLg() {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &Info,
+    &Date {
+      margin-top: 2rem;
+      @include mixins.Caption;
+    }
+  }
+}

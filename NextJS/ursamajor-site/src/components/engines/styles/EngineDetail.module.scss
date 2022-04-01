@@ -1,0 +1,761 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.engineDetailPage {
+  color: colors.$grey3;
+  overflow: hidden;
+
+  .mobileIconBear {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+
+    @include media.onLg() {
+      display: none;
+    }
+
+    @include media.onXl() {
+      bottom: 57px;
+      left: auto;
+      position: relative;
+      right: -200px;
+      path {
+        fill: colors.$orange;
+      }
+    }
+  }
+
+  .limitedDescription {
+    max-width: calc(100% - 160px);
+    @include media.onMd() {
+      max-width: 170px;
+    }
+  }
+
+  .imageContainer {
+    @include media.onMd() {
+      // padding-left: 35px;
+    }
+  }
+
+  .unit {
+    @include mixins.body;
+    display: inline-block;
+    margin: 0;
+    font-size: 2.4rem;
+    line-height: 25.2px;
+  }
+
+  .hero {
+    z-index: 2;
+    background-size: cover;
+    background-color: colors.$black;
+    overflow: hidden;
+    color: colors.$white;
+    position: relative;
+    height: 120vh;
+    display: flex;
+    @media screen and (min-width: 350px) {
+      height: 110vh;
+    }
+    @include media.onSm() {
+      height: 100vh;
+    }
+
+    &Name {
+      @include mixins.bodyHeavy;
+      font-size: 2rem;
+      margin: 0 0 2.4rem;
+      line-height: 37.8px;
+      position: relative;
+      @include media.onXl() {
+        margin: 0 0 4.8rem;
+        font-size: 3.6rem;
+        line-height: 37px;
+      }
+      &:after {
+        height: 2px;
+        width: calc(100% - 80px);
+        background-color: #fff;
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        content: '';
+        @include media.onXl() {
+          right: -180px;
+          width: 90%;
+        }
+      }
+    }
+    &Description {
+      @include mixins.major;
+      margin-top: 0;
+      margin-bottom: 4.9rem;
+      font-size: 3.6rem;
+      line-height: 37.2px;
+      @include media.onXl() {
+        font-size: 6.4rem;
+        line-height: 67.2px;
+        margin-right: 4rem;
+      }
+    }
+    &Feature {
+      padding-left: 2.2rem;
+      margin-bottom: 2.6rem;
+      position: relative;
+      &:after {
+        content: '';
+        height: 100%;
+        width: 4px;
+        background-color: colors.$orange;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0 5px 0 0;
+      }
+      @include media.onXl() {
+        margin-bottom: 0rem;
+      }
+      &Title {
+        @include mixins.bodyHeavy;
+        margin: 0 0 0.2rem;
+      }
+      &Text {
+        @include mixins.monoLink;
+        font-size: 1.2rem;
+        line-height: 16px;
+        margin: 0;
+        letter-spacing: 2px;
+      }
+    }
+    &Image {
+      position: absolute;
+      right: -30px;
+      bottom: 30px;
+      width: 150px;
+      height: 335px;
+      @include media.onSm() {
+        width: 170px;
+        height: 390px;
+      }
+      @include media.onXl() {
+        width: 233px;
+        height: 518px;
+        position: relative;
+        top: -80px;
+        right: auto;
+        bottom: 0;
+      }
+      div {
+        z-index: 2;
+      }
+      &:after {
+        content: '';
+        border-radius: 50%;
+        width: 278px;
+        height: 278px;
+        border: 6px solid colors.$white;
+        position: absolute;
+        left: -50px;
+        bottom: -50px;
+        z-index: 1;
+        @include media.onXl() {
+          width: 310px;
+          height: 310px;
+        }
+      }
+    }
+
+    .heroUnit {
+      @include mixins.body;
+      display: inline-block;
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 18.9px;
+    }
+  }
+
+  .section2 {
+    background-image: linear-gradient(0deg, black, #2f2f2f);
+    padding: 6rem 2.5rem;
+    color: colors.$white;
+    @include media.onXl() {
+      padding: 10rem 0;
+    }
+    .fixCardMarginBottom {
+      @include media.onXl() {
+        margin-bottom: -292px;
+      }
+    }
+
+    &Header {
+      position: relative;
+      &:after {
+        height: 2px;
+        width: 40%;
+        background-color: #fff;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        @include media.onXl() {
+          content: '';
+        }
+      }
+    }
+    &Title {
+      position: relative;
+      @include mixins.bodyHeavy;
+      max-width: 334px;
+      font-size: 3.6rem;
+      line-height: 37.8px;
+      margin: 0 0 6.4rem 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .sectionRow {
+    @include media.onXl() {
+      padding: 168px 0 0 0;
+    }
+
+    @include media.onXl() {
+      padding: 140px 0px 0 0;
+    }
+  }
+
+  .section2Row {
+    @include media.onXl() {
+      padding-right: 25px;
+    }
+  }
+
+  .section1 {
+    padding: 6rem 2.5rem 3rem 2.5rem;
+    color: colors.$white;
+    @include media.onLg() {
+      padding: 6rem 2.5rem 3rem 0;
+    }
+    @include media.onXlWithMargin() {
+      padding: 10rem 2.5rem 10rem 0;
+    }
+
+    .header {
+      margin-top: 0;
+      margin-bottom: 3rem;
+      font-size: 1.8rem;
+      @include media.onXl() {
+        margin-bottom: 6.4rem;
+      }
+    }
+
+    .engineName {
+      @include mixins.bodyHeavy;
+      font-size: 3.6rem;
+      line-height: 37.8px;
+      margin: 0;
+      @include media.onXl() {
+        margin-right: 2.4rem;
+        font-size: 4.8rem;
+        line-height: 50.4px;
+      }
+    }
+
+    .nameWrapper {
+      margin: 0 0 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include media.onXl() {
+        justify-content: flex-start;
+        margin: 0 0 6.4rem;
+      }
+    }
+
+    .status {
+      @include mixins.monoLink;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 1.2rem;
+      line-height: 16px;
+      letter-spacing: 2px;
+      border: 1px solid colors.$white;
+    }
+
+    .description {
+      @include mixins.body;
+      line-height: 27px;
+      letter-spacing: 0.8px;
+      margin-bottom: 4rem;
+      @include media.onXl() {
+        max-width: 330px;
+      }
+    }
+
+    .button {
+      background-color: transparent;
+      border: 2px solid colors.$orange;
+      color: colors.$orange;
+      margin-bottom: 5rem;
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      line-height: 22px;
+      @include media.onXl() {
+        max-width: 246px;
+      }
+    }
+
+    .specs {
+      @include mixins.bodyHeavy;
+      margin-top: 0;
+      margin-bottom: 2.4rem;
+      font-size: 2.4rem;
+      line-height: 25.2px;
+      border-bottom: 3px solid colors.$white;
+      padding-bottom: 2.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .section1Feature {
+      border-bottom: 1px solid colors.$grey2;
+      padding-bottom: 1.6rem;
+      margin-bottom: 1.6rem;
+
+      .weight {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .oxRich {
+          @include mixins.bodyHeavy;
+          font-size: 1.8rem;
+          line-height: 18.9px;
+          text-align: end;
+          max-width: 200px;
+          margin: 0;
+          transform: translateY(5px);
+
+          @include media.onSm() {
+            line-height: 25.2px;
+            font-size: 2.4rem;
+            max-width: 200px;
+          }
+
+          @include media.onLg() {
+            line-height: 25.2px;
+            font-size: 2.4rem;
+            transform: translateY(10px);
+          }
+        }
+      }
+    }
+    .section1FeatureTitle {
+      margin-bottom: 0.6rem;
+      font-size: 2.4rem;
+      line-height: 25.2px;
+      min-width: 150px;
+    }
+
+    .featureImage {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      @include media.onXl() {
+        left: 30px;
+        height: 100%;
+      }
+      @include media.onXlWithMargin() {
+        height: 100%;
+      }
+      @media only screen and (min-width: 1440px) {
+        height: 100%;
+        left: 30px;
+      }
+      .featureImageWrapper {
+        width: 240px;
+        position: relative;
+        margin: auto;
+        height: 90%;
+
+        @include media.onSm() {
+          width: 327px;
+        }
+
+        @include media.onXl() {
+          width: 100%;
+        }
+
+        svg {
+          position: absolute;
+          right: -20px;
+          bottom: -55px;
+
+          @include media.onSm() {
+            right: 23px;
+            bottom: -55px;
+          }
+
+          @include media.onXl() {
+            display: none;
+          }
+        }
+      }
+      div {
+        z-index: 2;
+      }
+      &:after {
+        content: '';
+        border-radius: 50%;
+        width: 320px;
+        height: 320px;
+        border: 6px solid colors.$white;
+        position: absolute;
+        left: -40px;
+        bottom: 0;
+        z-index: 1;
+        right: 0;
+        margin: auto;
+        @include media.onXl() {
+          width: 430px;
+          height: 430px;
+        }
+      }
+    }
+
+    .hideOnMobile {
+      display: none;
+      @include media.onXl() {
+        display: block;
+      }
+    }
+
+    .mobileImage {
+      position: relative;
+      right: -20px;
+      margin-bottom: 4.8rem;
+      @include media.onXl() {
+        display: none;
+      }
+    }
+
+    .features {
+      .borderBottom {
+        padding-bottom: 1.6rem;
+        margin-bottom: 1.6rem;
+        border-bottom: 1px solid colors.$grey2;
+      }
+      .featureTitle {
+        margin: 0 0 1.2rem;
+        @include mixins.displayLight;
+        font-size: 4.8rem;
+        line-height: 50.4px;
+      }
+
+      .featureGray {
+        @include mixins.body;
+        color: colors.$grey3;
+        font-size: 1.8rem;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      .featureText {
+        @include mixins.monoLink;
+        font-size: 1.2rem;
+        line-height: 16px;
+        margin: 0;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .fullImage {
+    position: relative;
+    margin-bottom: 1.6rem;
+    @include media.onXl() {
+      min-height: 521px;
+      margin-bottom: 10rem;
+    }
+
+    div {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 400px;
+      @include media.onXl() {
+        height: 521px;
+        margin-top: 40px;
+      }
+    }
+
+    img,
+    video {
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+      min-height: 200px;
+
+      @include media.onXl() {
+        min-height: 521px;
+      }
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000bf;
+  }
+
+  .videoWrapper {
+    position: relative;
+    .fadeOutButton {
+      opacity: 0;
+    }
+    .buttonArea {
+      button {
+        background: transparent;
+        border: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0;
+        width: 96px;
+        height: 100%;
+        z-index: 9;
+        cursor: pointer;
+        margin: auto;
+        @include media.onXl() {
+          height: 96px;
+        }
+        &:after {
+          content: 'Play';
+          @include mixins.monoLink;
+          color: white;
+          letter-spacing: 2px;
+          bottom: 30px;
+          position: absolute;
+          left: -8px;
+          right: 0;
+          font-size: 12px;
+          text-transform: uppercase;
+          @include media.onXl() {
+            bottom: -180px;
+            position: absolute;
+            left: -4px;
+          }
+        }
+      }
+      &:after {
+        content: '';
+        width: 96px;
+        height: 96px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        margin: auto;
+        bottom: 0;
+        right: 8px;
+      }
+      &:before {
+        height: 123px;
+        width: 1px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 8px;
+        left: 0;
+        margin: auto;
+        top: 270px;
+        @include media.onXl() {
+          content: '';
+        }
+      }
+    }
+  }
+
+  .smallerContainer {
+    max-width: 920px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 25px;
+    // @include media.onXl() {
+    //   padding: 0;
+    // }
+  }
+
+  .gallery {
+    .galleryCol {
+      margin: auto;
+      padding: 0;
+
+      @include media.onXl() {
+        padding: 0 10px;
+      }
+    }
+
+    .galleryColBottom {
+      margin: 0 auto 60px;
+
+      @include media.onXl() {
+        margin: 0 auto 110px;
+      }
+    }
+
+    .galleryMainImage {
+      min-height: 205px;
+      position: relative;
+      margin: 10px auto 100px;
+
+      @include media.onXl() {
+        min-height: 550px;
+        margin: 65px auto 12px;
+      }
+    }
+
+    .galleryWrapper {
+      position: relative;
+      margin-bottom: 4.4rem;
+      margin-left: -8px;
+      margin-right: -8px;
+      @include media.onXl() {
+        margin-bottom: 8rem;
+      }
+    }
+
+    .imageButtonContent {
+      position: relative;
+      height: 476px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      color: colors.$white;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      z-index: 9;
+      @include media.onXl() {
+        height: 653px;
+      }
+      p {
+        @include mixins.monoLink;
+        padding-bottom: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .hideBytton {
+      opacity: 0;
+    }
+
+    .expandImageIcon {
+      position: relative;
+
+      svg {
+        width: 18px;
+        height: 18px;
+
+        @include media.onXl() {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      &:after {
+        content: '';
+        width: 72px;
+        height: 72px;
+        position: absolute;
+        top: -27px;
+        left: -27px;
+        border-radius: 50%;
+        border: 1px solid colors.$white;
+
+        @include media.onXl() {
+          width: 96px;
+          height: 96px;
+          top: -36px;
+          left: -36px;
+        }
+      }
+      &:before {
+        content: '';
+        width: 1px;
+        height: 600%;
+        position: absolute;
+        left: 8px;
+        background: white;
+        top: 77px;
+        @include media.onXl() {
+          height: 700%;
+          top: 100px;
+          left: 12px;
+        }
+      }
+    }
+
+    .imageClickArea {
+      width: 100%;
+      display: block;
+      height: 100%;
+      cursor: pointer;
+      z-index: 4;
+      border: 0;
+      position: relative;
+    }
+
+    .galleryImage {
+      margin-bottom: 2rem;
+      .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 476px;
+        @include media.onXl() {
+          min-height: 653px;
+        }
+        button:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #02020261;
+          top: 0;
+          z-index: 4;
+          left: 0;
+        }
+      }
+      .openedImage {
+        position: absolute;
+        left: 0;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.borderTopLine {
+  padding: 0 0 0 8px;
+}

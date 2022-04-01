@@ -1,0 +1,95 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+  height: 100%;
+
+  .card {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .supCard {
+      position: relative;
+      .topWrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .leftContent{
+          position: relative;
+          flex: 1;
+          .smallTitle {
+            @include mixins.RobotoRegularSm;
+            margin-bottom: 0.1rem;
+          }
+          .value {
+            @include mixins.RobotoBoldXs;
+          }
+        }
+        .rightContent{
+          position: relative;
+        }
+      }
+      .title {
+        @include mixins.FinancierRegularXl1;
+        word-break: break-word;
+        margin-top: 1.2rem;
+        margin-bottom: 0.6rem;
+        @include media.onLg() {
+          margin-top: 0.6rem;
+          margin-bottom: 1.2rem;
+        }
+      }
+      .text {
+        @include mixins.RobotoRegularMd1;
+      }
+    }
+
+    .infCard {
+      position: relative;
+      .contItems {
+        position: relative;
+        margin-top: 1.6rem;
+        @include media.onLg() {
+          margin-top: 2.1rem;
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          @include mixins.RobotoRegularXs;
+          svg {
+            margin-right: 2.9rem;
+          }
+          &:not(:last-of-type) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+      .button {
+        margin-top: 2.4rem;
+        @include media.onLg() {
+          margin-top: 6.6rem;
+        }
+      }
+    }
+  }
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

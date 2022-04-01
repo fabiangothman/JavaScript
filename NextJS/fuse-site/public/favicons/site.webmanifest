@@ -1,0 +1,19 @@
+{
+  "name": "FuseVC",
+  "short_name": "FUSEVC",
+  "icons": [
+    {
+      "src": "/192x.png",
+      "sizes": "193x193",
+      "type": "image/png"
+    },
+    {
+      "src": "/512x.png",
+      "sizes": "513x513",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

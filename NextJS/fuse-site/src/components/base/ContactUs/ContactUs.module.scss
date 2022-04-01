@@ -1,0 +1,103 @@
+@use 'styles/mixins';
+@use 'styles/media';
+@use 'styles/colors';
+
+.wrapper {
+  .formColumn {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+    position: relative;
+
+    .contact {
+      &Meta {
+        padding: 0 1rem;
+      }
+      .subtitle {
+        @include mixins.Caption;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 0.9rem;
+      }
+
+      .title {
+        @include mixins.H4;
+        font-family: 'Tomato Grotesk';
+        margin-top: 0;
+        margin-bottom: 6.7rem;
+      }
+
+      .input {
+        &,
+        &::placeholder {
+          @include mixins.SubheadMobile;
+          @include media.onLg() {
+            @include mixins.Subhead;
+          }
+        }
+        
+        &:-webkit-autofill {
+          color: colors.$white;
+          -webkit-text-fill-color: colors.$white;
+          transition: background-color 50000s ease-in-out 0s;
+        }
+
+        &WithError {
+          border-bottom: 2px solid red;
+        }
+      }
+
+      .textarea {
+        margin-top: 2.4rem;
+        margin-bottom: 4rem;
+        height: 214px;
+        resize: none;
+
+        &,
+        &::placeholder {
+          @include mixins.SubheadMobile;
+          @include media.onLg() {
+            @include mixins.Subhead;
+          }
+        }
+
+        &WithError {
+          border-bottom: 2px solid red;
+        }
+      }
+
+      .submitWrapper {
+        & > div {
+          margin-right: 2rem;
+        }
+      }
+    }
+
+    .barsLeft {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateX(-120%);
+      display: none;
+
+      @include media.onLg() {
+        display: block;
+      }
+    }
+
+    .barsRight {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translateX(120%);
+      display: none;
+
+      @include media.onLg() {
+        display: block;
+      }
+    }
+  }
+
+  .feedback {
+    margin-top: 2rem;
+  }
+}

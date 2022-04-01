@@ -1,0 +1,13 @@
+@use 'styles/fonts';
+@use 'styles/colors';
+
+ .gradient {
+    background-color: #C496FF;
+    //background-image: linear-gradient(158.9deg, #C496FF 18.59%, #4689EF 86.08%);
+    //background-image: linear-gradient(158.9deg, #C496FF 18.59%, #1E6FE9 86.08%);
+    background-image: linear-gradient(180deg, #C496FF 28.59%, #1E6FE9 86.08%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+ }

@@ -1,0 +1,36 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .leftLine {
+      flex: 1;
+      position: relative;
+      height: 1px;
+      border-top: 1px solid colors.$black;
+    }
+    .logo {
+      width: 8rem;
+      flex: inherit;
+      text-align: center;
+      svg path {
+        stroke: colors.$black;
+      }
+    }
+    .rightLine {
+      flex: 1;
+      position: relative;
+      height: 1px;
+      border-top: 1px solid colors.$black;
+    }
+  }
+  
+}

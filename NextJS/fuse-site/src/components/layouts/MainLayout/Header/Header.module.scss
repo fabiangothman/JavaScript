@@ -1,0 +1,213 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.header {
+  background: rgba(8, 8, 8, 0.8);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: mixins.$header-mobile-height;
+  padding-left: 2.1rem;
+  padding-right: 3.2rem;
+  @include media.onLg() {
+    height: mixins.$header-desktop-height;
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(20px);
+    padding-left: 4rem;
+    padding-right: 5.6rem;
+  }
+
+  &Fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include media.onLg() {
+      .inner {
+        padding-left: 5.6rem;
+        padding-right: 5.6rem;
+      }
+    }
+  }
+
+  & > div {
+    max-width: 100%;
+  }
+
+  .area {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    max-width: 100%;
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &LogoHidden {
+      .logo {
+        @include media.onLg() {
+          visibility: hidden;
+        }
+      }
+    }
+
+    @include media.onLg() {
+      padding-top: 0;
+    }
+  }
+
+  .mobileMenu {
+    display: block;
+    z-index: 11;
+    @include media.onLg() {
+      display: none;
+    }
+  }
+
+  .desktopMenu {
+    display: none;
+    @include media.onLg() {
+      display: block;
+    }
+  }
+
+  .logo {
+    display: flex;
+    z-index: 11;
+    @include media.onLg() {
+      width: auto;
+      padding-top: 4rem;
+    }
+
+    & > svg {
+      display: block;
+      width: 92px;
+      height: 53px;
+    }
+  }
+
+  .nav {
+    max-height: 100%;
+    @include media.smallerThanLg() {
+      z-index: 9;
+      position: fixed;
+      background: rgba(8, 8, 8, 0.7);
+      backdrop-filter: blur(20px);
+      left: 0;
+      right: 0;
+      top: 0;
+      padding-top: 9.6rem;
+      transform: translateX(180%);
+      transition: transform 0.4s ease;
+      will-change: transform;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+
+      &IsOpened {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .menuBtn {
+    background-color: transparent;
+    border: none;
+    padding-top: 2rem;
+    @include media.onLg() {
+      padding-top: 2rem;
+    }
+  }
+
+  .loginWrapper {
+    display: flex;
+    align-items: center;
+    @include media.onLg() {
+      margin-left: 3.8rem;
+      align-items: flex-start;
+      & > svg {
+        align-self: flex-end;
+        @include media.onLg() {
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+
+  .loginBtn {
+    padding-left: 1.2rem;
+    @include media.onLg() {
+      padding-left: 4.8rem !important;
+    }
+
+    & > svg {
+      height: 17px;
+    }
+  }
+
+  .scrollable {
+    @include media.smallerThanLg() {
+      overflow-x: auto;
+      width: 100%;
+      flex-grow: 1;
+    }
+  }
+
+  .list {
+    color: white;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    padding-left: 4rem;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    
+    @include media.onLg() {
+      padding-top: 0;
+      flex-direction: row;
+      justify-content: initial;
+    }
+    &Item {
+      color: colors.$off-white;
+      margin-bottom: 2.4rem;
+      height: auto;
+      font-family: 'Poppins';
+      @include media.onLg() {
+        height: 73px;
+        &:not(&:first-of-type) {
+          margin-left: 4rem;
+        }
+      }
+      &Link {
+        color: colors.$off-white;
+        display: inline-block;
+        padding: 0 0.8rem;
+        @include media.onLg() {
+          padding: 5.4rem 0.8rem 0 0.8rem;
+        }
+        @include mixins.Subhead;
+        @include media.onLg() {
+          @include mixins.Caption;
+        }
+        &Actived {
+          opacity: 1;
+          @include media.onLg() {
+            border-left: 1px solid colors.$red;
+          }
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .social {
+    padding-top: 8rem;
+    & > span > a {
+      cursor: pointer;
+      margin-right: 1.2rem;
+    }
+  }
+}

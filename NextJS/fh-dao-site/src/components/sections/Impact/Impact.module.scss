@@ -1,0 +1,90 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .content {
+    position: relative;
+    margin-top: 7.2rem;
+    @include media.onLg() {
+      margin-top: 10.4rem;
+    }
+
+    .title {
+      @include mixins.FinancierRegularXl;
+      word-break: break-word;
+      margin-bottom: 3.2rem;
+    }
+
+    .tabs {
+      position: relative;
+      .tabList{
+        width: 100%;
+        border-bottom: 1px solid colors.$black;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        .tab {
+          position: relative;
+          display: inline-block;
+          outline: 0;
+          cursor: pointer;
+          @include mixins.RobotoMediumXs;
+          opacity: 0.6;
+          padding-bottom: 2.4rem;
+          @include media.onLg() {
+            padding-bottom: 3.4rem;
+          }
+          &:not(:last-of-type) {
+            margin-right: 2.4rem;
+            @include media.onLg() {
+              margin-right: 5.2rem;
+            }
+          }
+          &.tabSelected {
+            border-bottom: 3px solid colors.$green;
+            opacity: 1;
+          }
+        }
+      }
+      .body{
+        padding-top: 6.4rem;
+        padding-bottom: 1rem;
+      }
+    }
+    .featuredImage{
+      margin-top: calc(6.4rem - 3.2rem);
+      position: relative;
+      
+      @include media.onLg() {
+        display: none;
+      }
+    }
+
+    .button {
+      margin-top: calc(6.4rem - 1rem);
+      margin-bottom: 7.4rem;
+      @include media.onLg() {
+        margin-top: calc(3.6rem - 1rem);
+        margin-bottom: 10.6rem;
+      }
+    }
+  }
+  
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

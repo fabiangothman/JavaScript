@@ -1,0 +1,90 @@
+@use './colors';
+@use './fonts';
+@use './media';
+
+@mixin Text {
+  font-size: 2rem;
+  line-height: 24px;
+}
+
+@mixin ItalicText {
+  @include Text;
+  font-style: italic;
+}
+
+@mixin BigText {
+  font-size: 4rem;
+  line-height: 48px;
+}
+
+@mixin MiddleText {
+  font-size: 2.4rem;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+@mixin SmallText {
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+// Titles
+
+@mixin H1 {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 54px;
+}
+
+@mixin SmallTitle {
+  font-size: 4rem;
+  line-height: 48px;
+}
+
+@mixin SmallerTitle {
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+@mixin ItalicH1 {
+  @include H1;
+  font-style: italic;
+}
+
+@mixin H2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+@mixin H3 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+@mixin ItalicH3 {
+  @include H3;
+  font-style: italic;
+}
+
+@mixin H4 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+@mixin H5 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin SectionPadding {
+  padding: 8rem 0;
+  @include media.onLg() {
+    padding: 12rem 0;
+  }
+}
+

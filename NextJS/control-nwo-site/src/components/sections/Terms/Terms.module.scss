@@ -1,0 +1,62 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.textPage {
+  background-color: colors.$gray-background;
+  padding: 0 1.25rem;
+
+  .heading {
+    padding-bottom: 4.625rem;
+    
+    @include media.onLg() {
+      padding-bottom: 8.625rem;
+    }
+  
+    .header {
+      font-weight: 300;
+      font-size: 2rem;
+      line-height: 2.375rem;
+      margin-top: 6.25rem;
+      margin-bottom: 0.875rem;
+
+      @include media.onLg() {
+        margin-top: 8.25rem;
+        margin-bottom: 1.8125rem;
+        font-weight: 300;
+        font-size: 4.5rem;
+        line-height: 5.375rem;
+      }
+    }
+  
+    .date {
+      font-family: Source Sans Pro;
+      font-size: 1rem;
+      line-height: 140%;
+      letter-spacing: 0.03em;
+      color: colors.$gray-dark;
+      opacity: .5;
+    
+      @include media.onLg() {
+        font-size: 1.5rem;
+        line-height: 140%;
+      }
+    }
+  }
+  
+  .h4 {
+    margin-bottom: 1.875rem;
+  
+    @include media.onLg() {
+      margin-bottom: 1.875rem;
+    }
+  }
+  
+  .text {
+    margin-bottom: 3.5rem;
+    
+    @include media.onLg() {
+      margin-bottom: 6.25rem;
+    }
+  }
+}

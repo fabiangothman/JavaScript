@@ -1,0 +1,50 @@
+{
+  "name": "Ursa Major Technologies",
+  "short_name": "Ursa Major",
+  "theme_color": "#3d3d3d",
+  "background_color": "#3d3d3d",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/manifest/ursamajor-favico-72px.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest/ursamajor-favico-96px.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest/ursamajor-favico-128px.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest/ursamajor-favico-144px.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest/ursamajor-favico-152px.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest/ursamajor-favico-192px.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest/ursamajor-favico-384px.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/manifest/ursamajor-favico-512px.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

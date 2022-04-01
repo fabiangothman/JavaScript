@@ -1,0 +1,110 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$gray-900;
+  color: colors.$white-1000;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    @include media.onLg() {
+      margin: 3.5rem 0 10rem 0;
+    }
+
+    .contCarousel {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      
+      .carousel {
+        padding: 0;
+        cursor: grab;
+
+        ul{
+          padding:0 30% 0 0 !important;
+          @include media.onSm() {
+            padding: 0 !important;
+          }
+          li {
+            min-width: 26rem;
+            max-width: 26rem;
+          }
+        }
+
+        .contCard {
+          position: relative;
+          margin-left: 1.2rem;
+
+          .contImage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 4.2rem;
+
+            .overlay {
+              border-radius: 2rem;
+              height: 34.2rem;
+              overflow: hidden;
+              background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 38.69%,
+                rgba(0, 0, 0, 0.7) 67.83%
+              );
+              .image {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                z-index: -1;
+              }
+            }
+
+            .contInfo {
+              position: absolute;
+              bottom: -1.5rem;
+              left: 2.4rem;
+
+              .nick, .followers {
+                padding: 0.4rem 1.2rem;
+                @include mixins.NormalTextB;
+              }
+              .nick {
+                background-color: colors.$white-1000;
+                color: colors.$black-1000;
+                margin-bottom: 0.6rem;
+              }
+              .followers {
+                background-color: colors.$purple-1000;
+              }
+            }
+          }
+
+          .contInfo, .contText {
+            left: 2.4rem;
+          }
+
+          .show {
+            display: block;
+          }
+          .hide {
+            display: none;
+          }
+          .contText {
+            position: relative;
+            text-align: left;
+            @include mixins.NormalText;
+          }
+        }
+      }
+    }
+  }
+}

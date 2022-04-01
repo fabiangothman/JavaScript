@@ -1,0 +1,111 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+@use 'styles/fonts';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: colors.$black2;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-image: url("/images/thelore/background-md.png");
+    background-position: top left;
+    padding-top: 6.9rem;
+    padding-bottom: 6rem;
+    @include media.onLg() {
+      background-image: url("/images/thelore/background.png");
+      background-position: top center;
+      padding-top: 12.4rem;
+      padding-bottom: 12.3rem;
+    }
+    
+    .content {
+      position: relative;
+      .sectionName {
+        @include mixins.RobotoRegularMdMobile;
+        color: colors.$white;
+        margin-bottom: 6.7rem;
+        @include media.onLg() {
+          margin-bottom: 8.1rem;
+        }
+      }
+      .title {
+        color: colors.$white;
+        @include mixins.FinancierRegularLg;
+      }
+      .verticalLine {
+        position: relative;
+        width: 1px;
+        height: 100%;
+        border-left: 1px solid colors.$white;
+      }
+      .spacer {
+        margin-bottom: 6.7rem;
+        @include media.onLg() {
+          margin-bottom: 5.4rem;
+        }
+      }
+      .text {
+        position: relative;
+        color: colors.$white;
+        margin-bottom: 6.4rem;
+        @include media.onLg() {
+          margin-bottom: 6.3rem;
+        }
+        .paragraph {
+          margin: 0;
+          padding: 0;
+          @include mixins.RobotoRegularMd2;
+          line-height: 2.88rem !important;
+          margin-bottom: 2rem;
+        }
+      }
+      .circleData{
+        max-width: 48.9rem;
+        margin: 0 auto;
+      }
+      .bottomText {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        color: colors.$white;
+        @include mixins.FinancierRegularLg;
+      }
+      .button {
+        margin: 0 auto;
+        max-width: 100%;
+        margin-top: 3.9rem;
+        margin-bottom: 9.6rem;
+        @include media.onLg() {
+          max-width: 41.1rem;
+          margin-top: 0rem;
+          margin-bottom: 0rem;
+        }
+      }
+      .line {
+        margin-top: 2.4rem;
+        border-top: 1px solid colors.$white;
+      }
+    }
+  }
+  
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

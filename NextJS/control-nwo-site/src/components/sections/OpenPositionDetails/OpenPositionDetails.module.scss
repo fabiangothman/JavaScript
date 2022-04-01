@@ -1,0 +1,66 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  color: colors.$gray-dark;
+  background: colors.$gray-lighter;
+  padding-bottom: 12rem;
+  padding-top: 4.2rem;
+  @include media.onLg() {
+    padding-top: 10rem;
+  }
+
+  .title {
+    position: relative;
+    font-family: fonts.$header;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.36rem;
+    @include media.onLg() {
+      font-weight: 300;
+      font-size: 4.8rem;
+      line-height: 6.72rem;
+    }
+  }
+  .button {
+    position: relative;
+    width: 100%;
+    max-width: 28rem;
+  }
+
+  .description {
+    position: relative;
+    margin-top: 6rem;
+    .heading {
+      font-family: fonts.$text;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      @include media.onLg() {
+        font-size: 2.4rem;
+        line-height: 3.36rem;
+      }
+    }
+    .text {
+      font-family: fonts.$text;
+      margin-bottom: 4rem;
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 2.52rem;
+      @include media.onLg() {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
+    }
+    ul li {
+      .text {
+        margin: 0;
+      }
+    }
+  }
+  
+}

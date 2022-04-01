@@ -1,0 +1,65 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.bg {
+  background-color: colors.$gray-light;
+}
+
+.sliderContainer {
+  padding: 6.25rem 0;
+  position: relative;
+
+  .header {
+    margin-bottom: 4.125rem;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.375rem;
+    text-align: center;
+
+    @include media.onLg() {
+      font-weight: 300;
+      font-size: 4.5rem;
+      line-height: 86px;
+      text-align: center;
+    }
+  }
+
+  .slider {
+    max-width: 43.125rem;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 9999;
+
+  .btnNext {
+    margin-right: auto;
+
+    @include media.onLg() {
+      margin-right: 1.125rem;
+    }
+  }
+  .btnPrev {
+    margin-left: auto;
+
+  }
+  .noBorder {
+    border: none;
+  }
+
+  .inactive {
+    display: none;
+
+    @include media.onLg() {
+      cursor: auto;
+      display: flex;
+      opacity: .2;
+    }
+  }
+}

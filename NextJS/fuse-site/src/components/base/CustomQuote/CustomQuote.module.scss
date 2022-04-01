@@ -1,0 +1,23 @@
+@use 'styles/mixins';
+@use 'styles/media';
+@use 'styles/colors';
+
+.quote {
+  .wrapper {
+    display: flex;
+    align-items: center;
+
+    & > svg {
+      margin: 0 3.9rem;
+    }
+  }
+
+  .text {
+    @include mixins.H4;
+    font-weight: 400;
+    font-family: 'Tomato Grotesk';
+    color: colors.$other-black;
+    margin: 0;
+    max-width: 559px;
+  }
+}

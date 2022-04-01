@@ -1,0 +1,25 @@
+.image {
+  display: inline-block;
+
+  source, img {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.loaded {
+  source, img {
+    opacity: 1;
+  }
+}
+
+.fluid {
+  display: block;
+  width: 100%;
+
+  source, img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,150 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  padding-top: 6rem;
+  padding-bottom: 8.552rem;
+  overflow: hidden;
+  @include media.onLg() {
+    padding-top: 16.4rem;
+    padding-bottom: 18.1rem;
+    overflow: inherit;
+  }
+
+  .highlighted {
+    font-family: fonts.$header;
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 3.36rem;
+    @include media.onLg() {
+      font-size: 4.8rem;
+      font-weight: 300;
+      line-height: 6.72rem;
+    }
+  }
+  .text {
+    font-family: fonts.$text;
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.52rem;
+    @include media.onLg() {
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 2.8rem;
+    }
+  }
+  .button {
+    padding-bottom: 9.181rem;
+    @include media.onLg() {
+      padding-bottom: 17.4rem;
+    }
+    button {
+      margin: 0 auto;
+    }
+  }
+
+  .blockImages {
+    position: relative;
+    width: 100%;
+    //overflow: hidden;
+    height: 24.166rem;
+    @include media.onLg() {
+      height: 39.5rem;
+    }
+    .backgroundColor {
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      background-color: colors.$blue;
+      opacity: 0.1;
+    }
+    .topleftImage {
+      position: absolute;
+      z-index: 2;
+      right: 0rem;
+      margin: auto;
+      width: 20.741rem;
+      height: 14.015rem;
+      top: -2.5rem;
+      left: -30.5rem;
+      @include media.onLg() {
+        width: 33.901rem;
+        height: 22.907rem;
+        top: -3.7rem;
+        left: -49.5rem;
+      }
+    }
+    .toprightImage {
+      position: absolute;
+      z-index: 2;
+      left: 0rem;
+      margin: auto;
+      width: 12.236rem;
+      height: 15.234rem;
+      top: -3.3rem;
+      right: -34.2rem;
+      @include media.onLg() {
+        width: 20rem;
+        height: 24.9rem;
+        top: -4.8rem;
+        right: -56rem;
+      }
+    }
+    .centerImage {
+      position: absolute;
+      z-index: 3;
+      top: 0rem;
+      bottom: 0rem;
+      left: 0rem;
+      right: 0rem;
+      margin: auto;
+      width: 29.091rem;
+      height: 19.394rem;
+      @include media.onLg() {
+        width: 47.55rem;
+        height: 31.7rem;
+      }
+    }
+    .bottomleftImage {
+      position: absolute;
+      z-index: 1;
+      right: 0rem;
+      margin: auto;
+      width: 16.947rem;
+      height: 13.89rem;
+      bottom: -2.5rem;
+      left: -21.5rem;
+      @include media.onLg() {
+        width: 27.7rem;
+        height: 22.703rem;
+        bottom: -4rem;
+        left: -37.5rem;
+      }
+    }
+    .bottomrightImage {
+      position: absolute;
+      z-index: 1;
+      left: 0rem;
+      margin: auto;
+      width: 16.722rem;
+      height: 21.05rem;
+      bottom: -2.8rem;
+      right: -32.2rem;
+      @include media.onLg() {
+        width: 27.332rem;
+        height: 34.406rem;
+        bottom: -4.2rem;
+        right: -52.6rem;
+      }
+    }
+  }
+}
+.noPad {
+  padding: 0 !important;
+}

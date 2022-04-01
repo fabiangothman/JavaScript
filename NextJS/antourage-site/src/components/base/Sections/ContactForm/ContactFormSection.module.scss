@@ -1,0 +1,153 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$gray-800;
+  color: colors.$white-1000;
+  text-align: center;
+  overflow: hidden;
+
+  .content {
+    padding: 5rem 0 4rem 0;
+    position: relative;
+    @include media.onMd() {
+      padding: 11.1rem 0 13.7rem 0;
+    }
+
+    .title {
+      margin-bottom: 2.4rem;
+      p {
+        margin: 0;
+        padding: 0;
+        @include mixins.Title;
+      }
+      @include media.onMd() {
+        margin-bottom: 5.8rem;
+      }
+    }
+
+    .formContainer {
+      background-color: colors.$gray-100;
+      color: colors.$gray-500;
+      border-radius: 2rem;
+      padding: 2.4rem;
+      @include media.onMd() {
+        padding: 4rem;
+      }
+
+      .inputCont {
+        margin-bottom: 2.4rem;
+        border-bottom: 1px solid colors.$gray-500;
+
+        input, textarea {
+          width: 100%;
+          border: 0;
+          background-color: transparent;
+          outline: none;
+          @include mixins.TextMd2;
+          @include media.onMd() {
+            @include mixins.TextMd;
+          }
+          color: colors.$gray-500;
+          &:focus, &:focus {
+            outline: none;
+          }
+        }
+        input {
+          height: 5.8rem;
+        }
+        textarea {
+          min-width: 100%;
+          min-height: 16.3rem;
+        }
+      }
+
+      .policyCont {
+        text-align: left;
+        label {
+          @include mixins.TextXsB;
+          color: colors.$black-1000;
+          @include media.onMd() {
+            @include mixins.TextSmB;
+          }
+          display: flex;
+          flex-direction: row;
+          input {
+            width: 2.7rem;
+            height: 2.7rem;
+            border-color: colors.$black-1000;
+            background-color: transparent;
+            margin-right: 2.3rem;
+          }
+        }
+      }
+
+      .buttonCont {
+        margin-top: 2.5rem;
+        text-align: right;
+        .button {
+          &:hover {
+            background-color: colors.$black-1000;
+            color: colors.$white-1000;
+          }
+        }
+        .feedback {
+          margin-bottom: 2.4rem;
+          @include mixins.TextXsB;
+          @include media.onMd() {
+            @include mixins.TextSmB;
+          }
+        }
+        .success {
+          text-align: left;
+          color: colors.$black-1000;
+        }
+        .error {
+          text-align: right;
+          color: colors.$red-1000;
+        }
+      }
+    }
+  }
+
+  .topStain, .bottomStain {
+    position: absolute;
+  }
+  .topStain {
+    top: -20rem;
+    left: -10rem;
+    @include media.onMd() {
+      top: -10rem;
+      left: -10rem;
+    }
+  }
+  .bottomStain {
+    bottom: -20rem;
+    right: -10rem;
+    @include media.onMd() {
+      bottom: -10rem;
+      right: -10rem;
+    }
+  }
+}
+
+// Button base colors
+.RED {
+  path {
+    fill: colors.$red-1000;
+  }
+}
+.BLUE {
+  path {
+    fill: colors.$blue-1000;
+  }
+}
+.PURPLE {
+  path {
+    fill: colors.$purple-1000;
+  }
+}
+

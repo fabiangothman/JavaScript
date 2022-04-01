@@ -1,0 +1,31 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+
+.wrapper {
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: colors.$black;
+  color: colors.$white;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  z-index: 999;
+}
+
+.close {
+  text-decoration: none;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  padding: 0.5rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: colors.$white;
+
+  &:hover {
+    color: colors.$blue;
+  }
+}

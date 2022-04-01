@@ -1,0 +1,55 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.blog,
+.sliderContainer {
+  padding: 0;
+  position: relative;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 101;
+
+  @include media.onLg() {
+    bottom: 2.25rem;
+    right: 2.25rem;
+    width: auto;
+  }
+
+  .btnNext {
+    margin-right: auto;
+    filter: invert(1);
+
+    @include media.onLg() {
+      margin-right: 1.125rem;
+      filter: invert(0);
+    }
+  }
+  .btnPrev {
+    filter: invert(1);
+    margin-left: auto;
+
+    @include media.onLg() {
+      filter: invert(0);
+    }
+  }
+  .noBorder {
+    border: none;
+  }
+
+  .inactive {
+    display: none;
+
+    @include media.onLg() {
+      cursor: auto;
+      display: flex;
+      opacity: .2;
+    }
+  }
+}

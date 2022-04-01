@@ -1,0 +1,84 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$black-1000;
+  color: colors.$white-1000;
+  overflow: hidden;
+
+  .disablePadding {
+    padding: 0;
+  }
+
+  .container {
+    display: block;
+    flex-direction: row;
+    @include media.onLg() {
+      display: flex;
+    }
+    .contImage {
+      position: relative;
+      flex: 7;
+      width: 100%;
+      height: 26.5rem;
+      @include media.onLg() {
+        height: 58.3rem;
+      }
+    }
+
+    .contGrid {
+      flex: 5;
+
+      .contRow {
+        height: 100%;
+
+        .contContent {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding: 4rem 0;
+          @include media.onLg() {
+            padding: 2rem 3.3rem 3rem 12.7rem;
+          }
+
+          .content {
+            @include mixins.Text;
+            .case {
+              @include mixins.TextB;
+            }
+            .title {
+              @include mixins.Title;
+              margin-bottom: 1.2rem;
+              @include media.onLg() {
+                margin-bottom: 2.4rem;
+              }
+            }
+
+            .contText{
+              margin-bottom: 2.2rem;
+              @include media.onXl() {
+                margin-bottom: 5rem;
+              }
+              
+              .title {
+                @include mixins.Title;
+                color: var(--text);
+              }
+              .text {
+                @include mixins.Text;
+                color: var(--text);
+              }
+            }
+
+            .contButton {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}

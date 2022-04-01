@@ -1,0 +1,56 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$gray-900;
+  color: colors.$white-1000;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+
+    .text {
+      text-align: center;
+      @include mixins.NormalText;
+      margin: 4rem 0;
+      @include media.onLg() {
+        margin: 8rem 0;
+      }
+    }
+
+    .contCarousel {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 5rem;
+      @include media.onLg() {
+        margin-bottom: 18rem;
+      }
+      & > div {
+        margin: 0px auto;
+      }
+      
+      .carousel {
+        padding: 0;
+
+        ul li {
+          overflow: hidden;
+        }
+
+        .img {
+          width: auto;
+          max-height: 8.5rem;
+          @include media.onLg() {
+            max-height: 16rem;
+          }
+        }
+      }
+    }
+  }
+}

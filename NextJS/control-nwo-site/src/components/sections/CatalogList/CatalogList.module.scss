@@ -1,0 +1,20 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: colors.$gray-lighter;
+  color: colors.$black;
+  padding-bottom: calc(12rem - 4rem);
+  @include media.onLg() {
+    padding-bottom: calc(12rem - 6rem);
+  }
+  
+  .contCard {
+    margin-bottom: 4rem;
+    @include media.onLg() {
+      margin-bottom: 6rem;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  .blogContent {
+    ul,
+    ol {
+      padding-left: 20px;
+      li {
+        list-style: disc;
+      }
+      @include media.onLg() {
+        max-width: 628px;
+        margin-left: 217px;
+        p {
+          margin-left: unset;
+          margin-bottom: 0.8rem;
+        }
+      }
+      margin-bottom: 2.4rem;
+    }
+    ol li {
+      list-style-type: auto;
+    }
+  }
+  padding: 0;
+  li {
+    @include mixins.BlogPostContentText;
+  }
+  .text,
+  .subtitle {
+    margin-bottom: 2.4rem;
+    @include mixins.BlogPostContentText;
+    a {
+      b {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .subtitle {
+    font-weight: 600;
+    margin-bottom: 2.4rem;
+  }
+
+  .title {
+    margin-bottom: 2.4rem;
+    @include mixins.BlogPostContentTitle;
+    padding-top: 80px;
+    margin-top: -80px;
+    @include media.onLg() {
+      padding-top: 140px;
+      margin-top: -140px;
+    }
+  }
+
+  .smallContainer {
+    @include media.onLg() {
+      max-width: 628px;
+      margin-left: 217px;
+    }
+  }
+
+  .thumbnail {
+    display: block;
+    position: relative;
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-bottom: 3.7rem;
+    @include media.onLg() {
+      width: 100%;
+      padding-left: 217px;
+      margin-left: 0;
+      max-width: initial;
+      margin-bottom: 7rem;
+    }
+    p {
+      margin-top: 1.6rem;
+      margin-left: 1.6rem;
+      font-size: 1.2rem;
+      line-height: 14px;
+      letter-spacing: -0.5px;
+    }
+  }
+}

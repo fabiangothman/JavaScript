@@ -1,0 +1,60 @@
+{
+  "short_name": "Meritech Capital",
+  "name": "Meritech Capital",
+  "icons": [
+    {
+      "src": "/favicons/96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}

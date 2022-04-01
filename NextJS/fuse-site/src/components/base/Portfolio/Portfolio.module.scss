@@ -1,0 +1,272 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.portfolio {
+  position: relative;
+  margin-top: calc(1.2rem + #{mixins.$header-mobile-height});
+
+  @include media.onLg() {
+    margin-top: calc(8.8rem + #{mixins.$header-desktop-height} + 4.8rem);
+  }
+
+  &SidebarWrapper {
+    width: 100%;
+  }
+
+  & > div:first-of-type {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .storiesWrapper {
+    display: flex;
+    width: 100%;
+    &AtEnd {
+      justify-content: flex-end;
+      padding-right: 1.6rem;
+      @include media.onLg() {
+        padding-right: 0;
+      }
+    }
+
+    &AtMid {
+      justify-content: flex-start;
+      padding-left: 1.6rem;
+      @include media.onLg() {
+        padding-left: 0;
+        justify-content: center;
+      }
+    }
+  }
+
+  .fullStory {
+    background-color: #fff;
+    padding: 15rem 2.4rem 5rem 2.4rem;
+    margin-bottom: 10rem;
+    @include media.onLg() {
+      padding: 8rem;
+      margin-bottom: 15rem;
+    }
+
+    &Relate {
+      color: colors.$black;
+      @include mixins.CompanyNameMobile;
+      @include media.onLg() {
+        @include mixins.CompanyName;
+      }
+      font-weight: 400;
+    }
+
+    &CompanyData {
+      margin-bottom: 4.2rem;
+      &Name {
+        color: colors.$black;
+        @include mixins.CompanyNameMobile;
+        font-weight: 500;
+        @include media.onLg() {
+          @include mixins.CompanyName;
+          font-weight: 500;
+        }
+      }
+
+      &Links {
+        display: flex;
+        & > svg {
+          margin: 0 1.6rem;
+        }
+        & > span {
+          & > a {
+            display: flex;
+            align-items: center;
+            color: colors.$black;
+            @include mixins.CtaSmall;
+            & > svg {
+              margin-right: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .testimonials {
+    background-color: colors.$off-white;
+    padding: 2.4rem;
+    margin-bottom: 17rem;
+    z-index: 2;
+    max-width: 351px;
+    @include media.onLg() {
+      max-width: 924px;
+      padding: 7.2rem 11.6rem;
+      margin-bottom: 15rem;
+    }
+    position: relative;
+
+    &NoMargin {
+      margin-bottom: 0;
+    }
+
+    &Images {
+      &NoCompanyLogo {
+        position: absolute;
+        background-color: colors.$off-white;
+        width: 83px;
+        height: 83px;
+        bottom: -35px;
+        left: -7px;
+      }
+
+      &AuthorPhoto {
+        filter: grayscale(1);
+        object-fit: cover;
+      }
+
+      &Left {
+        & > img {
+          position: absolute;
+          &:first-of-type {
+            width: 103px;
+            height: 100px;
+            bottom: -134px;
+            left: 52px;
+          }
+          &:last-of-type {
+            width: 83px;
+            height: 83px;
+            bottom: -35px;
+            left: -7px;
+          }
+          @include media.onXs() {
+            &:first-of-type {
+              width: 103px;
+              height: 100px;
+              bottom: -134px;
+              right: 58px;
+            }
+            &:last-of-type {
+              width: 83px;
+              height: 83px;
+              bottom: -35px;
+              right: -6px;
+            }
+          }
+          @include media.onLg() {
+            &:first-of-type {
+              width: 150px;
+              height: 150px;
+              top: 70px;
+              left: -250px;
+            }
+            &:last-of-type {
+              width: 150px;
+              height: 150px;
+              top: -80px;
+              left: -100px;
+            }
+          }
+        }
+      }
+
+      &Right {
+        & > img {
+          position: absolute;
+          &:first-of-type {
+            width: 103px;
+            height: 100px;
+            bottom: -134px;
+            right: 58px;
+          }
+          &:last-of-type {
+            width: 83px;
+            height: 83px;
+            bottom: -35px;
+            right: -7px;
+          }
+
+          @include media.onSm() {
+            &:first-of-type {
+              width: 103px;
+              height: 100px;
+              bottom: -134px;
+              right: 52px;
+            }
+            &:last-of-type {
+              width: 83px;
+              height: 83px;
+              bottom: -35px;
+              right: -30px;
+            }
+          }
+          @include media.onLg() {
+            &:first-of-type {
+              width: 150px;
+              height: 150px;
+              top: 70px;
+              right: -231px;
+            }
+            &:last-of-type {
+              width: 150px;
+              height: 150px;
+              top: -80px;
+              right: -80px;
+            }
+          }
+        }
+      }
+    }
+
+    &Relate {
+      @include mixins.PortfolioBodyMobile;
+      @include media.onLg() {
+        @include mixins.PortfolioBody;
+      }
+      color: colors.$portfolio-body-text;
+    }
+  }
+
+  .readmoreWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 1.4rem;
+    cursor: pointer;
+    & > span {
+      @include mixins.CtaSmall;
+      color: colors.$black;
+      margin-right: 0.4rem;
+    }
+    &Right {
+      justify-content: flex-end;
+    }
+  }
+
+  .microphoneWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    cursor: pointer;
+    & > svg {
+      margin-right: 0.8rem;
+    }
+    & > span {
+      @include mixins.CtaLargeMobile;
+      @include media.onLg() {
+        @include mixins.CtaLarge;
+      }
+      color: colors.$black;
+    }
+
+    &Right {
+      justify-content: flex-end;
+    }
+  }
+
+  .customBackground {
+    position: absolute;
+  }
+
+  .customColClass {
+    position: relative;
+  }
+}

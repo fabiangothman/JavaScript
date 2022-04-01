@@ -1,0 +1,27 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+
+.buttonWrapper {
+  display: inline-block;
+  
+  .link {
+    display: inline-flex;
+    color: colors.$off-white;
+    text-transform: uppercase;
+    align-items: center;
+    @include mixins.CtaSmall;
+
+    & > svg:first-of-type {
+      margin-top: 4px;
+      margin-right: 8px;
+    }
+
+    & > svg:last-of-type {
+      margin-bottom: 4px;
+      margin-left: 8px;
+    }
+    
+  }
+
+}

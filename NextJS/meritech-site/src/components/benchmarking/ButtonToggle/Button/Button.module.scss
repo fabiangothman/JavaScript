@@ -1,0 +1,30 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.wrapper {
+  margin: 0px 6px 6px 0;
+
+  border: 1px solid colors.$tan-light;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 12px 6px;
+  border-radius: 4px;
+  color: colors.$brown-light;
+  //   background-color: colors.$dark-white;
+  background-color: colors.$white;
+  @include mixins.TextXSSemiBold;
+
+  &:hover {
+    border-color: colors.$green;
+  }
+
+  &.selected {
+    border-color: colors.$green;
+    background-color: colors.$green;
+    color: colors.$white;
+
+    &:hover {
+      background-color: colors.$dark-green;
+    }
+  }
+}

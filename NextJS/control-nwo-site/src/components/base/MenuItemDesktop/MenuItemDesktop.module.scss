@@ -1,0 +1,113 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  color: colors.$black-light;
+
+  .item {
+    font-family: fonts.$menu;
+    color: colors.$black-light;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.95rem;
+    &:hover {
+      color: colors.$blue;
+    }
+    &.active {
+      color: colors.$blue;
+    }
+
+    .link {
+      color: inherit;
+    }
+  }
+
+  .boxArea {
+    position: absolute;
+    z-index: 200;
+    left: 0rem;
+    margin: auto;
+    width: max-content;
+    max-width: 44.8rem;
+    display: table;
+    //transform: translateX(-50%);
+    //left: 50%;
+
+    .spacing {
+      height: 2.1rem;
+    }
+    .triangleSelector {
+      position: relative;
+      z-index: 2;
+      display: table;
+      width: 100%;
+      .triangleCont {
+        display: flex;
+        vertical-align: middle;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        filter: drop-shadow(0 -1px rgba(53, 61, 71, 0.1));
+      }
+    }
+    .subItems {
+      position: relative;
+      z-index: 1;
+      background-color: colors.$white;
+      color: colors.$gray-dark;
+      border-radius: 1.2rem;
+      padding: 2.4rem 0;
+      display: flex;
+      flex-direction: row;
+      filter: drop-shadow(0 1px 1px rgba(53, 61, 71, 0.1));
+      
+      .list {
+        font-family: fonts.$text;
+        padding-left: 2.4rem;
+        padding-right: 3.1rem;
+
+        .title {
+          color: colors.$gray-dark;
+          font-weight: 700;
+          font-size: 1.2rem;
+          line-height: 1.508rem;
+          margin-bottom: 1.6rem;
+        }
+
+        .subitem {
+          font-family: fonts.$text;
+          color: colors.$gray-dark;
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 1.76rem;
+          &:not(:last-of-type){
+            margin-bottom: 1.6rem;
+          }
+          &:hover {
+            color: colors.$blue;
+          }
+          .link {
+            color: inherit;
+          }
+        }
+      }
+
+      .lineVertical {
+        border-right: 1px solid colors.$gray-dark;
+        opacity: 0.2;
+      }
+    }
+  }
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}

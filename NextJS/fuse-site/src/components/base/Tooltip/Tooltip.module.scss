@@ -1,0 +1,24 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.wrapper {
+  @include media.onXl() {
+    width: 90%;
+  }
+  @include media.onLg() {
+    width: 75%;
+  }
+  @include media.bwLgAndXl() {
+    width: 80%;
+  }
+  width: 80%;
+  max-height: 130%;
+  overflow: scroll;
+  padding: 2.4rem;
+  background-color: colors.$off-white;
+  & > span {
+    color: colors.$black;
+    @include mixins.Caption;
+  }
+}

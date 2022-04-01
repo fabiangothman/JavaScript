@@ -1,0 +1,218 @@
+@use './colors';
+@use './media';
+
+@mixin TextMobile {
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+
+@mixin TextDesktop {
+  font-size: 1.8rem;
+  line-height: 27px;
+}
+
+@mixin Text {
+  @include TextMobile;
+  @include media.onLg() {
+    @include TextDesktop;
+  }
+}
+
+@mixin LinkDesktop {
+  font-size: 1.2rem;
+  line-height: 14.63px;
+  letter-spacing: 0.05em;
+}
+
+@mixin Link {
+  color: var(--mobileMenuLink);
+  &:hover {
+    color: var(--headerMenuActived);
+  }
+}
+
+@mixin TextMd {
+  font-size: 1.4rem;
+  line-height: 17.07px;
+}
+
+@mixin TextLg {
+  font-size: 1.8rem;
+  line-height: 21.94px;
+}
+
+@mixin MiddleText {
+  font-size: 2.4rem;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+@mixin MiddleText1 {
+  font-size: 2.4rem;
+  line-height: 2.926rem;
+  font-weight: 600;
+}
+
+@mixin SmallText {
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+@mixin TitleMobile {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 43.88px;
+}
+
+@mixin TitleDesktop {
+  font-size: 6.4rem;
+  font-weight: 600;
+  line-height: 78.02px;
+}
+
+@mixin MiddleTitle {
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 58.51px;
+}
+
+// Titles
+
+@mixin Text5XL {
+  font-size: 7.2rem;
+  font-weight: 600;
+  line-height: 87.77px;
+}
+
+@mixin Text2XS {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 12.19px;
+}
+
+@mixin Text3XS {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 12.19px;
+}
+
+@mixin Text4XS {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+}
+
+@mixin Text5XS {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+
+@mixin Title {
+  @include TitleMobile;
+  @include media.onLg() {
+    @include TitleDesktop;
+  }
+}
+
+@mixin H1 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+@mixin SmallTitle {
+  font-size: 4rem;
+  line-height: 48px;
+}
+
+@mixin SmallerTitle {
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+@mixin ItalicH1 {
+  @include H1;
+  font-style: italic;
+}
+
+@mixin H2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+@mixin H3 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+@mixin ItalicH3 {
+  @include H3;
+  font-style: italic;
+}
+
+@mixin H4 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+@mixin H5 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin SectionPadding {
+  padding: 4.8rem 0;
+  @include media.onLg() {
+    padding: 20rem 0;
+  }
+}
+
+@mixin SectionSmallerPadding {
+  padding: 2rem 0 6.4rem 0;
+  @include media.onLg() {
+    padding: 4.8rem 0;
+  }
+}
+
+// Blog
+
+@mixin BlogPostContentText {
+  @include TextMobile;
+  color: colors.$brown-dark;
+  a {
+    font-weight: 600;
+    color: colors.$brown-dark;
+    border-bottom: 2px solid colors.$green;
+  }
+}
+
+@mixin BlogPostContentTitle {
+  color: colors.$brown-dark;
+  font-size: 2.4rem;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+@mixin TextXSSemiBold {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@mixin TextBaseSemiBold {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin TitleSm {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 21.94px;
+}

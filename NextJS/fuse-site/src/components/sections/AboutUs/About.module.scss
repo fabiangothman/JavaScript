@@ -1,0 +1,8 @@
+.about {
+  .testimonials {
+    padding: 0 !important;
+    & > div {
+      padding: 0 !important;
+    }
+  }
+}

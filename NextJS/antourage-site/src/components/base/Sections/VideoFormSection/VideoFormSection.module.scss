@@ -1,0 +1,219 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$gray-800;
+  color: colors.$white-1000;
+  text-align: center;
+  overflow: hidden;
+
+  .content {
+    padding: 5rem 0 4rem 0;
+    position: relative;
+    @include media.onMd() {
+      padding: 11.1rem 0 13.7rem 0;
+    }
+
+    .title {
+      margin-bottom: 2.4rem;
+      @include mixins.Title;
+      @include media.onMd() {
+        margin-bottom: 2.1rem;
+      }
+    }
+    .text {
+      margin-bottom: 2.4rem;
+      @include mixins.NormalText;
+      @include media.onMd() {
+        margin-bottom: 5rem;
+      }
+    }
+    .teamsText {
+      margin-bottom: 2.7rem;
+      @include mixins.NormalText;
+      @include media.onMd() {
+        margin-bottom: 3.1rem;
+      }
+    }
+    .contLogos {
+      margin-bottom: 6.2rem;
+      .contImage {
+        position: relative;
+        display: inline-block;
+        width: 6rem;
+        height: 6rem;
+        margin: 0 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .formContainer {
+      background-color: colors.$gray-100;
+      color: colors.$gray-500;
+      border-radius: 2rem;
+      padding: 2.4rem;
+      @include media.onMd() {
+        padding: 4rem;
+      }
+
+      .sameLine {
+        display: block;
+        @include media.onXl() {
+          display: flex;
+        }
+        .inputCont {
+          &:last-of-type{
+            flex: 1;
+          }
+          &:not(:last-of-type) {
+            margin-right: 4rem;
+          }
+        }
+      }
+
+      .inputCont {
+        margin-bottom: 2.4rem;
+        border-bottom: 1px solid colors.$gray-500;
+
+        input, textarea, select {
+          width: 100%;
+          border: 0;
+          background-color: transparent;
+          outline: none;
+          @include mixins.TextMd2;
+          @include media.onMd() {
+            @include mixins.TextMd;
+          }
+          color: colors.$gray-500;
+          &:focus, &:focus {
+            outline: none;
+          }
+        }
+        input {
+          height: 5.8rem;
+        }
+        textarea {
+          min-width: 100%;
+          min-height: 16.3rem;
+        }
+        select {
+          height: 5.8rem;
+          padding-right: 1.6rem;
+        }
+      }
+      .uploadCont{
+          position: relative;
+        .dropzone {
+          border-width: 1px;
+          border-color: colors.$gray-500;
+          border-style: dashed;
+          border-radius: 2rem;
+          width: 100%;
+          display: table;
+          overflow: hidden;
+          height: 34rem;
+          @include media.onLg() {
+            height: 30rem;
+          }
+          .intCont {
+            display: table-cell;
+            vertical-align: middle;
+          }
+        }
+        .filesList {
+          margin-top: 1rem;
+          text-align: left;
+          @include mixins.TextXs;
+        }
+      }
+
+      .policyCont {
+        margin-top: 2.7rem;
+        text-align: left;
+        label {
+          color: colors.$black-1000;
+          @include mixins.TextXsB;
+          @include media.onMd() {
+            @include mixins.TextSmB;
+          }
+          display: flex;
+          flex-direction: row;
+          input {
+            width: 2.7rem;
+            height: 2.7rem;
+            border-color: colors.$black-1000;
+            background-color: transparent;
+            margin-right: 2.3rem;
+          }
+        }
+      }
+
+      .buttonCont {
+        margin-top: 2.5rem;
+        text-align: right;
+        .button {
+          &:hover {
+            background-color: colors.$black-1000;
+            color: colors.$white-1000;
+          }
+        }
+        .feedback {
+          margin-bottom: 2.4rem;
+          @include mixins.TextXsB;
+          @include media.onMd() {
+            @include mixins.TextSmB;
+          }
+        }
+        .success {
+          text-align: left;
+          color: colors.$black-1000;
+        }
+        .error {
+          text-align: right;
+          color: colors.$red-1000;
+        }
+      }
+    }
+  }
+
+  .topStain, .bottomStain {
+    position: absolute;
+  }
+  .topStain {
+    top: -20rem;
+    left: -10rem;
+    @include media.onMd() {
+      top: -10rem;
+      left: -10rem;
+    }
+  }
+  .bottomStain {
+    bottom: -20rem;
+    right: -10rem;
+    @include media.onMd() {
+      bottom: -10rem;
+      right: -10rem;
+    }
+  }
+}
+
+// Button base colors
+.RED {
+  path {
+    fill: colors.$red-1000;
+  }
+}
+.BLUE {
+  path {
+    fill: colors.$blue-1000;
+  }
+}
+.PURPLE {
+  path {
+    fill: colors.$purple-1000;
+  }
+}
+

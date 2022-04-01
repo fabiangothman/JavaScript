@@ -1,0 +1,38 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/fonts';
+
+.component {
+  position: relative;
+  overflow: hidden;
+
+  .inputWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .input, .button {
+      position: relative;
+      margin: 0;
+      border: 0;
+      padding: 1.2rem;
+    }
+    .input{
+      flex: 1;
+      background-color: #E9F1FF;
+      font-family: fonts.$text;
+      font-weight: 400;
+      color: colors.$gray-dark;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      resize: none;
+      &::placeholder {
+        color: colors.$gray-dark;
+      }
+    }
+    .button{
+      background-color: #E9F1FF;
+    }
+  }
+}

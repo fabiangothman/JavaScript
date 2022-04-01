@@ -1,0 +1,105 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  z-index: 0;
+
+  .container {
+    position: relative;
+    z-index: -1;
+    background: radial-gradient(
+      85.24% 82.13% at 72.53% 17.87%,
+      rgba(118, 196, 166, 0.75) 0%,
+      rgba(118, 196, 166, 0) 100%
+    ),
+    linear-gradient(
+      209.13deg,
+      rgba(217, 169, 195, 0) 26.97%,
+      rgba(217, 169, 195, 0.5) 89.22%
+    );
+    padding-top: 3.6rem;
+    padding-bottom: 9.6rem;
+    @include media.onLg() {
+      padding-top: 8rem;
+      padding-bottom: 9.9rem;
+    }
+
+    .header {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 4.8rem;
+      @include media.onLg() {
+        margin-bottom: 8.9rem;
+      }
+      .icon {
+        flex: inherit;
+        margin-right: 1.8rem;
+        @include media.onLg() {
+          margin-right: 2.4rem;
+        }
+      }
+      .textWrapper {
+        flex: 1;
+        .entryTextHg {
+          @include mixins.RobotoBoldMd;
+        }
+        .entryText {
+          @include mixins.RobotoMd;
+        }
+      }
+    }
+    .subtitle {
+      @include mixins.RobotoRegularMd;
+    }
+    
+    .dropCard{
+      //max-width: 32.6rem;
+      max-width: 100%;
+      padding-top: 3.6rem;
+      @include media.onLg() {
+        max-width: 32.6rem;
+        padding-top: 6.6rem;
+      }
+    }
+    
+    .hightlightedText{
+      text-align: center;
+      @include mixins.RobotoBoldMdDesktop;
+      margin-bottom: 2.4rem;
+      margin-top: 9.6rem;
+      font-weight: 600 !important;
+      @include media.onLg() {
+        margin-top: 8.9rem;
+        font-weight: 700 !important;
+      }
+    }
+    .relatedText{
+      text-align: center;
+      @include mixins.RobotoRegularMdDesktop;
+    }
+    .buttonLearn {
+      margin-top: 2.3rem;
+      @include media.onLg() {
+        margin-top: 2rem;
+      }
+    }
+  }
+  
+}
+
+.showOnMobile {
+  display: block;
+  @include media.onLg() {
+    display: none;
+  }
+}
+.showOnDesktop {
+  display: none;
+  @include media.onLg() {
+    display: block;
+  }
+}

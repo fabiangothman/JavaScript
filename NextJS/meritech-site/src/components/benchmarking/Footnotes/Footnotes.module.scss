@@ -1,0 +1,17 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.wrapper {
+  margin-top: 24px;
+
+  .title {
+    @include mixins.Text2XS();
+    text-transform: uppercase;
+    color: colors.$brown-lighter;
+    margin-bottom: 6px;
+  }
+
+  .extraNotes {
+    margin-top: 24px;
+  }
+}

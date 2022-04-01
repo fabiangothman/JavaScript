@@ -1,0 +1,18 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  
+  @include media.onLg() {
+    margin: 0;
+  }
+}
+
+.main {
+  flex-grow: 1;
+}

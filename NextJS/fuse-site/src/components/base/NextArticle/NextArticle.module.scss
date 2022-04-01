@@ -1,0 +1,95 @@
+@use 'styles/mixins';
+@use 'styles/media';
+@use 'styles/colors';
+
+.next {
+  .linesCol {
+    position: relative;
+
+    &.linesColLeft {
+      svg {
+        right: 2rem;
+      }
+    }
+
+    &.linesColRight {
+      display: none;
+      @include media.onLg() {
+        display: block;
+      }
+      svg {
+        left: 2rem;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .svgDesktop {
+    display: none;
+
+    @include media.onLg() {
+      display: initial;
+    }
+  }
+
+  .svgMobile {
+    @include media.onLg() {
+      display: none;
+    }
+  }
+
+  .content {
+    padding: 5.5rem 0 8rem 0px;
+    @include media.onLg() {
+      padding: 12rem 0 14.8rem 0px;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        margin-top: 0;
+        text-align: left;
+        font-family: 'Tomato Grotesk';
+
+        @include mixins.H3Mobile;
+        @include media.onLg() {
+          @include mixins.H3;
+          text-align: right;
+        }
+
+        & > a {
+          color: colors.$white;
+        }
+      }
+
+      .article {
+        align-self: flex-start;
+        margin-bottom: 4rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &GoBack {
+          & > a {
+            @include mixins.Caption;
+            color: colors.$off-white;
+          }
+        }
+
+        @include media.onLg() {
+          align-self: flex-end;
+        }
+      }
+
+      .articleInfo {
+        @include mixins.Caption;
+      }
+    }
+  }
+}

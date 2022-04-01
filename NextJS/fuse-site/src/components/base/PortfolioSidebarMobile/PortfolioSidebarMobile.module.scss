@@ -1,0 +1,106 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.dropdown {
+  margin-bottom: 1rem;
+  &Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &Categories {
+    display: flex;
+    width: 100%;
+    overflow-y: auto;
+    margin: 3.5rem 0;
+    align-items: center;
+    &Item {
+      font-family: 'Poppins';
+      font-size: 12px;
+      color: #c8c8c8;
+      &Active {
+        color: #ffffff;
+      }
+    }
+
+    & > span:first-of-type {
+      margin-left: 4rem;
+    }
+
+    & > span:last-of-type {
+      margin-right: 4rem;
+    }
+
+    & > svg {
+      margin: 0 2.4rem;
+    }
+  }
+
+  &Header {
+    margin-bottom: 0.8em;
+    padding: 0.4em 2em 0.4em 1em;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 16.8px;
+    color: colors.$off-white;
+    background: transparent;
+    font-family: 'Poppins';
+    display: flex;
+    align-items: center;
+    &Selected {
+      min-width: 100px;
+    }
+    & > span:first-of-type {
+      padding-right: 1rem;
+    }
+    & > span:last-of-type {
+      padding-left: 1rem;
+    }
+    & > svg {
+      margin-left: 2rem;
+    }
+  }
+
+  &List {
+    padding: 0;
+    margin: 0;
+    padding-left: 4.1rem;
+    height: 60%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    &:first-child {
+      padding-top: 0.8em;
+    }
+
+    &Item {
+      list-style: none;
+      margin-bottom: 2.4em;
+      color: #c8c8c8;
+      font-size: 18px;
+      line-height: 21, 6px;
+      font-weight: 400;
+      & > a {
+        color: #c8c8c8;
+      }
+      &Active {
+        font-weight: 700;
+        color: colors.$off-white;
+      }
+    }
+  }
+
+  &ListContainer {
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 9;
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(20px);
+  }
+}

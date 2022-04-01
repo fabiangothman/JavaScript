@@ -1,0 +1,38 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.getInTouch {
+  background: colors.$grey2;
+  padding: 32px 25px 100px;
+  color: colors.$grey1;
+
+  @include media.onLg() {
+    padding: 54px 0 230px;
+  }
+
+  .col {
+    padding: 0;
+    margin: auto;
+    text-align: left;
+
+    @include media.onLg() {
+      padding: 0 10px;
+    }
+  }
+
+  .headline {
+    @include mixins.subheaderHeavy;
+
+    @include media.onLg() {
+      @include mixins.major;
+    }
+  }
+
+  .copy {
+    margin: 24px 0;
+    max-width: 260px;
+    @include mixins.body;
+  }
+}

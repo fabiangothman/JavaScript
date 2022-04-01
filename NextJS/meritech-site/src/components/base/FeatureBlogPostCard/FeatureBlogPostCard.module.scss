@@ -1,0 +1,84 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  margin-bottom: 2rem;
+  position: relative;
+  @include media.onLg() {
+    margin-bottom: 0;
+  }
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 -16px;
+    background: colors.$white;
+    img {
+      transition: 0.3s ease;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+      .title {
+        color: colors.$green !important;
+      }
+    }
+
+    @include media.onLg() {
+      min-height: 450px;
+      margin: 0;
+    }
+
+    .header {
+      flex: 1;
+      width: 100%;
+    }
+
+    .body {
+      padding: 2.4rem;
+      @include media.onLg() {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 302px;
+        background-color: colors.$white;
+      }
+
+      .category,
+      .date,
+      .title,
+      .author {
+        color: colors.$brown-dark;
+      }
+
+      .category {
+        @include mixins.Text2XS;
+        margin-bottom: 4px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .date {
+        @include mixins.Text3XS;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 1.8rem;
+      }
+      .title {
+        @include mixins.MiddleText1;
+        min-height: 127px;
+      }
+
+      .author {
+        border-top: 1px solid colors.$tan-light;
+        @include mixins.TextMd;
+        font-weight: 400;
+        padding-top: 12px;
+      }
+    }
+  }
+}

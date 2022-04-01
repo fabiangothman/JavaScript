@@ -1,0 +1,52 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  color: colors.$gray-dark;
+  padding: 2rem 0 12rem;
+  @include media.onLg() {
+    padding: 2rem 0 8rem;
+  }
+  
+  .title {
+    position: relative;
+    font-family: fonts.$header;
+    font-weight: 400;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid colors.$gray-light;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    @include media.onLg() {
+      font-size: 2.4rem;
+      line-height: 3.36rem;
+    }
+  }
+
+  .position {
+    position: relative;
+    border-bottom: 1px solid colors.$gray-light;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    cursor: pointer;
+    .label {
+      font-family: fonts.$header;
+      font-weight: 400;
+      padding: 2.4rem 0;
+      font-size: 2rem;
+      line-height: 3rem;
+      @include media.onLg() {
+        font-size: 4rem;
+        line-height: 6rem;
+      }
+    }
+    .arrowIcon {
+      position: relative;
+      display: flex;
+      align-self: center;
+    }
+  }
+}

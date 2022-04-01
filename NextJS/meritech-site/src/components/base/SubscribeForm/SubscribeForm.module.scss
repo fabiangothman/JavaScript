@@ -1,0 +1,55 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.box {
+  padding: 2.4rem;
+  margin-top: 2.9rem;
+  border: 1px solid var(--headerBorderColor);
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 302px;
+  // background-color: red;
+  // height: 100%;
+  .description {
+    @include mixins.TextMd;
+    color: var(--text);
+  }
+  .input {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    border-bottom: 1px solid colors.$tan-light;
+    margin-bottom: 1.6rem;
+    @include mixins.TextMd;
+    padding: 2rem 0;
+    color: var(--headerMenu);
+    &:focus {
+      outline: none;
+    }
+  }
+  .label {
+    @include mixins.TextMd;
+    font-weight: 600;
+    color: var(--headerMenu);
+    margin-right: 1.2rem;
+  }
+  .button {
+    width: 3.6rem;
+    height: 3.6rem;
+    background-color: transparent;
+    svg * {
+      stroke: var(--text);
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+}

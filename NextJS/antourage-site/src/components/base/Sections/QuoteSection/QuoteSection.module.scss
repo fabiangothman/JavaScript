@@ -1,0 +1,189 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  padding: 0;
+  position: relative;
+  background-color: colors.$white-1000;
+  color: colors.$white-1000;
+  overflow: hidden;
+
+  .contGeneralQuote {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    margin: 2.4rem 0.8rem 2.4rem 0.8rem;
+    @include media.onLg() {
+      height: 58.6rem;
+      max-width: 124rem;
+      margin: 10.1rem 5rem 9.9rem 5rem;
+    }
+    @include media.onXl() {
+      margin: 10.1rem 10rem 9.9rem 10rem;
+    }
+
+    .contQuote{
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      background-color: colors.$purple-1000;
+      border-radius: 2rem;
+      display: block;
+      padding-top: 5.6rem;
+      overflow: hidden;
+      @include media.onLg() {
+        padding-top: 0;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .contTabs {
+        flex: 5;
+        align-self: center;
+        // height: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        word-break: break-word;
+        margin: 0;
+        @include media.onLg() {
+          margin: 0 10rem;
+        }
+
+        .tabs {
+          margin: 0 auto;
+
+          .tabList {
+            position: relative;
+            margin-bottom: 1.8rem;
+            .tab {
+              color: rgba(255, 255, 255, 0.5);
+              cursor: pointer;
+              @include mixins.TextXs;
+              @include media.onLg() {
+                @include mixins.TextSm;
+              }
+              display: inline-block;
+              &.tabSelected {
+                color: colors.$white-1000;
+                font-weight: 600;
+              }
+              &:first-of-type {
+                padding-left: 2.2rem;
+              }
+              &:not(:last-of-type) {
+                margin-right: 1.2rem;
+                @include media.onLg() {
+                  margin-right: 1.8rem;
+                }
+              }
+            }
+          }
+
+          .body {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            margin-bottom: 5rem;
+            @include media.onLg() {
+              margin-bottom: 0;
+            }
+            .tabPanel {
+              position: relative;
+              text-align: left;
+              //display: none;
+              &.panelSelected {
+                position: relative;
+                display: block;
+              }
+
+            }
+
+            .text, .hideText {
+              @include mixins.NormalTextMobileB;
+              padding: 0 1.9rem 0 2.2rem;
+              @include media.onLg() {
+                padding-right: 0;
+                @include mixins.TextMdB;
+              }
+            }
+            .hideText {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+
+      .contInfo {
+        position: relative;
+        display: block;
+        @include media.onLg() {
+          display: block;
+          flex: 6;
+        }
+        .contImage {
+          width: 100%;
+          position: relative;
+          height: 33.4rem;
+          @include media.onLg() {
+            height: 100%;
+          }
+          .image {
+            object-position: top center;
+            @include media.onLg() {
+              object-position: center center;
+            }
+          }
+        }
+
+        .contNames {
+          position: absolute;
+          bottom: 3rem;
+          left: 2.4rem;
+          z-index: 4;
+          @include media.onLg() {
+            bottom: 3.9rem;
+            left: -3.9rem;
+          }
+          .name, .role {
+            @include mixins.NormalTextB;
+            padding: 1.2rem;
+            display: table;
+          }
+          .name {
+            background-color: colors.$white-1000;
+            color: colors.$purple-1000;
+            margin-bottom: 0.6rem;
+          }
+          .role {
+            background-color: colors.$black-1000;
+            color: colors.$white-1000;
+          }
+        }
+      }
+    }
+
+    .topQuote, .bottomQuote {
+      position: absolute;
+      z-index: 3;
+      width: 6.6rem;
+      @include media.onLg() {
+        width: 12.2rem;
+      }
+    }
+    .topQuote {
+      top: -3rem;
+      left: -1.3rem;
+      @include media.onLg() {
+        left: -3rem;
+      }
+    }
+    .bottomQuote {
+      bottom: -3rem;
+      right: -1.3rem;
+      @include media.onLg() {
+        right: -3rem;
+      }
+    }
+  }
+}

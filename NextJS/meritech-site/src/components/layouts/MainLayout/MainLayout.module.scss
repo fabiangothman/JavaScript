@@ -1,0 +1,12 @@
+@use 'styles/colors';
+
+.component {
+  //   background-color: var(--background);
+  height: 100%;
+  display: inline-table;
+  table-layout: fixed;
+  width: 100%;
+  &Dark {
+    background-color: black;
+  }
+}

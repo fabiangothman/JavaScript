@@ -1,0 +1,71 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  color: colors.$gray-dark;
+  
+  .header {
+    position: relative;
+    padding: 2rem 0;
+    border-bottom: 1px solid colors.$gray-light;
+    .headerWrapper {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        color: colors.$blue;
+        .arrowIcon svg path{
+          stroke: colors.$blue;
+        }
+      }
+    }
+    .contArrow {
+      height: 100%;
+      margin-right: calc(2rem - 1rem);
+      .arrowIcon {
+        padding: 1rem 1rem 1rem 0;
+        cursor: pointer;
+      }
+    }
+    .title {
+      font-family: fonts.$menu;
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: 2.19rem;
+    }
+  }
+
+  .category {
+    position: relative;
+    border-bottom: 1px solid colors.$gray-light;
+    margin-top: 2rem;
+    .titleCat{
+      font-family: fonts.$text;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.508rem;
+      margin-bottom: 2rem;
+    }
+    
+    .item{
+      display: table;
+      font-family: fonts.$menu;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2.438rem;
+      margin-bottom: 2rem;
+      &:hover {
+        color: colors.$blue;
+      }
+      .link {
+        color: inherit;
+      }
+    }
+  }
+}

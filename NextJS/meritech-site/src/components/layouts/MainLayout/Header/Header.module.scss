@@ -1,0 +1,273 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.header {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  .customContainer {
+    max-width: 95%;
+  }
+  &:after {
+    content: '';
+    width: 0%;
+    transition: width 0.3s ease;
+    height: 1px;
+    background: var(--headerBorderColor);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  &White {
+    background-color: colors.$white;
+  }
+  &WithBorder:after {
+    width: 100%;
+  }
+  @include media.onLg() {
+    height: 111px;
+  }
+  &Fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+  &WithBackground {
+    background-color: var(--background);
+  }
+
+  .withAnimation {
+    position: relative;
+    top: -70px;
+  }
+  .withoutAnimation {
+    position: relative;
+    top: 0px;
+  }
+  .whiteLogo {
+    path {
+      fill: var(--headerMenu);
+    }
+  }
+  .title {
+    line-height: 0;
+    @include media.onLg() {
+      margin-left: 50px;
+      //   &WithMargin {
+      //     margin-left: 50px;
+      //   }
+    }
+    a {
+      display: block;
+    }
+
+    &WithTransition {
+      transition: all 0.3s ease;
+    }
+
+    &WithScale {
+      // transition: all 0.3s ease;
+      transform: scale(1.3) translateX(10px);
+      position: relative;
+    }
+  }
+
+  .subscribeFloatingBox {
+    position: absolute;
+    right: 0px;
+    height: 250px;
+    top: 33px;
+    width: 300px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    display: none;
+    @include media.onLg() {
+      display: flex;
+    }
+  }
+
+  .subscribeOpened {
+    opacity: 1;
+    pointer-events: initial;
+    z-index: 1;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include media.onLg() {
+      justify-content: space-between;
+    }
+  }
+
+  .menuButton {
+    background: none;
+    border: 0;
+    margin-right: -8px;
+    padding: 16px;
+    position: relative;
+    left: -16px;
+    @include media.onLg() {
+      display: none;
+    }
+  }
+
+  .subscribeButtonOpened {
+    color: colors.$green;
+    * {
+      stroke: colors.$green;
+    }
+  }
+
+  .subscribeArea {
+    display: none;
+    @include media.onLg() {
+      display: flex;
+      border: 0;
+      margin: auto;
+      background-color: transparent;
+      color: var(--text);
+      * {
+        stroke: var(--text);
+      }
+      &:hover {
+        color: colors.$green;
+        * {
+          stroke: colors.$green;
+        }
+      }
+    }
+  }
+
+  .timeline {
+    position: absolute;
+    // opacity: 0;
+    right: 25px;
+    pointer-events: none;
+    &Hidden {
+      opacity: 0;
+    }
+    @include media.onLg() {
+      right: initial;
+      left: 0px;
+      opacity: 1;
+      &Hidden {
+        opacity: 0;
+      }
+    }
+    @media screen and (min-width: 1201px) {
+      left: 7.7px;
+    }
+    &Circle,
+    &Trace {
+      position: absolute;
+      left: 0px;
+      top: 0;
+    }
+
+    &TraceWrapper {
+      pointer-events: none;
+    }
+
+    &Circle {
+      left: -11px;
+      top: -13px;
+    }
+  }
+
+  .subscribeBox {
+    position: relative;
+    width: 300px;
+    display: none;
+    @include media.onLg() {
+      display: initial;
+    }
+  }
+
+  .subscribe {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+    @include mixins.LinkDesktop;
+  }
+
+  .list {
+    padding: 0;
+    margin: 0;
+    display: none;
+    @include media.onLg() {
+      display: flex;
+    }
+    &Item {
+      text-transform: uppercase;
+      position: relative;
+      @include mixins.Text;
+      @include media.onLg() {
+        letter-spacing: 0.05em;
+        @include mixins.TextMd;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        border-radius: 2px;
+        height: 2px;
+        background: colors.$green;
+        left: 0;
+        right: 0;
+        width: 0;
+        transition: 0.3s ease;
+      }
+      &:not(&:first-of-type) {
+        margin-left: 4.8rem;
+      }
+      &Link {
+        color: var(--headerMenu);
+        transition: color 0.3s ease;
+        &:hover {
+          color: var(--headerMenuActived);
+        }
+      }
+      &Hovered {
+        a {
+          color: var(--headerMenuHovered);
+        }
+        &:after {
+          width: 100%;
+        }
+      }
+      &Actived {
+        font-weight: 600;
+        a {
+          color: var(--headerMenuActived);
+        }
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+:global(.transparent-header) {
+  .header {
+    background: none !important;
+    &OpenedMenu {
+      background-color: var(--background) !important;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.investors {
+  background-color: colors.$gray-background;
+  padding: 0 1.25rem;
+
+  @include media.onLg() {
+    padding: 10.625rem 3.4375rem;
+  }
+}
+
+.header {
+  align-self: flex-start;
+}
+
+.logos {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  
+  @include media.onLg() {
+    padding-left: 1.875rem
+  }
+  
+  .logo {
+    background-color: colors.$white;
+    height: 0;
+    margin: 0.3125rem;
+    padding-top: 40vw;
+    position: relative;
+    width: 40vw;
+
+    @include media.onLg() {
+      margin: 0.625rem;
+      padding-top: 16.875rem;
+      padding-top: 40%;
+      width: 16.875rem;
+      width: 40%;
+    }
+  
+    .logoImage {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      padding: 1.5625rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .logoImg {
+    overflow: visible;
+  }
+}
+
+.header {
+  margin-top: 3.75rem;
+}
+  
+.description {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.875rem;
+  margin-top: 1.875rem;
+}

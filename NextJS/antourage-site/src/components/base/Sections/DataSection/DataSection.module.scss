@@ -1,0 +1,155 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  position: relative;
+  background-color: colors.$black-1000;
+  color: colors.$white-1000;
+  overflow: hidden;
+  height: 100%;
+
+  .contScroll{
+    position: relative;
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      .roulette {
+        position: absolute;
+        top: 0;
+        width: 60%;
+        @include media.onSm() {
+          width: 55%;
+        }
+        @include media.onLg() {
+          width: 40%;
+        }
+        left: 0;
+      }
+      .animation {
+        position: relative;
+        height: 100%;
+      }
+      .space {
+        position: relative;
+        height: 100%;
+        flex: 1;
+        @include media.onLg() {
+          flex: 5;
+        }
+      }
+      .content {
+        position: relative;
+        flex: 1;
+        @include media.onLg() {
+          flex: 6;
+        }
+        padding-right: 1rem;
+        ul li {
+          position: relative;
+          //height: 90% !important;
+
+          .contCard{
+            position: relative;
+            height: 100%;
+            vertical-align: top !important;
+            padding: 0rem 0 2rem 0;
+
+            .card {
+              display: flex;
+              max-width: 60rem;
+              text-align: left;
+              flex-direction: column;
+              padding: 0 0 6rem 0;
+              @include media.onLg() {
+                flex-direction: row;
+                padding: 10rem 0;
+              }
+              .contValues {
+                display: flex;
+                flex-direction: row;
+                padding-bottom: 2rem;
+                @include media.onLg() {
+                  padding-bottom: 0;
+                }
+                .value{
+                  @include mixins.TextxLB_3;
+                  @include media.onLg() {
+                    @include mixins.TextxLB_1;
+                  }
+                }
+                .sign{
+                  margin-right: 4.1rem;
+                  @include mixins.TitleMobileSB;
+                  line-height: 11rem;
+                  @include media.onLg() {
+                    @include mixins.TextxLB_2;
+                    line-height: 6.4rem;
+                  }
+                }
+              }
+
+              .contArch {
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                word-break: break-word;
+                padding-top: 2rem;
+                @include media.onLg() {
+                  padding-top: 0;
+                }
+                .achievement {
+                  margin-bottom: 1.6rem;
+                  @include mixins.TextMobileB;
+                  @include media.onLg() {
+                    @include mixins.H4;
+                  }
+                }
+
+                .contBuss {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: flex-start;
+                  .bussiness {
+                    align-self: center;
+                    @include mixins.TextSmB;
+                    @include media.onLg() {
+                      @include mixins.TextLgB;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .hide{
+            & span {
+              display: none;
+            }
+          }
+        }
+        .comparator{
+          position: absolute;
+          top: 1.9rem;
+          right: 1.5rem;
+          overflow: hidden;
+          color: colors.$gray-500;
+          @include mixins.TextSm;
+          max-width: 35rem;
+          @include media.onMd() {
+            max-width: 20rem;
+          }
+          @include media.onLg() {
+            max-width: 25rem;
+          }
+          @include media.onXl() {
+            max-width: 30rem;
+          }
+        }
+
+      }
+    }
+  }
+  
+}

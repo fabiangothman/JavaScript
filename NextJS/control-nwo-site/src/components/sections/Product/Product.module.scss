@@ -1,0 +1,58 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.description {
+  background-color: colors.$gray-light;
+  padding: 0;
+}
+
+.imageContainer {
+  padding: 4.875rem 1.625rem 0;
+
+  @include media.onLg() {
+    padding: 12.5rem 4.6875rem;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 4.6875rem 1.3125rem 4.8125rem;
+
+  @include media.onLg() {
+    padding: 12.5rem 4.6875rem;
+  }
+  
+  .header {
+    color: colors.$primary;
+    font-size: 3rem;
+    line-height: 3.625rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    
+    @include media.onLg() {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      line-height: 4.1875rem;
+      margin-bottom: 2.9375rem;
+    }
+  }
+
+  .text {
+    color: colors.$black;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    line-height: 1.375rem;
+    margin-bottom: 2.1875rem;
+
+    @include media.onLg() {
+      color: colors.$black-light;
+      font-size: 1.5rem;
+      letter-spacing: 0.03em;
+      line-height: 2.125rem;
+      margin-bottom: 3.3125rem;
+    }
+  }
+}

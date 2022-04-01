@@ -1,0 +1,698 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/fonts';
+
+@mixin LogoTextMobile {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 400;
+}
+@mixin LogoTextDesktop {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 400;
+}
+@mixin LogoText {
+  @include LogoTextMobile;
+  @include media.onLg() {
+    @include LogoTextDesktop;
+  }
+}
+
+@mixin LogoTextBoldMobile {
+  font-family: fonts.$Akzidenzgrotesk-Bold;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 600;
+}
+@mixin LogoTextBoldDesktop {
+  font-family: fonts.$Akzidenzgrotesk-Bold;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 600;
+}
+@mixin LogoTextBold {
+  @include LogoTextBoldMobile;
+  @include media.onLg() {
+    @include LogoTextBoldDesktop;
+  }
+}
+
+@mixin MenuTextMobile {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 1.4rem;
+  line-height: 1.686rem;
+  font-weight: 400;
+}
+@mixin MenuTextDesktop {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 1.4rem;
+  line-height: 1.686rem;
+  font-weight: 400;
+}
+@mixin MenuText {
+  @include MenuTextMobile;
+  @include media.onLg() {
+    @include MenuTextDesktop;
+  }
+}
+
+@mixin MenuTextBoldMobile {
+  font-family: fonts.$Akzidenzgrotesk-Bold;
+  font-size: 1.4rem;
+  line-height: 1.686rem;
+  font-weight: 600;
+}
+@mixin MenuTextBoldDesktop {
+  font-family: fonts.$Akzidenzgrotesk-Bold;
+  font-size: 1.4rem;
+  line-height: 1.686rem;
+  font-weight: 600;
+}
+@mixin MenuTextBold {
+  @include MenuTextBoldMobile;
+  @include media.onLg() {
+    @include MenuTextBoldDesktop;
+  }
+}
+
+
+@mixin HeaderTitleMobile {
+  font-family: fonts.$TiemposHeadline-Regular;
+  font-size: 6.4rem;
+  line-height: 7.04rem;
+  font-weight: 400;
+}
+@mixin HeaderTitleDesktop {
+  font-family: fonts.$TiemposHeadline-Regular;
+  font-size: 6.4rem;
+  line-height: 7.04rem;
+  font-weight: 400;
+}
+@mixin HeaderTitle {
+  @include HeaderTitleMobile;
+  @include media.onLg() {
+    @include HeaderTitleDesktop;
+  }
+}
+
+@mixin HeaderTitleBoldMobile {
+  font-family: fonts.$TiemposHeadline-Semibold;
+  font-size: 6.4rem;
+  line-height: 7.04rem;
+  font-weight: 600;
+}
+@mixin HeaderTitleBoldDesktop {
+  font-family: fonts.$TiemposHeadline-Semibold;
+  font-size: 6.4rem;
+  line-height: 7.04rem;
+  font-weight: 600;
+}
+@mixin HeaderTitleBold {
+  @include HeaderTitleBoldMobile;
+  @include media.onLg() {
+    @include HeaderTitleBoldDesktop;
+  }
+}
+
+@mixin HeaderTextMobile {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 3.6rem;
+  line-height: 3.96rem;
+  font-weight: 400;
+}
+@mixin HeaderTextDesktop {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 3.6rem;
+  line-height: 3.96rem;
+  font-weight: 400;
+}
+@mixin HeaderText {
+  @include HeaderTextMobile;
+  @include media.onLg() {
+    @include HeaderTextDesktop;
+  }
+}
+
+@mixin ReferenceTextMobile {
+  font-family: fonts.$TiemposHeadline-RegularItalic;
+  font-style: italic;
+  font-size: 2.4rem;
+  line-height: 2.88rem;
+  font-weight: 400;
+}
+@mixin ReferenceTextDesktop {
+  font-family: fonts.$TiemposHeadline-RegularItalic;
+  font-style: italic;
+  font-size: 2.4rem;
+  line-height: 2.88rem;
+  font-weight: 400;
+}
+@mixin ReferenceText {
+  @include ReferenceTextMobile;
+  @include media.onLg() {
+    @include ReferenceTextDesktop;
+  }
+}
+
+@mixin SmallReferenceTextMobile {
+  font-family: fonts.$TiemposHeadline-RegularItalic;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  font-weight: 400;
+}
+@mixin SmallReferenceTextDesktop {
+  font-family: fonts.$TiemposHeadline-RegularItalic;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  font-weight: 400;
+}
+@mixin SmallReferenceText {
+  @include SmallReferenceTextMobile;
+  @include media.onLg() {
+    @include SmallReferenceTextDesktop;
+  }
+}
+
+@mixin SmallTabMobile {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 1.8rem;
+  line-height: 1.98rem;
+  font-weight: 400;
+}
+@mixin SmallTabDesktop {
+  font-family: fonts.$Akzidenzgrotesk-Regular;
+  font-size: 1.8rem;
+  line-height: 1.98rem;
+  font-weight: 400;
+}
+@mixin SmallTab {
+  @include SmallTabMobile;
+  @include media.onLg() {
+    @include SmallTabDesktop;
+  }
+}
+
+@mixin HeaderSubtitleMobile {
+  font-family: fonts.$TiemposHeadline-Regular;
+  font-size: 3.6rem;
+  line-height: 4.32rem;
+  font-weight: 400;
+}
+@mixin HeaderSubtitleDesktop {
+  font-family: fonts.$TiemposHeadline-Regular;
+  font-size: 3.6rem;
+  line-height: 4.32rem;
+  font-weight: 400;
+}
+@mixin HeaderSubtitle {
+  @include HeaderSubtitleMobile;
+  @include media.onLg() {
+    @include HeaderSubtitleDesktop;
+  }
+}
+
+
+
+
+/* New styles */
+@mixin RobotoMediumSmMobile {
+  font-family: fonts.$Roboto-Medium;
+  font-size: 1.2rem;
+  line-height: 1.406rem;
+  font-weight: 400;
+}
+@mixin RobotoMediumSmDesktop {
+  font-family: fonts.$Roboto-Medium;
+  font-size: 2rem;
+  line-height: 2.344rem;
+  font-weight: 500;
+}
+@mixin RobotoMediumSm {
+  @include RobotoMediumSmMobile;
+  @include media.onLg() {
+    @include RobotoMediumSmDesktop;
+  }
+}
+
+@mixin RobotoMediumXsMobile {
+  font-family: fonts.$Roboto-Medium;
+  font-size: 1.4rem;
+  line-height: 1.641rem;
+  font-weight: 500;
+}
+@mixin RobotoMediumXsDesktop {
+  font-family: fonts.$Roboto-Medium;
+  font-size: 1.4rem;
+  line-height: 1.641rem;
+  font-weight: 500;
+}
+@mixin RobotoMediumXs {
+  @include RobotoMediumXsMobile;
+  @include media.onLg() {
+    @include RobotoMediumXsDesktop;
+  }
+}
+
+@mixin FinancierRegularXlMobile {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 3.6rem;
+  line-height: 3.96rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularXlDesktop {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 8rem;
+  line-height: 8rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularXl {
+  @include FinancierRegularXlMobile;
+  @include media.onLg() {
+    @include FinancierRegularXlDesktop;
+  }
+}
+
+@mixin TiemposHeadlineRegularXlMobile {
+  font-family: fonts.$TiemposHeadline-Regular;
+  font-size: 3.6rem;
+  line-height: 3.96rem;
+  font-weight: 400;
+}
+@mixin TiemposHeadlineRegularXlDesktop {
+  font-family: fonts.$TiemposHeadline-Regular;
+  //font-size: 8rem;
+  font-size: 6.98rem;
+  line-height: 8rem;
+  font-weight: 400;
+}
+@mixin TiemposHeadlineRegularXl {
+  @include TiemposHeadlineRegularXlMobile;
+  @include media.onLg() {
+    @include TiemposHeadlineRegularXlDesktop;
+  }
+}
+
+@mixin RobotoRegularMdMobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 1.98rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMdDesktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd {
+  @include RobotoRegularMdMobile;
+  @include media.onLg() {
+    @include RobotoRegularMdDesktop;
+  }
+}
+
+@mixin RobotoBoldSmMobile {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 1.4rem;
+  line-height: 1.641rem;
+  font-weight: 700;
+}
+@mixin RobotoBoldSmDesktop {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 1.8rem;
+  line-height: 2.109rem;
+  font-weight: 700;
+}
+@mixin RobotoBoldSm {
+  @include RobotoBoldSmMobile;
+  @include media.onLg() {
+    @include RobotoBoldSmDesktop;
+  }
+}
+
+@mixin TiemposHeadlineRegularItalicXsMobile {
+  font-family: fonts.$TiemposHeadline-RegularItalic;
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  font-weight: 400;
+}
+@mixin TiemposHeadlineRegularItalicXsDesktop {
+  font-family: fonts.$TiemposHeadline-RegularItalic;
+  font-size: 1.2rem;
+  line-height: 1.44rem;
+  font-weight: 400;
+}
+@mixin TiemposHeadlineRegularItalicXs {
+  @include TiemposHeadlineRegularItalicXsMobile;
+  @include media.onLg() {
+    @include TiemposHeadlineRegularItalicXsDesktop;
+  }
+}
+
+@mixin RobotoBoldMdMobile {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 1.8rem;
+  line-height: 1.98rem;
+  font-weight: 700;
+}
+@mixin RobotoBoldMdDesktop {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 700;
+}
+@mixin RobotoBoldMd {
+  @include RobotoBoldMdMobile;
+  @include media.onLg() {
+    @include RobotoBoldMdDesktop;
+  }
+}
+
+@mixin RobotoMdMobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 1.98rem;
+  font-weight: 400;
+}
+@mixin RobotoMdDesktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 400;
+}
+@mixin RobotoMd {
+  @include RobotoMdMobile;
+  @include media.onLg() {
+    @include RobotoMdDesktop;
+  }
+}
+
+@mixin RobotoRegularSmMobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.2rem;
+  line-height: 1.406rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularSmDesktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.4rem;
+  line-height: 1.641rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularSm {
+  @include RobotoRegularSmMobile;
+  @include media.onLg() {
+    @include RobotoRegularSmDesktop;
+  }
+}
+
+
+@mixin RobotoBoldXsMobile {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 1.2rem;
+  line-height: 1.406rem;
+  font-weight: 600;
+}
+@mixin RobotoBoldXsDesktop {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 1.4rem;
+  line-height: 1.641rem;
+  font-weight: 700;
+}
+@mixin RobotoBoldXs {
+  @include RobotoBoldXsMobile;
+  @include media.onLg() {
+    @include RobotoBoldXsDesktop;
+  }
+}
+
+@mixin FinancierRegularXl1Mobile {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 4.8rem;
+  line-height: 5.208rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularXl1Desktop {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 8rem;
+  line-height: 8.68rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularXl1 {
+  @include FinancierRegularXl1Mobile;
+  @include media.onLg() {
+    @include FinancierRegularXl1Desktop;
+  }
+}
+
+@mixin RobotoRegularMd1Mobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 1.98rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd1Desktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 1.98rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd1 {
+  @include RobotoRegularMd1Mobile;
+  @include media.onLg() {
+    @include RobotoRegularMd1Desktop;
+  }
+}
+
+@mixin RobotoRegularXsMobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.4rem;
+  line-height: 1.54rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularXsDesktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.4rem;
+  line-height: 1.54rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularXs {
+  @include RobotoRegularXsMobile;
+  @include media.onLg() {
+    @include RobotoRegularXsDesktop;
+  }
+}
+
+@mixin FinancierRegularLgMobile {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 2.4rem;
+  line-height: 2.604rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularLgDesktop {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 4.4rem;
+  line-height: 4.774rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularLg {
+  @include FinancierRegularLgMobile;
+  @include media.onLg() {
+    @include FinancierRegularLgDesktop;
+  }
+}
+
+@mixin RobotoRegularMd2Mobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 2.16rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd2Desktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 2.4rem;
+  line-height: 2.88rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd2 {
+  @include RobotoRegularMd2Mobile;
+  @include media.onLg() {
+    @include RobotoRegularMd2Desktop;
+  }
+}
+
+@mixin TiemposHeadlineSemiBoldLgMobile {
+  font-family: fonts.$TiemposHeadline-Semibold;
+  font-size: 4.8rem;
+  line-height: 5.76rem;
+  font-weight: 600;
+}
+@mixin TiemposHeadlineSemiBoldLgDesktop {
+  font-family: fonts.$TiemposHeadline-Semibold;
+  font-size: 6.4rem;
+  line-height: 7.68rem;
+  font-weight: 600;
+}
+@mixin TiemposHeadlineSemiBoldLg {
+  @include TiemposHeadlineSemiBoldLgMobile;
+  @include media.onLg() {
+    @include TiemposHeadlineSemiBoldLgDesktop;
+  }
+}
+
+@mixin FinancierRegularMdMobile {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 2.4rem;
+  line-height: 2.604rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularMdDesktop {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 2.4rem;
+  line-height: 2.604rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularMd {
+  @include FinancierRegularMdMobile;
+  @include media.onLg() {
+    @include FinancierRegularMdDesktop;
+  }
+}
+
+@mixin TiemposHeadlineRegularMdMobile {
+  font-family: fonts.$TiemposHeadline-Regular;
+  font-size: 1.8rem;
+  line-height: 2.16rem;
+  font-weight: 400;
+}
+@mixin TiemposHeadlineRegularMdDesktop {
+  font-family: fonts.$TiemposHeadline-Regular;
+  font-size: 2.4rem;
+  line-height: 2.88rem;
+  font-weight: 400;
+}
+@mixin TiemposHeadlineRegularMd {
+  @include TiemposHeadlineRegularMdMobile;
+  @include media.onLg() {
+    @include TiemposHeadlineRegularMdDesktop;
+  }
+}
+
+@mixin RobotoRegularMd3Mobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 2.109rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd3Desktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 2.4rem;
+  line-height: 2.813rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd3 {
+  @include RobotoRegularMd3Mobile;
+  @include media.onLg() {
+    @include RobotoRegularMd3Desktop;
+  }
+}
+
+@mixin RobotoBoldXs1Mobile {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 1.4rem;
+  line-height: 1.68rem;
+  font-weight: 600;
+}
+@mixin RobotoBoldXs1Desktop {
+  font-family: fonts.$Roboto-Bold;
+  font-size: 1.4rem;
+  line-height: 1.68rem;
+  font-weight: 600;
+}
+@mixin RobotoBoldXs1 {
+  @include RobotoBoldXs1Mobile;
+  @include media.onLg() {
+    @include RobotoBoldXs1Desktop;
+  }
+}
+
+@mixin RobotoRegularXs1Mobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.4rem;
+  line-height: 1.68rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularXs1Desktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.4rem;
+  line-height: 1.68rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularXs1 {
+  @include RobotoRegularXs1Mobile;
+  @include media.onLg() {
+    @include RobotoRegularXs1Desktop;
+  }
+}
+
+@mixin FinancierRegularXl2Mobile {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 3.6rem;
+  line-height: 3.906rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularXl2Desktop {
+  font-family: fonts.$FinancierDisplay-Medium;
+  font-size: 8rem;
+  line-height: 8.68rem;
+  font-weight: 400;
+}
+@mixin FinancierRegularXl2 {
+  @include FinancierRegularXl2Mobile;
+  @include media.onLg() {
+    @include FinancierRegularXl2Desktop;
+  }
+}
+
+@mixin RobotoRegularMd4Mobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 2.16rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd4Desktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 2.4rem;
+  line-height: 2.64rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd4 {
+  @include RobotoRegularMd4Mobile;
+  @include media.onLg() {
+    @include RobotoRegularMd4Desktop;
+  }
+}
+
+@mixin RobotoRegularMd5Mobile {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 2.16rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd5Desktop {
+  font-family: fonts.$Roboto-Regular;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  font-weight: 400;
+}
+@mixin RobotoRegularMd5 {
+  @include RobotoRegularMd5Mobile;
+  @include media.onLg() {
+    @include RobotoRegularMd5Desktop;
+  }
+}

@@ -1,0 +1,155 @@
+@use 'styles/colors';
+@use 'styles/media';
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: colors.$gray-900;
+  color: colors.$white-1000;
+  padding: 58px 24px 94px;
+  margin: 0 auto;
+  max-width: 1600px;
+
+  @include media.onLg() {
+    flex-direction: row;
+    padding: 123px 100px 208px;
+  }
+
+  @include media.onXl() {
+    flex-direction: row;
+    padding: 123px 140px 208px;
+  }
+}
+
+.left {
+  width: 100%;
+  margin-bottom: 40px;
+  @include media.onLg() {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.headlineLeft {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+
+  @include media.onLg() {
+    display: none;
+  }
+}
+
+.image {
+  border-radius: 14.0385px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  width: 100%;
+  padding: 0;
+  background: colors.$gray-900;
+
+  @include media.onLg() {
+    width: 50%;
+    padding: 30px 0 30px 100px;
+  }
+
+  @include media.onXl() {
+    width: 50%;
+    padding: 50px 0 50px 142px;
+  }
+}
+
+.headline {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  display: none;
+  text-transform: uppercase;
+
+  @include media.onLg() {
+    margin-bottom: 35px;
+    display: flex;
+  }
+}
+
+.tabsContainer {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+
+  @include media.onLg() {
+    margin-bottom: 24px;
+  }
+}
+
+.tabsList {
+  display: flex;
+  padding-bottom: 24px;
+}
+
+.tabsItem {
+  &.activeTab {
+    display: flex;
+    opacity: 1;
+
+    .tabTitle {
+      opacity: 1;
+      font-weight: bold;
+    }
+  }
+}
+
+.tabTitle {
+  color: white;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+  opacity: 0.6;
+  margin-right: 12px;
+}
+
+  .contContent {
+    position: relative;
+
+    .contBox {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .tabContent {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      font-feature-settings: 'salt' on;
+      font-family: "Source Sans Pro";
+
+      @include media.onMd() {
+        font-size: 24px;
+        line-height: 36px;
+      }
+    }
+
+    .tabVisible {
+      visibility: visible;
+    }
+    .tabHidden {
+      visibility: hidden;
+    }
+  }

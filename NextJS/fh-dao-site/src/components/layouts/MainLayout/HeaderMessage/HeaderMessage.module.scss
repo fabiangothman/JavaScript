@@ -1,0 +1,26 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  z-index: 3;
+
+  .contMessage {
+    text-align: center;
+    background-color: colors.$yellow;
+    padding-left: 6.4rem;
+    padding-right: 6.4rem;
+    padding-top: 2.8rem;
+    padding-bottom: 3rem;
+    @include media.onLg() {
+      padding-top: 3.9rem;
+      padding-bottom: 4rem;
+    }
+
+    .message {
+      @include mixins.RobotoRegularMd3Mobile;
+      color: colors.$black;
+    }
+  }
+}

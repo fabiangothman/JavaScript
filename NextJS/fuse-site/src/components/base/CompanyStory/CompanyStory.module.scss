@@ -1,0 +1,529 @@
+@use 'styles/media';
+@use 'styles/mixins';
+@use 'styles/colors';
+
+.wrapper {
+  &.firstChild,
+  &:nth-child(1) {
+    .testimonials {
+      &Images {
+        &Right {
+          @include media.onLg() {
+            img:last-of-type {
+              top: -74px;
+            }
+            &::before {
+              top: -74px;
+              background-image: url('~assets/icons/portfolio-right-top.svg');
+            }
+            &::after {
+              top: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &:nth-child(even) {
+    background-image: url('~assets/images/testimonial-left-background.png');
+
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &:nth-child(4n) {
+    background-image: url('~assets/images/testimonial-right-background.png');
+
+    background-position: 100% 100%;
+  }
+  width: 100%;
+  .storiesWrapper {
+    display: flex;
+    width: 100%;
+    &AtEnd {
+      justify-content: flex-end;
+      padding-right: 1.6rem;
+      @include media.onLg() {
+        padding-right: 0;
+      }
+    }
+
+    &AtMid {
+      justify-content: flex-start;
+      padding-left: 1.6rem;
+      @include media.onLg() {
+        padding-left: 0;
+        justify-content: center;
+      }
+    }
+  }
+
+  .testimonials {
+    background-color: colors.$off-white;
+    padding: 2.4rem;
+    margin-bottom: 17rem;
+    z-index: 2;
+    max-width: 228px;
+    @include media.onXs() {
+      max-width: 278px;
+    }
+    @include media.onSm() {
+      max-width: calc(100% - 250px);
+    }
+    @include media.onLg() {
+      max-width: calc(100% - 460px);
+      padding: 3.2rem 7.6rem;
+      margin-bottom: 15rem;
+    }
+
+    @include media.onXl() {
+      padding: 7.2rem 11.6rem;
+    }
+
+    position: relative;
+
+    &NoMargin {
+      margin-bottom: 0;
+    }
+
+    &Images {
+      &CompanyLogo {
+        filter: grayscale(1);
+      }
+
+      &NoCompanyLogo {
+        position: absolute;
+        background-color: colors.$off-white;
+        width: 83px;
+        height: 83px;
+        bottom: -35px;
+        left: -25px;
+      }
+
+      &AuthorPhoto {
+        filter: grayscale(1);
+        object-fit: cover;
+      }
+
+      &Left {
+        &::before {
+          background-image: url('~assets/icons/portfolio-right-side.svg');
+          background-repeat: no-repeat;
+          //   background-position: 150px 0;
+          content: ' ';
+          height: 134px;
+          width: 50%;
+          position: absolute;
+          top: 100%;
+          left: 52px;
+        }
+        &::after {
+          background-image: url('~assets/icons/portfolio-right-side.svg');
+          background-repeat: no-repeat;
+          content: ' ';
+          height: 134px;
+          width: 50%;
+          position: absolute;
+          top: 100%;
+          left: -108px;
+          transform: rotate(180deg);
+        }
+        @include media.onSm() {
+          // &::before {
+          //   left: 239px;
+          //   transform: rotate(180deg);
+          // }
+          &::after {
+            left: -199px;
+          }
+        }
+        @include media.onLg() {
+          &::before {
+            background-image: url('~assets/icons/portfolio-left-top.svg');
+            background-repeat: no-repeat;
+            background-position: 150px 0;
+            content: ' ';
+            height: 300px;
+            width: 50%;
+            position: absolute;
+            top: -75px;
+            left: -100px;
+            right: unset;
+          }
+          &::after {
+            background-image: url('~assets/icons/portfolio-left-side.svg');
+            background-repeat: no-repeat;
+            //   background-position: 150px 0;
+            background-position: 100% 0;
+
+            content: ' ';
+            height: 300px;
+            width: 50%;
+            position: absolute;
+            top: 0px;
+            left: unset;
+            right: 100%;
+            transform: unset;
+          }
+        }
+        & > img {
+          z-index: 2;
+          position: absolute;
+          filter: grayscale(1);
+          object-fit: cover;
+          &:first-of-type {
+            width: 103px;
+            height: 100px;
+            bottom: -134px;
+            left: 52px;
+          }
+          &:last-of-type {
+            width: 83px;
+            height: 83px;
+            bottom: -35px;
+            left: -31px;
+          }
+          @include media.onXs() {
+            &:first-of-type {
+              width: 103px;
+              height: 100px;
+              bottom: -134px;
+              right: 58px;
+            }
+            &:last-of-type {
+              width: 83px;
+              height: 83px;
+              bottom: -35px;
+              right: -6px;
+            }
+          }
+          @include media.onLg() {
+            &:first-of-type {
+              width: 150px;
+              height: 150px;
+              top: 75px;
+              left: -250px;
+            }
+            &:last-of-type {
+              width: 150px;
+              height: 150px;
+              top: -75px;
+              left: -100px;
+            }
+          }
+        }
+      }
+
+      &Right {
+        &::before {
+          background-image: url('~assets/icons/portfolio-right-side.svg');
+          background-repeat: no-repeat;
+          background-position: 100% -1px;
+          content: ' ';
+
+          height: 134px;
+          width: 215px;
+          top: 100%;
+          position: absolute;
+          right: 58px;
+          transform: rotate(180deg);
+        }
+        &::after {
+          background-image: url('~assets/icons/portfolio-right-side.svg');
+          background-repeat: no-repeat;
+          //   background-position: 100% -1px;
+          content: ' ';
+          height: 133px;
+          width: 50%;
+          top: 100%;
+          position: absolute;
+          left: calc(100% - 58px);
+        }
+        @include media.onSm() {
+          &::before {
+            left: 239px;
+            transform: rotate(180deg);
+          }
+          &::after {
+            left: calc(100% - 57px);
+          }
+        }
+        @include media.onLg() {
+          &::before {
+            background-image: url('~assets/icons/portfolio-right-top-expanded.svg');
+
+            background-position: 100% -1px;
+
+            height: 300px;
+            width: 50%;
+            top: -149px;
+            position: absolute;
+            right: 70px;
+            transform: unset;
+            left: unset;
+          }
+          &::after {
+            background-image: url('~assets/icons/portfolio-right-side.svg');
+            background-position: 100% -1px;
+            height: 300px;
+            width: 50%;
+            top: 10px;
+            position: absolute;
+            right: -215px;
+            left: unset;
+          }
+        }
+        & > img {
+          z-index: 1;
+          position: absolute;
+          &:first-of-type {
+            width: 103px;
+            height: 100px;
+            bottom: -134px;
+            right: 58px;
+          }
+          &:last-of-type {
+            width: 83px;
+            height: 83px;
+            bottom: -35px;
+            right: -25px;
+          }
+
+          @include media.onSm() {
+            &:first-of-type {
+              width: 103px;
+              height: 100px;
+              bottom: -134px;
+              right: 52px;
+            }
+            &:last-of-type {
+              width: 83px;
+              height: 83px;
+              bottom: -35px;
+              right: -30px;
+            }
+          }
+          @include media.onLg() {
+            &:first-of-type {
+              width: 150px;
+              height: 150px;
+              top: 75px;
+              right: -230px;
+            }
+            &:last-of-type {
+              width: 150px;
+              height: 150px;
+              top: -75px;
+              right: -80px;
+            }
+          }
+        }
+      }
+    }
+
+    &Relate {
+      &AudioWrapper {
+        align-items: center;
+        margin-top: 4rem;
+        display: flex;
+        &AtRight {
+          justify-content: flex-end;
+          @include media.onLg() {
+            justify-content: flex-start;
+          }
+        }
+        &AtLeft {
+          justify-content: flex-start;
+        }
+        & > svg {
+          margin: 0 1.4rem;
+        }
+        & > a {
+          @include mixins.CtaLargeMobile;
+          @include media.onLg() {
+            @include mixins.CtaLarge;
+          }
+          color: colors.$black;
+        }
+      }
+      @include mixins.PortfolioBodyMobile;
+      @include media.onLg() {
+        @include mixins.PortfolioBody;
+      }
+      color: colors.$portfolio-body-text;
+    }
+  }
+
+  .testimonialsBody {
+    position: relative;
+    z-index: 1;
+  }
+
+  .readmoreWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 1.4rem;
+    cursor: pointer;
+    & > span {
+      @include mixins.CtaSmall;
+      color: colors.$black;
+      margin-right: 0.4rem;
+    }
+    &AtRight {
+      justify-content: flex-end;
+      @include media.onLg() {
+        justify-content: flex-start;
+      }
+    }
+    &AtLeft {
+      justify-content: flex-start;
+    }
+  }
+
+  .microphoneWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    & > img {
+      margin-right: 0.8rem;
+    }
+    & > span {
+      @include mixins.CtaLargeMobile;
+      @include media.onLg() {
+        @include mixins.CtaLarge;
+      }
+      color: colors.$black;
+    }
+
+    &Right {
+      justify-content: flex-end;
+    }
+  }
+
+  .fullStory {
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 10rem;
+    @include media.onLg() {
+      padding-bottom: 0;
+      margin-bottom: 15rem;
+    }
+
+    &Relate {
+      color: colors.$black;
+      @include mixins.CompanyNameMobile;
+      @include media.onLg() {
+        @include mixins.CompanyName;
+      }
+      font-weight: 400;
+    }
+
+    &Company {
+      &Relate {
+        padding: 0 8rem;
+        &WithPadding {
+          padding-bottom: 8rem;
+        }
+      }
+
+      &AltPhoto {
+        display: flex;
+        position: relative;
+        min-height: 100px;
+        &NoInner {
+          min-height: 0px;
+        }
+        &AtRight {
+          justify-content: flex-end;
+        }
+
+        &InnerAtRight {
+          width: 103px;
+          height: 101px;
+          @include media.onLg() {
+            width: 153px;
+            height: 150px;
+          }
+        }
+
+        &InnerAtLeft {
+          background-color: white;
+          position: absolute;
+          left: -33px;
+          width: 103px;
+          height: 101px;
+          @include media.onLg() {
+            position: relative;
+            left: 0;
+            width: 153px;
+            height: 150px;
+          }
+        }
+
+        &OuterAtLeft {
+          position: absolute;
+          left: 7rem;
+          top: 10rem;
+          width: 103px;
+          height: 123px;
+          @include media.onLg() {
+            position: absolute;
+            width: 258px;
+            height: 253px;
+            top: -253px;
+            left: -25.8rem;
+          }
+        }
+        &OuterAtRight {
+          position: absolute;
+          top: 10rem;
+          right: 10rem;
+          width: 103px;
+          height: 123px;
+          @include media.onLg() {
+            width: 258px;
+            height: 253px;
+            top: -25.3rem;
+            right: -25.8rem;
+          }
+        }
+      }
+
+      &Data {
+        padding: 15rem 2.4rem 0 2.4rem;
+        @include media.onMd() {
+          padding: 8rem;
+          padding-bottom: 0;
+        }
+        margin-bottom: 4.2rem;
+        &Name {
+          color: colors.$black;
+          @include mixins.CompanyNameMobile;
+          font-weight: 500;
+          @include media.onMd() {
+            @include mixins.CompanyName;
+            font-weight: 500;
+          }
+        }
+
+        &Links {
+          display: flex;
+          & > svg {
+            margin: 0 1.6rem;
+          }
+          & > span {
+            & > a {
+              display: flex;
+              align-items: center;
+              color: colors.$black;
+              @include mixins.CtaSmall;
+              & > svg {
+                margin-right: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use 'styles/colors';
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  pointer-events: none;
+}
+
+.disabled {
+  display: none;
+}
+
+.hiddenContainer {
+  animation: hide 2s forwards;
+
+  @keyframes hide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+.inner {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background-color: colors.$black-1000;
+}
+
+.image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  transition: opacity ease .5s;
+  opacity: 0;
+}
+
+.activeImage {
+  opacity: 1;
+}
+
+.lastImage {
+  opacity: 1;
+}
+
+.logo {
+  max-height: 67.33px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,92 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.sectionContainer {
+  position: relative;
+  background: colors.$grey1;
+  @include mixins.displayHeavy;
+  color: colors.$white;
+  overflow: hidden;
+
+  .infoCont, .iconCloseQuoteCont, .iconOpenQuoteCont, .imageCont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+  }
+  .contLeft {
+    align-content: space-between;
+    height: 100%;
+    .iconOpenQuoteCont{
+      align-items: flex-start;
+      .iconOpenQuote{
+        position: relative;
+        width: 9.171rem;
+        height: 6.4rem;
+        //float: right;
+      }
+    }
+    .sentence {
+      font-family: fonts.$replica;
+      font-size: 3.6rem;
+      font-weight: 400;
+      line-height: 3.78rem;
+      color: colors.$white;
+      margin-top: 6rem;
+      margin-bottom: 6.4rem;
+      width: 72.9rem;
+    }
+    .info {
+      position: relative;
+      .name {
+        font-size: 1.8rem;
+        font-weight: 900;
+        line-height: 2.2rem;
+        margin-bottom: 2.4rem;
+      }
+      .role {
+        font-family: fonts.$replica;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.89rem;
+        margin-bottom: 0.6rem;
+      }
+      .location {
+        font-family: fonts.$replicaMono;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.6rem;
+        color: colors.$grey3;
+      }
+    }
+    .iconCloseQuoteCont{
+      align-items: flex-end;
+      .iconCloseQuote{
+        position: relative;
+        width: 13.9rem;
+        height: 9.7rem;
+        //float: right;
+      }
+    }
+  }
+  .image {
+    position: relative;
+    height: 49.8rem;
+    width: 100%;
+    //max-width: 33rem;
+  }
+
+  .bottomLine {
+    margin-top: 6.4rem;
+    border-top: 2px solid colors.$orange;
+  }
+  
+}
+
+.noPad {
+  padding: 0;
+}

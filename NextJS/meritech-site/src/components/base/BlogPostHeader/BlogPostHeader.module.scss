@@ -1,0 +1,70 @@
+@use 'styles/media';
+@use 'styles/colors';
+@use 'styles/mixins';
+
+.component {
+  @include media.onLg() {
+    padding-top: 6.4rem;
+  }
+  .categories {
+    @include mixins.Text2XS;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: colors.$brown-dark;
+    margin-bottom: 0.4rem;
+    @include media.onLg() {
+      margin-bottom: 0.2rem;
+      line-height: 14px;
+    }
+  }
+
+  .publishedAt {
+    @include mixins.Text2XS;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: colors.$brown-dark;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+    @include media.onLg() {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .title {
+    @include mixins.MiddleText;
+    margin-bottom: 3.6rem;
+    color: colors.$brown-dark;
+    @include media.onLg() {
+      padding-top: 180px;
+      margin-top: -180px;
+      margin-bottom: 4.7rem;
+      @include mixins.H1;
+    }
+  }
+
+  .thumbnail {
+    // height: 500px;
+    // max-height: 50rem;
+    position: relative;
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-bottom: 3.6rem;
+    @include media.onLg() {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  .description {
+    margin-bottom: 3.6rem;
+    max-width: 737px;
+    @include media.onLg() {
+      margin-bottom: 7.2rem;
+    }
+    p {
+      @include mixins.BlogPostContentText;
+      @include mixins.TextDesktop;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use 'styles/colors';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.inputWrapper {
+  .fieldsArea{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .subscribeInput {
+      flex: 1;
+      width: 100%;
+      border: 2px solid colors.$white-1000;
+      background-color: transparent;
+      border-radius: 6rem;
+      color: colors.$white-1000;
+      outline: none;
+      @include mixins.TextSm;
+      padding: 7px 12px;
+      margin-right: 1rem;
+      @include media.onMd() {
+        @include mixins.TextMdB;
+        padding: 8px 24px;
+        margin-right: 2.4rem;
+      }
+      &WithError {
+        border-bottom: 2px solid colors.$white-1000;
+      }
+    }
+  }
+}
+
+.message {
+  @include mixins.NormalText;
+  text-align: right;
+  margin-bottom: 1rem;
+  &Error {
+    color: red;
+  }
+  &Success {
+    color: green;
+  }
+  &Warning {
+    color: orange;
+  }
+}

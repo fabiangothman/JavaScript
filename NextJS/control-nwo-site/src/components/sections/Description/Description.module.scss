@@ -1,0 +1,27 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.description {
+  background-color: colors.$gray-lighter;
+  padding: 0;
+}
+
+.textContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 4.6875rem 1.3125rem 6.5625rem;
+
+  @include media.onLg() {
+    padding: 1rem 5rem;
+  }
+
+  @include media.onXl() {
+    padding: 1rem 9rem;
+  }
+}
+
+.animationContainer {
+  padding: 0;
+}

@@ -1,0 +1,60 @@
+@use 'styles/colors';
+@use 'styles/mixins';
+@use 'styles/media';
+
+.component {
+  position: relative;
+  background-color: transparent;
+
+  .background {
+    position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    &.useGreen {
+      background: linear-gradient(
+        183.56deg,
+        rgba(174, 228, 197, 0.6) 0%,
+        rgba(182, 235, 204, 0.35) 18.36%,
+        rgba(188, 237, 209, 0.5) 45.83%,
+        rgba(196, 240, 215, 0) 100%
+      );
+      @include media.onLg() {
+        background: linear-gradient(
+          183.56deg,
+          rgba(174, 228, 197, 0.75) 0%,
+          rgba(182, 235, 204, 0.35) 18.36%,
+          rgba(188, 237, 209, 0.5) 45.83%,
+          rgba(196, 240, 215, 0) 100%
+        );
+      }
+    }
+    &.useBlue {
+      background: radial-gradient(
+        100.97% 98.15% at 0% 100%,
+        rgba(217, 169, 195, 0.3) 0%,
+        rgba(217, 169, 195, 0) 100%
+      );
+      @include media.onLg() {
+        background: radial-gradient(
+          100.97% 98.15% at 0% 100%,
+          rgba(217, 169, 195, 0.3) 0%,
+          rgba(217, 169, 195, 0) 100%
+        );
+      }
+    }
+  }
+
+  .bgBlue {
+    background-color: #E3F0F0;
+  }
+
+  .extendToWidth {
+    background-size: 100% auto;
+  }
+  .extendToHeight {
+    background-size: auto 100%;
+  }
+  
+}

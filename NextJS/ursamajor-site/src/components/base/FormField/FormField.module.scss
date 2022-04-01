@@ -1,0 +1,60 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+@use 'styles/mixins';
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+
+  .input {
+    @include mixins.body;
+    border: 0;
+    border-bottom: 1px solid colors.$grey2;
+    background: colors.$grey1;
+    height: 77px;
+    width: 100%;
+    color: colors.$grey3;
+    &:focus {
+      border-bottom: 2px solid colors.$grey2;
+    }
+    &::placeholder {
+      color: colors.$grey3;
+    }
+  }
+
+  .textarea {
+    height: auto;
+    padding: 10px 0;
+    &::placeholder {
+      padding-top: 100px;
+    }
+  }
+
+  .error {
+    border: 0;
+    border-bottom: 1px solid colors.$orange;
+    color: colors.$orange;
+
+    &:focus {
+      border: 2px solid colors.$orange;
+    }
+  }
+
+  .validation {
+    color: colors.$orange;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    padding: 0 3px;
+  }
+
+  .label {
+    @include mixins.body;
+    margin-bottom: 1rem;
+    @include media.onLg() {
+    }
+  }
+}

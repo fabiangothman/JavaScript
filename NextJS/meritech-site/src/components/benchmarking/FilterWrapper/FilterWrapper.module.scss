@@ -1,0 +1,27 @@
+@use 'styles/colors';
+@use 'styles/media';
+
+.wrapper {
+  margin-top: 24px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .separator {
+    display: block;
+    margin-top: 24px;
+    height: 1px;
+    background-color: colors.$tan-light;
+  }
+
+  &:last-child {
+    .separator {
+      display: none;
+
+      @include media.onLg() {
+        display: block;
+      }
+    }
+  }
+}

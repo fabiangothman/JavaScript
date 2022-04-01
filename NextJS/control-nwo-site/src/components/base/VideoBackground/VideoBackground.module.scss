@@ -1,0 +1,20 @@
+@use 'styles/colors';
+@use 'styles/fonts';
+@use 'styles/media';
+
+.container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.video {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
